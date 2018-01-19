@@ -14,30 +14,183 @@
  **/
 
 public class CalendarStuff {
-  public static boolean isLeapYear( long year ) {
-    return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
-  }
-  public static long daysInMonth( long month, long year ) {
-    long numberOfDays = null;
-    switch ( month ) {
-      case '01': return isLeapYear( year ) ? numberOfDays = 29: numberOfDays = 28; 
-      case '00':
-      case '02':
-      case '04':
-      case '06':
-      case '07':
-      case '09':
-      case '11': return numberOfDays = 31;
-      case '03':
-      case '05':
-      case '08':
-      case '10': return numberOfDays = 30;
+
+  /**
+   * A listing of the days of the week, assigning numbers; Note that the week arbitrarily starts on Sunday
+   */
+   private static final int SUNDAY     = 0;
+   private static final int MONDAY     = SUNDAY    + 1;
+   private static final int TUESDAY    = MONDAY    + 1;
+   private static final int WEDNESDAY  = TUESDAY   + 1;
+   private static final int THURSDAY   = WEDNESDAY + 1;
+   private static final int FRIDAY     = THURSDAY  + 1;
+   private static final int SATURDAY   = FRIDAY    + 1;
+    
+  /**
+   * A listing of the months of the year, assigning numbers; I suppose these could be ENUMs instead, but whatever
+   */
+   private static final int JANUARY    = 0;
+   private static final int FEBRUARY   = JANUARY   + 1;
+   private static final int MARCH      = FEBRUARY  + 1;
+   private static final int APRIL      = MARCH     + 1;
+   private static final int MAY        = APRIL     + 1;
+   private static final int JUNE       = MAY       + 1;
+   private static final int JULY       = JUNE      + 1;
+   private static final int AUGUST     = JULY      + 1;
+   private static final int SEPTEMBER  = AUGUST    + 1;
+   private static final int OCTOBER    = SEPTEMBER + 1;
+   private static final int NOVEMBER   = OCTOBER   + 1;
+   private static final int DECEMBER   = NOVEMBER  + 1;
+  
+  /**
+   * An array containing the number of days in each month
+   *  NOTE: this excludes leap years, so those will be handled as special cases
+   *  NOTE: this is optional, but suggested
+   */
+   private static int[]    daysPerMonth      = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+  /**
+   * The constructor for the class
+   */
+   public CalendarStuff() {
+      System.out.println( "Constructor called..." );  // replace this with the actual code
+   }
+
+  /**
+   * A method to determine if the year argument is a leap year or not<br />
+   *  Leap years are every four years, except for even-hundred years, except for every 400
+   * @param    year  long containing four-digit year
+   * @return         boolean which is true if the parameter is a leap year
+   */
+   public static boolean isLeapYear( long year ) {
+      return ( year % 4 == 0 && year % 100 != 0 ) || year % 400 == 0;
+   } 
+
+  /**
+   * A method to calculate the days in a month, including leap years
+   * @param    month long containing month number, starting with "1" for "January"
+   * @param    year  long containing four-digit year; required to handle Feb 29th
+   * @return         long containing number of days in referenced month of the year
+   * notes: remember that the month variable is used as an indix, and so must
+   *         be decremented to make the appropriate index value
+   */
+   public static long daysInMonth( long month, long year ) {
+      if ( true == CalendarStuff.isLeapYear( year ) ) {
+        if ( 1 == month ) {
+          return daysPerMonth[ 1 ] + 1;
+        }
+      } else {
+        return daysPerMonth[ month ];
+      }
+     }
+
+  /**
+   * A method to determine if two dates are exactly equal
+   * @param    month1 long    containing month number, starting with "1" for "January"
+   * @param    day1   long    containing day number
+   * @param    year1  long    containing four-digit year
+   * @param    month2 long    containing month number, starting with "1" for "January"
+   * @param    day2   long    containing day number
+   * @param    year2  long    containing four-digit year
+   * @return          boolean which is true if the two dates are exactly the same
+   */
+   public static boolean dateEquals( long month1, long day1, long year1, long month2, long day2, long year2 ) {
+      if ( year1 == year2 ) {
+        if ( month1 == month2 ) {
+          if ( day1 == day2) {
+            return true;
+          }
+      } else {
+        return false;
+      }
     }
   }
-  public static boolean isValidDate ( long month, long day, long year ) {
-    
-  }
-  public static long daysBetween( long month0, long day0, long year0, long month1, long day1, long year1) {
-    
-  }
+
+  /**
+   * A method to compare the ordering of two dates
+   * @param    month1 long   containing month number, starting with "1" for "January"
+   * @param    day1   long   containing day number
+   * @param    year1  long   containing four-digit year
+   * @param    month2 long   containing month number, starting with "1" for "January"
+   * @param    day2   long   containing day number
+   * @param    year2  long   containing four-digit year
+   * @return          int    -1/0/+1 if first date is less than/equal to/greater than second
+   */
+   public static int compareDate( long month1, long day1, long year1, long month2, long day2, long year2 ) {
+      if ( year1 == year2 ) {
+        if ( month1 == month2 ) {
+          if ( day1 == day2) {
+            return 0;
+          } else if ( day1 < day2 ) {
+             return -1;
+          } else {
+             return 1;
+          }
+        } else if ( month1 < month2 ) {
+           return -1;
+        } else {
+           return 1;
+        }
+      } else if ( year1 < year2 ) {
+         return -1;
+      } else {
+        return 1;
+      }
+   }
+
+  /**
+   * A method to return whether a date is a valid date
+   * @param    month long    containing month number, starting with "1" for "January"
+   * @param    day   long    containing day number
+   * @param    year  long    containing four-digit year
+   * @return         boolean which is true if the date is valid
+   * notes: remember that the month and day variables are used as indices, and so must
+   *         be decremented to make the appropriate index value
+   */
+   public static boolean isValidDate( long month, long day, long year ) {
+    if ( month < 1 || month > 12 ) {
+      return false;
+    } else if ( day < 0 || day > CalendarStuff.daysInMonth( month, year)) {
+       return false;
+    } else {
+       return true;
+    } 
+   }
+
+  /**
+   * A method to return a string version of the month name
+   * @param    month long   containing month number, starting with "1" for "January"
+   * @return         String containing the string value of the month (no spaces)
+   */
+   public static String toMonthString( int month ) {
+      switch( month - 1 ) {
+         default: throw new IllegalArgumentException( "Illegal month value given to 'toMonthString()'." );
+      }
+   }
+
+  /**
+   * A method to return a string version of the day of the week name
+   * @param    day int    containing day number, starting with "1" for "Sunday"
+   * @return       String containing the string value of the day (no spaces)
+   */
+   public static String toDayOfWeekString( int day ) {
+      switch( day - 1 ) {
+         default       : throw new IllegalArgumentException( "Illegal day value given to 'toDayOfWeekString()'." );
+      }
+   }
+
+  /**
+   * A method to return a count of the total number of days between two valid dates
+   * @param    month1 long   containing month number, starting with "1" for "January"
+   * @param    day1   long   containing day number
+   * @param    year1  long   containing four-digit year
+   * @param    month2 long   containing month number, starting with "1" for "January"
+   * @param    day2   long   containing day number
+   * @param    year2  long   containing four-digit year
+   * @return          long   count of total number of days
+   */
+   public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
+      long dayCount = 0;
+      return dayCount;
+   }
 }
