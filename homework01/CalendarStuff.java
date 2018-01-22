@@ -75,18 +75,16 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static long daysInMonth( long month, long year ) {
-      if ( true == CalendarStuff.isLeapYear( year ) ) {
-        if ( 1 == month ) {
+      if ( 2 == month ) {
+        if ( true == CalendarStuff.isLeapYear( year ) ) {
           return daysPerMonth[ 1 ] + 1;
         } else {
-           int monthIndex = (int) month;
-           long numberOfDays = (long) daysPerMonth[ monthIndex ];
-           return numberOfDays;
+          return daysPerMonth[ 1 ]; 
         }
       } else {
-        int monthIndex = (int) month;
-        long numberOfDays = (long) daysPerMonth[ monthIndex ];
-        return numberOfDays;
+         int monthIndex = (int) month-1;
+         long numberOfDays = (long) daysPerMonth[ monthIndex ];
+         return numberOfDays;
       }
     }
 
@@ -162,6 +160,8 @@ public class CalendarStuff {
       return false;
     } else if ( day < 0 || day > CalendarStuff.daysInMonth( month, year )) {
        return false;
+    } else if (year < 0) {
+       return false;
     } else {
        return true;
     } 
@@ -201,7 +201,11 @@ public class CalendarStuff {
    */
    public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
     long dayCount = 0;
-    
-    return dayCount;
+    if ( true == CalendarStuff.isValidDate( month1, day1, year1 ) && true == CalendarStuff.isValidDate( month2, day2, year2 ) ) {
+
+     return 23;
+    } else {
+       return 34;
+    }
    }
-}
+ }
