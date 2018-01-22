@@ -16,36 +16,37 @@
 public class CalendarStuff {
 
   /**
-   * A listing of the days of the week, assigning numbers; Note that the week arbitrarily starts on Sunday
+   * A listing of the days of the week, assigning numbers.
    */
-   private static final int SUNDAY     = 0;
-   private static final int MONDAY     = SUNDAY    + 1;
-   private static final int TUESDAY    = MONDAY    + 1;
-   private static final int WEDNESDAY  = TUESDAY   + 1;
-   private static final int THURSDAY   = WEDNESDAY + 1;
-   private static final int FRIDAY     = THURSDAY  + 1;
-   private static final int SATURDAY   = FRIDAY    + 1;
+   private static final int SUNDAY          = 0;
+   private static final int MONDAY          = SUNDAY    + 1;
+   private static final int TUESDAY         = MONDAY    + 1;
+   private static final int WEDNESDAY       = TUESDAY   + 1;
+   private static final int THURSDAY        = WEDNESDAY + 1;
+   private static final int FRIDAY          = THURSDAY  + 1;
+   private static final int SATURDAY        = FRIDAY    + 1;
     
   /**
-   * A listing of the months of the year, assigning numbers; I suppose these could be ENUMs instead, but whatever
+   * A listing of the months of the year, assigning numbers.
    */
-   private static final int JANUARY    = 0;
-   private static final int FEBRUARY   = JANUARY   + 1;
-   private static final int MARCH      = FEBRUARY  + 1;
-   private static final int APRIL      = MARCH     + 1;
-   private static final int MAY        = APRIL     + 1;
-   private static final int JUNE       = MAY       + 1;
-   private static final int JULY       = JUNE      + 1;
-   private static final int AUGUST     = JULY      + 1;
-   private static final int SEPTEMBER  = AUGUST    + 1;
-   private static final int OCTOBER    = SEPTEMBER + 1;
-   private static final int NOVEMBER   = OCTOBER   + 1;
-   private static final int DECEMBER   = NOVEMBER  + 1;
-  
+   private static final int JANUARY         = 0;
+   private static final int FEBRUARY        = JANUARY   + 1;
+   private static final int MARCH           = FEBRUARY  + 1;
+   private static final int APRIL           = MARCH     + 1;
+   private static final int MAY             = APRIL     + 1;
+   private static final int JUNE            = MAY       + 1;
+   private static final int JULY            = JUNE      + 1;
+   private static final int AUGUST          = JULY      + 1;
+   private static final int SEPTEMBER       = AUGUST    + 1;
+   private static final int OCTOBER         = SEPTEMBER + 1;
+   private static final int NOVEMBER        = OCTOBER   + 1;
+   private static final int DECEMBER        = NOVEMBER  + 1;
+
+   private static final int MONTHS_PER_YEAR = 12;
+
   /**
    * An array containing the number of days in each month
    *  NOTE: this excludes leap years, so those will be handled as special cases
-   *  NOTE: this is optional, but suggested
    */
    private static int[]    daysPerMonth      = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
@@ -82,7 +83,7 @@ public class CalendarStuff {
           return daysPerMonth[ 1 ]; 
         }
       } else {
-         int monthIndex = (int) month-1;
+         int monthIndex = (int) (month-1);
          long numberOfDays = (long) daysPerMonth[ monthIndex ];
          return numberOfDays;
       }
@@ -158,7 +159,7 @@ public class CalendarStuff {
    public static boolean isValidDate( long month, long day, long year ) {
     if ( month < 1 || month > 12 ) {
       return false;
-    } else if ( day < 0 || day > CalendarStuff.daysInMonth( month, year )) {
+    } else if ( day < 1 || day > CalendarStuff.daysInMonth( month, year )) {
        return false;
     } else if (year < 0) {
        return false;
@@ -185,7 +186,8 @@ public class CalendarStuff {
    */
    public static String toDayOfWeekString( int day ) {
       switch( day - 1 ) {
-         default       : throw new IllegalArgumentException( "Illegal day value given to 'toDayOfWeekString()'." );
+
+        default       : throw new IllegalArgumentException( "Illegal day value given to 'toDayOfWeekString()'." );
       }
    }
 
@@ -201,11 +203,6 @@ public class CalendarStuff {
    */
    public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
     long dayCount = 0;
-    if ( true == CalendarStuff.isValidDate( month1, day1, year1 ) && true == CalendarStuff.isValidDate( month2, day2, year2 ) ) {
-
-     return 23;
-    } else {
-       return 34;
-    }
+    return dayCount;
    }
- }
+}
