@@ -78,11 +78,17 @@ public class CalendarStuff {
       if ( true == CalendarStuff.isLeapYear( year ) ) {
         if ( 1 == month ) {
           return daysPerMonth[ 1 ] + 1;
+        } else {
+           int monthIndex = (int) month;
+           long numberOfDays = (long) daysPerMonth[ monthIndex ];
+           return numberOfDays;
         }
       } else {
-        return daysPerMonth[ month ];
+        int monthIndex = (int) month;
+        long numberOfDays = (long) daysPerMonth[ monthIndex ];
+        return numberOfDays;
       }
-     }
+    }
 
   /**
    * A method to determine if two dates are exactly equal
@@ -99,12 +105,16 @@ public class CalendarStuff {
         if ( month1 == month2 ) {
           if ( day1 == day2) {
             return true;
+          } else {
+             return false;
           }
+        } else {
+            return false;
+        }
       } else {
         return false;
       }
     }
-  }
 
   /**
    * A method to compare the ordering of two dates
@@ -150,7 +160,7 @@ public class CalendarStuff {
    public static boolean isValidDate( long month, long day, long year ) {
     if ( month < 1 || month > 12 ) {
       return false;
-    } else if ( day < 0 || day > CalendarStuff.daysInMonth( month, year)) {
+    } else if ( day < 0 || day > CalendarStuff.daysInMonth( month, year )) {
        return false;
     } else {
        return true;
@@ -190,7 +200,8 @@ public class CalendarStuff {
    * @return          long   count of total number of days
    */
    public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
-      long dayCount = 0;
-      return dayCount;
+    long dayCount = 0;
+    
+    return dayCount;
    }
 }
