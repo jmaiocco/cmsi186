@@ -14,6 +14,17 @@
  **/
 
 public class CalendarStuff {
+ 
+  /**
+  * A listing of fundamental time constants.
+  */
+   private static final long MILLISECONDS_PER_SECOND = 1000;
+   private static final long SECONDS_PER_MINUTE      = 60;
+   private static final long MINUTES_PER_HOUR        = 60;
+   private static final long HOURS_PER_DAY           = 24;
+   private static final long DAYS_PER_WEEK           = 7;
+   private static final long WEEKS_PER_YEAR          = 52;
+
 
   /**
    * A listing of the days of the week, assigning numbers.
@@ -47,7 +58,8 @@ public class CalendarStuff {
    *  NOTE: this excludes leap years, so those will be handled as special cases
    */
    private static int[]    daysPerMonth      = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-   private static final int MONTHS_PER_YEAR = daysPerMonth.length;
+   
+
   /**
    * The constructor for the class
    */
@@ -207,12 +219,10 @@ public class CalendarStuff {
    */
    public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
      long dayCount = 0;
-     long dayIndex;
-     long monthIndex;
-     long yearIndex;
-     long endDay;
-     long endMonth;
-     long endYear;
+     double differenceInMilliseconds = 0;
+     double differenceInYears = Math.abs(year2 - year1);
+     double firstDateInMilliseconds  = Math.floor( MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY * day1 * month1 * year1 );
+     double secondDateInMilliseconds = Math.floor( MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY * day2 * month2 * year2 );
      if ( false == ( CalendarStuff.isValidDate( month1, day1, year1 ) || CalendarStuff.isValidDate( month2, day2, year2 ) )  ) {
       System.out.println("One of those is not a valid date.");
       return 0;
@@ -224,24 +234,8 @@ public class CalendarStuff {
       dayCount += Math.abs( day2 - day1 );
       return dayCount;
      } 
-     if (-1 == CalendarStuff.compareDate( month1, day1, year1, month2, day2, year2 ) ) {
-      monthIndex = month1; dayIndex = day1; yearIndex = year1; endMonth = month2; endDay = day2; endYear = year2; 
-     }
-     else {
-      monthIndex = month2; dayIndex = day2; yearIndex = year2; endMonth = month1; endDay = day1; endYear = year1; 
-     }
-     while ( false == CalendarStuff.dateEquals( monthIndex, dayIndex, yearIndex, endMonth, endDay, endYear ) ) {
-      if ( dayIndex > CalendarStuff.daysInMonth( monthIndex, yearIndex ) ) {
-        monthIndex++;
-        dayIndex = 0;
-      }
-      if ( monthIndex > MONTHS_PER_YEAR - 1 ) {
-        yearIndex++;
-        dayIndex = 0;
-        monthIndex = 0;
-      }
-      dayCount++;
-     }
+     differenceInMilliseconds = Math.abs( secondDateInMilliseconds - firstDateInMilliseconds );
+     dayCount = (long) ( differenceInMilliseconds / MILLISECONDS_PER_SECOND / SECONDS_PER_MINUTE / MINUTES_PER_HOUR / HOURS_PER_DAY);
      System.out.println(dayCount);
      return dayCount;
     }
