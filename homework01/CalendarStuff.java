@@ -237,16 +237,18 @@ public class CalendarStuff {
       dayCount += endDay;
       return dayCount;
      }
-     dayCount += CalendarStuff.daysInMonth( monthIndex - 1, yearIndex ) - dayIndex;                                                  ///Sums up days in the first month.
-     for ( i = monthIndex; i < MONTHS_PER_YEAR; i++ ) {                                                                      ///Sums up days until end of the first year.
-       dayCount += CalendarStuff.daysInMonth( monthIndex - 1 , yearIndex );
+     dayCount += CalendarStuff.daysInMonth( monthIndex - 1, yearIndex ) - dayIndex;                                              ///Sums up days in the first month.
+     for ( i = monthIndex; i < MONTHS_PER_YEAR; i++ ) {
+       int j = (int) i;                                                                        ///Sums up days until end of the first year.
+       dayCount += daysPerMonth[j - 1];
        monthIndex++;
      }
      dayCount += Math.abs( endYear - yearIndex - 1) * 365; 
      for ( i = 0; i < endMonth - 1; i++ ) {                                                                                      ///Sums up days in the final year until the last counted month.
-       dayCount += CalendarStuff.daysInMonth( monthIndex - 1, endYear );
+       int j = (int) i;
+       dayCount += daysPerMonth[j];
      }
-     dayCount += endDay + 1; 
+     dayCount += endDay; 
      for ( i = 0; i < ( endYear - yearIndex + 1 ); i++ ) {                                                                       ///Sums up extra leap days. Thanks to Patrick Utz for the code and idea!
         if ( CalendarStuff.isLeapYear( (yearIndex + i) ) ) {
           dayCount += 1;
