@@ -237,20 +237,21 @@ public class CalendarStuff {
       dayCount += endDay;
       return dayCount;
      }
-     dayCount += CalendarStuff.daysInMonth( monthIndex, yearIndex ) - dayIndex;                                                  ///Sums up days in the first month.
-     for ( i = monthIndex + 1; i < MONTHS_PER_YEAR; i++ ) {                                                                      ///Sums up days until end of the first year.
-       dayCount += CalendarStuff.daysInMonth( monthIndex, yearIndex );
+     dayCount += CalendarStuff.daysInMonth( monthIndex - 1, yearIndex ) - dayIndex;                                                  ///Sums up days in the first month.
+     for ( i = monthIndex; i < MONTHS_PER_YEAR; i++ ) {                                                                      ///Sums up days until end of the first year.
+       dayCount += CalendarStuff.daysInMonth( monthIndex - 1 , yearIndex );
+       monthIndex++;
      }
-     dayCount += (endYear - yearIndex -1) * 365;                                                                                 ///Sums up days in the full years.
+     dayCount += Math.abs( endYear - yearIndex - 1) * 365; 
      for ( i = 0; i < endMonth - 1; i++ ) {                                                                                      ///Sums up days in the final year until the last counted month.
-       dayCount += CalendarStuff.daysInMonth( monthIndex, endYear );
+       dayCount += CalendarStuff.daysInMonth( monthIndex - 1, endYear );
      }
-     for ( i = 0; i < (endYear - yearIndex + 1); i++ ) {                                                                  ///Sums up extra leap days. Thanks to Patrick Utz for the code and idea!
+     dayCount += endDay + 1; 
+     for ( i = 0; i < ( endYear - yearIndex + 1 ); i++ ) {                                                                       ///Sums up extra leap days. Thanks to Patrick Utz for the code and idea!
         if ( CalendarStuff.isLeapYear( (yearIndex + i) ) ) {
           dayCount += 1;
         }
      }
-     dayCount += endDay;                                                                                                         ///Sums up the days in the final month.
      System.out.println(dayCount);
      return dayCount;
     }
