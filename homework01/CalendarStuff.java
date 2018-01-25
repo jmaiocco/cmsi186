@@ -207,32 +207,40 @@ public class CalendarStuff {
    */
    public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
      long dayCount = 0;
-     long beginningNumberOfDays = 0;
-     long endNumberOfDays = 0;
-     long dayIndex = day1;
-     long monthIndex = month1;
-     long yearIndex = year1;
+     long dayIndex;
+     long monthIndex;
+     long yearIndex;
+     long endDay;
+     long endMonth;
+     long endYear;
      if ( false == ( CalendarStuff.isValidDate( month1, day1, year1 ) || CalendarStuff.isValidDate( month2, day2, year2 ) )  ) {
       System.out.println("One of those is not a valid date.");
       return 0;
      }
-     if ( 0 == CalendarStuff.compareDate( month1, day1, year1, month2, day2, year2 ) ) {
+     if ( true == CalendarStuff.dateEquals( month1, day1, year1, month2, day2, year2 ) ) {
       return dayCount;
      } 
      if (month1 == month2 && year1 == year2) {
       dayCount += Math.abs( day2 - day1 );
       return dayCount;
      } 
-     while ( monthIndex != month2 && dayIndex != day2 && yearIndex != year2 ) {
-      dayCount++;
-      if ( dayIndex > CalendarStuff.daysInMonth( monthIndex, yearIndex ) {
+     if (-1 == CalendarStuff.compareDate( month1, day1, year1, month2, day2, year2 ) ) {
+      monthIndex = month1; dayIndex = day1; yearIndex = year1; endMonth = month2; endDay = day2; endYear = year2; 
+     }
+     else {
+      monthIndex = month2; dayIndex = day2; yearIndex = year2; endMonth = month1; endDay = day1; endYear = year1; 
+     }
+     while ( false == CalendarStuff.dateEquals( monthIndex, dayIndex, yearIndex, endMonth, endDay, endYear ) ) {
+      if ( dayIndex > CalendarStuff.daysInMonth( monthIndex, yearIndex ) ) {
         monthIndex++;
-        dayIndex;
+        dayIndex = 0;
       }
       if ( monthIndex > MONTHS_PER_YEAR - 1 ) {
         yearIndex++;
         dayIndex = 0;
+        monthIndex = 0;
       }
+      dayCount++;
      }
      System.out.println(dayCount);
      return dayCount;
