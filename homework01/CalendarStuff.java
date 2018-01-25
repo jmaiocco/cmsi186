@@ -207,46 +207,50 @@ public class CalendarStuff {
    */
    public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
      long dayCount = 0;
-     long differenceInYears = Math.abs( year2 - year1 - 1);
+     long countedMonths;
      long endDay;
      long endMonth;
      long endYear;
      long dayIndex;
      long monthIndex;
      long yearIndex;
-     long countedMonths;
-     if ( false == ( CalendarStuff.isValidDate( month1, day1, year1 ) || CalendarStuff.isValidDate( month2, day2, year2 ) )  ) {
+     long i;
+     if ( false == ( CalendarStuff.isValidDate( month1, day1, year1 ) || CalendarStuff.isValidDate( month2, day2, year2 ) )  ) { ///Checks if dates are valid.
       System.out.println("One of those is not a valid date.");
       return 0;
      }
-     if ( 0 == CalendarStuff.compareDate( month1, day1, year1, month2, day2, year2 ) ) {
+     if ( 0 == CalendarStuff.compareDate( month1, day1, year1, month2, day2, year2 ) ) {                                         ///Returns when dates are equal.
       return dayCount;
      } 
-     if (month1 == month2 && year1 == year2 ) {
+     if (month1 == month2 && year1 == year2 ) {                                                                                  ///Returns when dates are in the same month.
       dayCount += Math.abs( day2 - day1 );
       return dayCount;
      } 
-     if ( -1 == CalendarStuff.compareDate( month1, day1, year1, month2, day2, year2 ) ) {
+     if ( -1 == CalendarStuff.compareDate( month1, day1, year1, month2, day2, year2 ) ) {                                        ///Initializes if date1 < date2.
        dayIndex = day1; monthIndex = month1; yearIndex = year1; endDay = day2; endMonth = month2; endYear = year2;
      } 
-     else {
+     else {                                                                                                                      ///Initializes if date1 > date2.
        dayIndex = day2; monthIndex = month2; yearIndex = year2; endDay = day1; endMonth = month1; endYear = year1;
      }
-     if ( endMonth == monthIndex + 1 && ( endYear == yearIndex + 1 || yearIndex == endYear ) ) {
+     if ( endMonth == monthIndex + 1 && ( endYear == yearIndex + 1 || yearIndex == endYear ) ) {                                 ///Returns when dates are about a month apart.
       dayCount += CalendarStuff.daysInMonth( monthIndex, yearIndex ) - dayIndex;
       dayCount += endDay;
       return dayCount;
      }
-     dayCount += CalendarStuff.daysInMonth( monthIndex, yearIndex ) - dayIndex;
-     dayCount += endDay;
-     long differenceInMonths = ( ( MONTHS_PER_YEAR - monthIndex ) + ( MONTHS_PER_YEAR * differenceInYears ) + ( endMonth ) - 1 );
-     for ( countedMonths = 0; countedMonths < differenceInMonths; countedMonths++ ) {
-      dayCount += CalendarStuff.daysInMonth( monthIndex, yearIndex );
-      if ( monthIndex > MONTHS_PER_YEAR - 1) {
-        monthIndex = 0;
-        yearIndex++;
-      }  
-     } 
+     dayCount += CalendarStuff.daysInMonth( monthIndex, yearIndex ) - dayIndex;                                                  ///Sums up days in the first month.
+     for ( i = monthIndex + 1; i < MONTHS_PER_YEAR; i++ ) {                                                                      ///Sums up days until end of the first year.
+       dayCount += CalendarStuff.daysInMonth( monthIndex, yearIndex );
+     }
+     dayCount += (endYear - yearIndex -1) * 365;                                                                                 ///Sums up days in the full years.
+     for ( i = 0; i < endMonth - 1; i++ ) {                                                                                      ///Sums up days in the final year until the last counted month.
+       dayCount += CalendarStuff.daysInMonth( monthIndex, endYear );
+     }
+     for ( i = 0; i < (endYear - yearIndex + 1); i++ ) {                                                                  ///Sums up extra leap days. Thanks to Patrick Utz for the code and idea!
+        if ( CalendarStuff.isLeapYear( (yearIndex + i) ) ) {
+          dayCount += 1;
+        }
+     }
+     dayCount += endDay;                                                                                                         ///Sums up the days in the final month.
      System.out.println(dayCount);
      return dayCount;
     }
