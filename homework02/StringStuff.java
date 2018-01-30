@@ -23,6 +23,13 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 
 public class StringStuff {
+  /**
+   * An array of vowels.
+   */
+   
+   private static char[]  vowels  = { 'a', 'e', 'i', 'o', 'u', 'y' };
+   private static char[]  letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y,' 'z'};
+
 
   /**
    * Method to determine if a string contains one of the vowels: A, E, I, O, U, and sometimes Y.
@@ -33,6 +40,16 @@ public class StringStuff {
    * @return  boolean which is true if there is a vowel, or false otherwise
    */
    public static boolean containsVowel( String s ) {
+      int i;
+      int j;
+      s = s.toLowerCase();
+      for ( i = 0; i < vowels.length; i++) {
+         for ( j = 0; j < s.length(); j++ ) {
+            if ( vowels[ i ] == s.charAt( j ) ) {
+              return true;
+            }
+         }
+      }
       return false;
    }
 
@@ -45,9 +62,12 @@ public class StringStuff {
    * @return  boolean which is true if this a palindrome, or false otherwise
    */
    public static boolean isPalindrome( String s ) {
-      int stringLength = s.length();
-      if (s.charAt( 0 ) == (s.charAt( stringLength - 1 )) )
-      return true;
+      String t = reverse( s );
+      if ( true == t.equals( s ) ) {
+         return true;
+      } else {
+         return false;
+      }
    }
 
   /**
@@ -59,6 +79,7 @@ public class StringStuff {
    * @return  String containing the &quot;even&quot; letters from the input
    */
    public static String evensOnly( String s ) {
+
       return new String( "HJHJHJ" );
    }
 
@@ -103,8 +124,14 @@ public class StringStuff {
    * @return  String containing the reverse of the input string
    */
    public static String reverse( String s ) {
-      return new String( "kculc eht tahw" );
+      int i;
+      String t = new String();
+      for (i = s.length() - 1 ; i >= 0; i--) {
+         t = t + s.charAt( i );
+      }
+      return t;
    }
+
 
   /**
    * Main method to test the methods in this class
