@@ -28,7 +28,7 @@ public class StringStuff {
    */
    
    private static char[]  vowels  = { 'a', 'e', 'i', 'o', 'u', 'y' };
-   private static char[]  letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y,' 'z'};
+   private static char[]  letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
 
   /**
@@ -79,8 +79,18 @@ public class StringStuff {
    * @return  String containing the &quot;even&quot; letters from the input
    */
    public static String evensOnly( String s ) {
-
-      return new String( "HJHJHJ" );
+      int i;
+      int j;
+      String t = new String();
+      String sLower = s.toLowerCase();
+      for ( i = 0; i < s.length(); i++ ) {
+         for ( j = 1; j < letters.length; j+=2 ) {
+            if ( letters[ j ]  == sLower.charAt( i ) ) {
+             t = t + s.charAt( i );
+            }
+         }
+      }
+      return t;
    }
 
   /**
@@ -92,7 +102,18 @@ public class StringStuff {
    * @return  String containing the &quot;odd&quot; letters from the input
    */
    public static String oddsOnly( String s ) {
-      return new String( "IKIKIK" );
+      int i;
+      int j;
+      String t = new String();
+      String sLower = s.toLowerCase();
+      for ( i = 0; i < s.length(); i++ ) {
+         for ( j = 0; j < letters.length; j+=2 ) {
+            if ( letters[ j ]  == sLower.charAt( i ) ) {
+             t = t + s.charAt( i );
+            }
+         }
+      }
+      return t;
    }
 
   /**
