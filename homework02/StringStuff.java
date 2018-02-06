@@ -117,6 +117,26 @@ public class StringStuff {
    }
 
   /**
+  * Method to remove duplicate characters in a string. 
+  *
+  * @param s String containing the date to be parsed for non-duplicates.
+  * @return  String containing the non-duplicate characters.
+  */
+  public static String noDupes( String s ) {
+   String noDupesString = "";
+   Set <String> characterSet = new LinkedHashSet <String> ();
+   for ( int i = 0; i < s.length(); i++ ) {
+      characterSet.add( s.substring( i, i + 1 ) );
+   }
+   String[] characterArray = characterSet.toArray( new String[ 0 ] );
+   for ( int j = 0; j < characterArray.length; j++ ) {
+     noDupesString = noDupesString + characterArray[ j ];
+   }
+   return noDupesString;
+  }
+
+
+  /**
    * Method to return the characters in a string that correspond to the &quot;EVEN&quot; index
    * numbers of the alphabet, but with no duplicate characters in the resulting string.
    *
@@ -124,17 +144,7 @@ public class StringStuff {
    * @return  String containing the &quot;even&quot; letters from the input without duplicates
    */
    public static String evensOnlyNoDupes( String s ) {
-      String noDupesString = "";
-      String evensOnlyString = evensOnly( s );
-      Set <String> characterSet = new LinkedHashSet <String> ();
-      for ( int i = 0; i < evensOnlyString.length(); i++ ) {
-        characterSet.add( evensOnlyString.substring( i, i + 1 ) );
-      }
-      String[] characterArray = characterSet.toArray( new String[ 0 ] );
-      for ( int j = 0; j < characterArray.length; j++ ) {
-        noDupesString = noDupesString + characterArray[ j ];
-      }
-      return noDupesString;
+     return noDupes( evensOnly( s ) );
    }
 
   /**
@@ -145,17 +155,7 @@ public class StringStuff {
    * @return  String containing the &quot;odd&quot; letters from the input without duplicates
    */
    public static String oddsOnlyNoDupes( String s ) {
-      String noDupesString = "";
-      String evensOnlyString = oddsOnly( s );
-      Set <String> characterSet = new LinkedHashSet <String> ();
-      for ( int i = 0; i < evensOnlyString.length(); i++ ) {
-        characterSet.add( evensOnlyString.substring( i, i + 1 ) );
-      }
-      String[] characterArray = characterSet.toArray( new String[ 0 ] );
-      for ( int j = 0; j < characterArray.length; j++ ) {
-        noDupesString = noDupesString + characterArray[ j ];
-      }
-      return noDupesString;
+     return noDupes( oddsOnly( s ) );
    }
 
   /**
