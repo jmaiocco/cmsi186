@@ -3,28 +3,17 @@
  *  Purpose       :  A file full of stuff to do with the Java String class
  *  Author        :  Joe Maiocco
  *  Date          :  2017-01-25
- *  Description   :  This file presents a bunch of String-style helper methods.  Although pretty much
- *                   any and every thing you'd want to do with Strings is already made for you in the
- *                   Jave String class, this exercise gives you a chance to do it yourself [DIY] for some
- *                   of it and get some experience with designing code that you can then check out using
- *                   the real Java String methods [if you want]
+ *  Description   :  This file provides several methods helpful for working with String type data.
  *  Notes         :  None
  *  Warnings      :  None
  *  Exceptions    :  None
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  Revision History
- *  ----------------
- *            Rev      Date     Modified by:  Reason for change/modification
- *           -----  ----------  ------------  -----------------------------------------------------------
- *  @version 1.0.0  2017-01-19  B.J. Johnson  Initial writing and release
- *  @version 1.1.0  2017-01-22  B.J. Johnson  Fill in methods to make the program actually work
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Set;
 import java.util.LinkedHashSet;
 
 public class StringStuff {
   /**
-   * An array of vowels.
+   * An array of vowels, and an array of letters.
    */
    
    private static char[]  vowels  = { 'a', 'e', 'i', 'o', 'u', 'y' };
@@ -117,14 +106,16 @@ public class StringStuff {
    }
 
   /**
-  * Method to remove duplicate characters in a string. 
+  * Method to return the non-duplicate characters in a string. The method creates a set of the 
+  * characters in the given string s, thus removing the duplicate characters. The set is converted
+  * to an array, and then back into a string to be returned.
   *
-  * @param s String containing the date to be parsed for non-duplicates.
+  * @param s String containing the data to be parsed for non-duplicates.
   * @return  String containing the non-duplicate characters.
   */
   public static String noDupes( String s ) {
    String noDupesString = "";
-   Set <String> characterSet = new LinkedHashSet <String> ();
+   Set <String> characterSet = new LinkedHashSet <String> ();           
    for ( int i = 0; i < s.length(); i++ ) {
       characterSet.add( s.substring( i, i + 1 ) );
    }
@@ -159,7 +150,7 @@ public class StringStuff {
    }
 
   /**
-   * Method to return the reverse of a string passed as an argument
+   * Method to return the reverse of a string passed as an argument.
    *
    * @param s String containing the data to be reversed
    * @return  String containing the reverse of the input string
