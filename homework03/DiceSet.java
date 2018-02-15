@@ -43,7 +43,11 @@ public class DiceSet {
     if ( count < 1 || sides < MINIMUM_SIDES) {
       throw new IllegalArgumentException();
     }
-
+    this.count = count;
+    this.sides = sides;
+    for ( int i = 0; i < count; i ++ ) {
+      ds[ i ] = new Die( sides );
+    }
    }
 
   /**
@@ -63,7 +67,9 @@ public class DiceSet {
    *  the values of the dice in the set
    */
    public void roll() {
-    ///for all Die.roll();
+    for ( Die d: ds ) {
+      d.roll();
+    }
    }
 
   /**
@@ -73,8 +79,10 @@ public class DiceSet {
    * @trhows IllegalArgumentException if the index is out of range
    */
    public int rollIndividual( int dieIndex ) {
-    ///roll single die in diceset
-    return -99;
+    if ( dieIndex > ds.length ) {
+      throw new IllegalArgumentException();
+    }
+    return ds[ dieIndex ].roll();
   }
 
   /**
@@ -83,7 +91,7 @@ public class DiceSet {
    * @trhows IllegalArgumentException if the index is out of range
    */
    public int getIndividual( int dieIndex ) {
-      return -99;
+      return ds[ dieIndex ].getValue();
    }
 
   /**
@@ -91,6 +99,9 @@ public class DiceSet {
    */
    public String toString() {
       String result = "";
+      for ( i=0; i < ds.length; i++ ) {
+        result = result + "[" + ds[ i ] + "]";
+      }
       return result;
    }
 
@@ -98,7 +109,7 @@ public class DiceSet {
    * @return Class-wide version of the preceding instance method
    */
    public static String toString( DiceSet ds ) {
-      return "";
+      return ds.toString();
    }
 
   /**
@@ -107,7 +118,7 @@ public class DiceSet {
    public boolean isIdentical( DiceSet ds ) {
       return true;
    }
-   
+
   /**
    * A little test main to check things out
    */
