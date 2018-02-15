@@ -45,6 +45,7 @@ public class DiceSet {
     }
     this.count = count;
     this.sides = sides;
+    ds = new Die[ count ];
     for ( int i = 0; i < count; i ++ ) {
       ds[ i ] = new Die( sides );
     }
@@ -56,7 +57,7 @@ public class DiceSet {
    public int sum() {
     int summedRolls = 0;
     for ( Die d: ds ) {
-      summedRolls += d.roll();
+      summedRolls += d.getValue();
     }     
     return summedRolls;
    }
@@ -72,7 +73,9 @@ public class DiceSet {
     }
    }
 
-  /**
+
+  /*
+  *
    * Randomly rolls a single die of the dice in this set indexed by 'dieIndex'
    * @param  dieIndex int of which die to roll
    * @return the integer value of the newly rolled die
@@ -91,6 +94,9 @@ public class DiceSet {
    * @trhows IllegalArgumentException if the index is out of range
    */
    public int getIndividual( int dieIndex ) {
+    if ( dieIndex > ds.length ) {
+      throw new IllegalArgumentException();
+    }
       return ds[ dieIndex ].getValue();
    }
 
@@ -99,8 +105,8 @@ public class DiceSet {
    */
    public String toString() {
       String result = "";
-      for ( i=0; i < ds.length; i++ ) {
-        result = result + "[" + ds[ i ] + "]";
+      for ( int i=0; i < ds.length; i++ ) {
+        result = result + "" + ds[ i ];
       }
       return result;
    }
@@ -115,15 +121,93 @@ public class DiceSet {
   /**
    * @return  tru iff this set is identical to the set passed as an argument
    */
-   public boolean isIdentical( DiceSet ds ) {
-      return true;
+   public boolean isIdentical( DiceSet dsInput ) {
+    ///SAVING THIS PUPPY FOR LATER
+    return true;
    }
 
   /**
    * A little test main to check things out
    */
    public static void main( String[] args ) {
-      // You do this part!
+     System.out.println( "Hello world from the DiceSet class..." );
+     DiceSet ds = null;
+     try { ds = new DiceSet( 0, 4 ); }
+     catch ( IllegalArgumentException iae ) { System.out.println( "That's an invalid number of dice!" ); }
+     try { ds = new DiceSet( 1, 3 ); }
+     catch ( IllegalArgumentException iae ) { System.out.println( "That's an invalid number of sides!" ); }
+     try { ds = new DiceSet( 1, 4 ); }
+     catch ( IllegalArgumentException iae ) { System.out.println( "That's an invalid number of dice or sides!" ); }
+     System.out.println( "Testing for proper return values from  roll() method with " + ds.count + " dice of " + ds.sides + " sides each." );
+     ds.roll();
+     System.out.println( "First roll: " + ds );
+     ds.roll();
+     System.out.println( "Second roll: " + ds );
+     ds.roll();
+     System.out.println( "Third roll: " + ds );
+     System.out.println( "Testing for proper return values from toString() method" );
+     System.out.println( "The current set of dice is " + ds.toString() );
+     System.out.println( "Testing for proper return values from sum() method" );
+     System.out.println( "The total of the current dice roll is " + ds.sum() );
+     System.out.println( "Testing for proper return values from rollIndividual() method" );
+     ds.rollIndividual( 0 );
+     System.out.println( "The new roll at index 0 is " + ds.getIndividual( 0 ) );
+     System.out.println( "Testing for proper return values from isIdentical() method" );
+     ///isIdentical tests here
+     try { ds = new DiceSet( 4, 6 ); }
+     catch ( IllegalArgumentException iae ) { System.out.println( "That's an invalid number of dice or sides!" ); }
+     System.out.println( "Testing for proper return values from  roll() method with " + ds.count + " dice of " + ds.sides + " sides each." );
+     ds.roll();
+     System.out.println( "First roll: " + ds );
+     ds.roll();
+     System.out.println( "Second roll: " + ds );
+     ds.roll();
+     System.out.println( "Third roll: " + ds );
+     System.out.println( "Testing for proper return values from toString() method" );
+     System.out.println( "The current set of dice is " + ds.toString() );
+     System.out.println( "Testing for proper return values from sum() method" );
+     System.out.println( "The total of the current dice roll is " + ds.sum() );
+     System.out.println( "Testing for proper return values from rollIndividual() method" );
+     ds.rollIndividual( 3 );
+     System.out.println( "The new roll at index 3 is " + ds.getIndividual( 3 ) );
+     System.out.println( "Testing for proper return values from isIdentical() method" );
+     ///isIdentical tests here
+     try { ds = new DiceSet( 6, 10 ); }
+     catch ( IllegalArgumentException iae ) { System.out.println( "That's an invalid number of dice or sides!" ); }
+     System.out.println( "Testing for proper return values from  roll() method with " + ds.count + " dice of " + ds.sides + " sides each." );
+     ds.roll();
+     System.out.println( "First roll: " + ds );
+     ds.roll();
+     System.out.println( "Second roll: " + ds );
+     ds.roll();
+     System.out.println( "Third roll: " + ds );
+     System.out.println( "Testing for proper return values from toString() method" );
+     System.out.println( "The current set of dice is " + ds.toString() );
+     System.out.println( "Testing for proper return values from sum() method" );
+     System.out.println( "The total of the current dice roll is " + ds.sum() );
+     System.out.println( "Testing for proper return values from rollIndividual() method" );
+     ds.rollIndividual( 5 );
+     System.out.println( "The new roll at index 5 is " + ds.getIndividual( 5 ) );
+     System.out.println( "Testing for proper return values from isIdentical() method" );
+     ///isIdentical tests here
+     try { ds = new DiceSet( 50, 100 ); }
+     catch ( IllegalArgumentException iae ) { System.out.println( "That's an invalid number of dice or sides!" ); }
+     System.out.println( "Testing for proper return values from  roll() method with " + ds.count + " dice of " + ds.sides + " sides each." );
+     ds.roll();
+     System.out.println( "First roll: " + ds );
+     ds.roll();
+     System.out.println( "Second roll: " + ds );
+     ds.roll();
+     System.out.println( "Third roll: " + ds );
+     System.out.println( "Testing for proper return values from toString() method" );
+     System.out.println( "The current set of dice is " + ds.toString() );
+     System.out.println( "Testing for proper return values from sum() method" );
+     System.out.println( "The total of the current dice roll is " + ds.sum() );
+     System.out.println( "Testing for proper return values from rollIndividual() method" );
+     ds.rollIndividual( 33 );
+     System.out.println( "The new roll at index 33 is " + ds.getIndividual( 33 ) );
+     System.out.println( "Testing for proper return values from isIdentical() method" );
+     ///isIdentical tests here
    }
 
 }
