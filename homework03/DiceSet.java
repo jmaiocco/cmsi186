@@ -125,12 +125,13 @@ public class DiceSet {
   * Note: do NOT use unless order of your diceset no longer matters.
   */
   public Die[] sortDiceSet( DiceSet ds ) {
-
+    int temporaryInt = null;
     for ( int i = 0; i < ds.length; i++ ) {
-      if ( ds[ i ].getIndividual() > ds[ i + 1 ].getIndividual() ) {
-        ssss = ssss
-        ssss = ssss
-        ssss = ssss
+      if ( ds[ i + 1 ].getIndividual() < ds[ i ].getIndividual() ) {
+        temporaryInt = ds[ i ];
+        ds[ i ] = ds[ i + 1 ];
+        ds[ i + 1 ] = temporaryInt;
+        i = 0;
       }
     }
     return ds;
