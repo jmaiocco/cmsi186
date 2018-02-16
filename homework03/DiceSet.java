@@ -74,8 +74,7 @@ public class DiceSet {
    }
 
 
-  /*
-  *
+  /**
    * Randomly rolls a single die of the dice in this set indexed by 'dieIndex'
    * @param  dieIndex int of which die to roll
    * @return the integer value of the newly rolled die
@@ -91,7 +90,7 @@ public class DiceSet {
   /**
    * Gets the value of the die in this set indexed by 'dieIndex'
    * @param  dieIndex int of which die to roll
-   * @trhows IllegalArgumentException if the index is out of range
+   * @throws IllegalArgumentException if the index is out of range
    */
    public int getIndividual( int dieIndex ) {
     if ( dieIndex > ds.length ) {
@@ -119,10 +118,32 @@ public class DiceSet {
    }
 
   /**
+  * Sorts an array of Dice values for comparison in isIdentical().
+  * @param  unsortedArray array in its original order.
+  * @return sortedArray   array in its "sorted" order.
+  * Note: this method does not sort numerically, e.g. 10 is sorted between 1 and 2.
+  * Note: do NOT use unless order of your diceset no longer matters.
+  */
+  public Die[] sortDiceSet( DiceSet ds ) {
+
+    for ( int i = 0; i < ds.length; i++ ) {
+      if ( ds[ i ].getIndividual() > ds[ i + 1 ].getIndividual() ) {
+        ssss = ssss
+        ssss = ssss
+        ssss = ssss
+      }
+    }
+    return ds;
+  }
+   
+  /**
    * @return  tru iff this set is identical to the set passed as an argument
    */
    public boolean isIdentical( DiceSet dsInput ) {
-    ///SAVING THIS PUPPY FOR LATER
+    if ( ds.length != dsInput.length ) {
+      return false;
+    }
+
     return true;
    }
 
