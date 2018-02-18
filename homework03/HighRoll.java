@@ -15,6 +15,21 @@ import java.io.IOException;
 
 public class HighRoll {
   
+    public static void optionsDisplay() {
+      System.out.println( "   Menu:" );
+      System.out.println( "     Press the 'r' key to roll all your dice.");
+      System.out.println( "     Press the 's' key to roll a single die." );
+      System.out.println( "     Press the 'c' key to calculate your dice score total.");
+      System.out.println( "     Press the 'h' key to save your score as the high score.");
+      System.out.println( "     Press the 'd' key to display the current high score.");
+      System.out.println( "     Press the 'q' key to quit the program." );
+    }
+
+    public static void spacesAfterMethod() {
+      System.out.println( "" );
+      System.out.println( "" );
+    }
+
     public static void main( String args[] ) {
       int count = Integer.parseInt(args[0]);
       int sides = Integer.parseInt(args[1]);
@@ -22,12 +37,7 @@ public class HighRoll {
       int currentDiceTotal = 0;
       DiceSet currentDiceSet = new DiceSet( count, sides );
       System.out.println( "\n   Welcome to HighRoll!!\n" );
-      System.out.println( "     Press the 'r' key to roll all your dice.");
-      System.out.println( "     Press the 's' key to roll a single die." );
-      System.out.println( "     Press the 'c' key to calculate your dice score total.");
-      System.out.println( "     Press the 'h' key to save your score as the high score.");
-      System.out.println( "     Press the 'd' key to display the current high score.");
-      System.out.println( "     Press the 'q' key to quit the program." );
+      HighRoll.optionsDisplay();
   
       BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
       while( true ) {
@@ -68,6 +78,8 @@ public class HighRoll {
                System.out.println( "Thanks for playing! See you again soon!" );
                break;
             }
+            HighRoll.spacesAfterMethod();
+            HighRoll.optionsDisplay();
          }
          catch( IOException ioe ) {
             System.out.println( "Caught IOException" );
