@@ -104,7 +104,7 @@ public class DiceSet {
    */
    public String toString() {
       String result = "";
-      for ( int i=0; i < ds.length; i++ ) {
+      for ( int i = 0; i < ds.length; i++ ) {
         result = result + "" + ds[ i ];
       }
       return result;
@@ -117,35 +117,20 @@ public class DiceSet {
       return ds.toString();
    }
 
-  /**
-  * Sorts an array of Dice values for comparison in isIdentical().
-  * @param  unsortedArray array in its original order.
-  * @return sortedArray   array in its "sorted" order.
-  * Note: this method does not sort numerically, e.g. 10 is sorted between 1 and 2.
-  * Note: do NOT use unless order of your diceset no longer matters.
-  */
-  public Die[] sortDiceSet( DiceSet ds ) {
-    int temporaryInt = null;
-    for ( int i = 0; i < ds.length; i++ ) {
-      if ( ds[ i + 1 ].getIndividual() < ds[ i ].getIndividual() ) {
-        temporaryInt = ds[ i ];
-        ds[ i ] = ds[ i + 1 ];
-        ds[ i + 1 ] = temporaryInt;
-        i = 0;
-      }
-    }
-    return ds;
-  }
    
   /**
    * @return  tru iff this set is identical to the set passed as an argument
    */
    public boolean isIdentical( DiceSet dsInput ) {
-    if ( ds.length != dsInput.length ) {
-      return false;
-    }
-
-    return true;
+      if ( ds.length != dsInput.count ) {
+        return false;
+      }
+      for ( int i = 0; i < ds.length; i++) {
+        if ( ds[ i ].getValue() != dsInput.getIndividual( i ) ) {
+          return false;
+        }
+      }
+      return true;
    }
 
   /**
@@ -228,8 +213,6 @@ public class DiceSet {
      System.out.println( "Testing for proper return values from rollIndividual() method" );
      ds.rollIndividual( 33 );
      System.out.println( "The new roll at index 33 is " + ds.getIndividual( 33 ) );
-     System.out.println( "Testing for proper return values from isIdentical() method" );
-     ///isIdentical tests here
    }
 
 }
