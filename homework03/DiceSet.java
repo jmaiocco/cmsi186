@@ -1,10 +1,9 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  DiceSet.java
- *  Purpose       :  Provides a class describing a set of dice
+ *  Purpose       :  Provides a class describing a set of dice.
  *  Author        :  Joe Maiocco
  *  Date          :  2017-02-09
- *  Description   :  This class provides everything needed (pretty much) to describe a set of dice.  The
- *                   idea here is to have an implementing class that uses the Die.java class.  Includes
+ *  Description   :  This class provides everything needed to describe a set of dice, and includes
  *                   the following:
  *                   public DiceSet( int k, int n );                  // Constructor for a set of k dice each with n-sides
  *                   public int sum();                                // Returns the present sum of this set of dice
@@ -16,10 +15,9 @@
  *                   public boolean isIdentical( DiceSet ds );        // Returns true iff this set is identical to the set ds
  *                   public static void main( String[] args );        // The built-in test program for this class
  *
- *  Notes         :  Stolen from Dr. Dorin pretty much verbatim, then modified to show some interesting
- *                   things about Java, and to add this header block and some JavaDoc comments.
+ *  Notes         :  Utilizes Die.java.
  *  Warnings      :  None
- *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
+ *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range.
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 public class DiceSet {
 
