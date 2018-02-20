@@ -66,7 +66,6 @@ public class Die {
    * @return the pip count of THIS die instance
    */
    public int getValue() {
-    System.out.println(pips);
     return pips;
    }
 
@@ -102,7 +101,7 @@ public class Die {
    * A little test main to check things out
    */
    public static void main( String[] args ) {
-     System.out.println( "Hello world from the Die class..." );
+      System.out.println( "Hello world from the Die class..." );
       Die d = null;
       try { d = new Die( 1 ); }
       catch ( IllegalArgumentException iae ) { System.out.println( "That die does not have enough sides!" ); }
@@ -180,11 +179,11 @@ public class Die {
       try { d.setSides( 1 ); }
       catch ( IllegalArgumentException iae ) { System.out.println( "That die does not have enough sides!" ); }
       d.setSides( 6 );
-      System.out.println( d.sides );
+      System.out.println( "New number of sides is: " + d.sides );
       d.setSides( 7 );
-      System.out.println( d.sides );
+      System.out.println( "New number of sides is: " + d.sides );
       d.setSides( 8 );
-      System.out.println( d.sides );
+      System.out.println( "New number of sides is: " + d.sides );
 
    }
 }
