@@ -1,13 +1,20 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  File name     :  Die.java
- *  Purpose       :  Provides a class describing a single die that can be rolled
+ *  File name     :  HighRoll.java
+ *  Purpose       :  Provides a class to play the HighRoll game 
  *  @author       :  Joe Maiocco
- *  Date          :  2018-02-06
- *  Description   :  
- *  Notes         :  
- *
+ *  Date          :  2018-02-18
+ *  Description   :  The class runs a game where a user tries to roll the highest possible value of a set of dice.
+                     The program accepts arguments on the command line to intialize the game, then provides the 
+                     following options:
+                     1) Allows the user to roll all the dice.
+                     2) Allows the user to roll a single die.
+                     3) Allows the user to sum up all the dice values.
+                     4) Allows the user to save his/her high score.
+                     5) Allows the user to view his/her high score.
+                     6) Allows the user to quit the game.                
+ *  Notes         :  Utilizes both Die.java and DiceSet.java to run.
  *  Warnings      :  None
- *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
+ *  Exceptions    :  IOException if user input is not applicable to the game options.
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
