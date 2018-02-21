@@ -14,7 +14,6 @@
  *                   public static String toString( DiceSet ds );     // Classwide version of the preceding instance method
  *                   public boolean isIdentical( DiceSet ds );        // Returns true iff this set is identical to the set ds
  *                   public static void main( String[] args );        // The built-in test program for this class
- *
  *  Notes         :  Utilizes Die.java.
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range.
@@ -28,8 +27,7 @@ public class DiceSet {
    private int sides;
    private Die[] ds = null;
    private int MINIMUM_SIDES = 4;
-
-   // public constructor:
+  
   /**
    * constructor
    * @param  count int value containing total dice count
