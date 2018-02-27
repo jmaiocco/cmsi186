@@ -1,0 +1,813 @@
+Hello world from the Die class...
+That die does not have enough sides!
+That die does not have enough sides!
+That die does not have enough sides!
+Testing for proper return values from roll() method for a die with 4 sides.
+First roll: 1
+Second roll: 3
+Third roll: 2
+Fourth roll: 3
+Fifth roll: 2
+Sixth roll: 4
+Testing for proper return values from toString() method
+The value of the last roll was [4]
+Testing for proper return values from roll() method for a die with 5 sides.
+First roll: 3
+Second roll: 5
+Third roll: 3
+Fourth roll: 1
+Fifth roll: 4
+Sixth roll: 3
+Testing for proper return values from toString() method
+The value of the last roll was [3]
+Testing for proper return values from roll() method for a die with 6 sides.
+First roll: 1
+Second roll: 2
+Third roll: 3
+Fourth roll: 6
+Fifth roll: 5
+Sixth roll: 1
+Testing for proper return values from toString() method
+The value of the last roll was [1]
+Testing for proper return values from roll() method for a die with 10 sides.
+First roll: 4
+Second roll: 5
+Third roll: 9
+Fourth roll: 8
+Fifth roll: 8
+Sixth roll: 8
+Testing for proper return values from toString() method
+The value of the last roll was [8]
+Testing for proper return values from roll() method for a die with 12 sides.
+First roll: 12
+Second roll: 6
+Third roll: 9
+Fourth roll: 8
+Fifth roll: 6
+Sixth roll: 9
+Testing for proper return values from toString() method
+The value of the last roll was [9]
+Testing for proper return values from roll() method for a die with 24 sides.
+First roll: 14
+Second roll: 2
+Third roll: 1
+Fourth roll: 21
+Fifth roll: 21
+Sixth roll: 12
+Testing for proper return values from toString() method
+The value of the last roll was [12]
+Testing for proper results from setSides() method
+That die does not have enough sides!
+New number of sides is: 6
+New number of sides is: 7
+New number of sides is: 8
+Hello world from the DiceSet class...
+That's an invalid number of dice!
+That's an invalid number of sides!
+Testing for proper return values from  roll() method with 1 dice of 4 sides each.
+First roll: [4]
+Second roll: [4]
+Third roll: [3]
+Testing for proper return values from toString() method
+The current set of dice is [3]
+Testing for proper return values from sum() method
+The total of the current dice roll is 3
+Testing for proper return values from rollIndividual() method
+The new roll at index 0 is 4
+Testing for proper return values from isIdentical() method
+Testing for proper return values from  roll() method with 4 dice of 6 sides each.
+First roll: [4][3][5][3]
+Second roll: [2][3][6][4]
+Third roll: [5][1][2][6]
+Testing for proper return values from toString() method
+The current set of dice is [5][1][2][6]
+Testing for proper return values from sum() method
+The total of the current dice roll is 14
+Testing for proper return values from rollIndividual() method
+The new roll at index 3 is 3
+Testing for proper return values from isIdentical() method
+Testing for proper return values from  roll() method with 6 dice of 10 sides each.
+First roll: [1][4][2][2][1][2]
+Second roll: [2][9][8][2][6][7]
+Third roll: [7][7][10][4][10][2]
+Testing for proper return values from toString() method
+The current set of dice is [7][7][10][4][10][2]
+Testing for proper return values from sum() method
+The total of the current dice roll is 40
+Testing for proper return values from rollIndividual() method
+The new roll at index 5 is 4
+Testing for proper return values from isIdentical() method
+Testing for proper return values from  roll() method with 50 dice of 100 sides each.
+First roll: [74][38][29][56][4][66][48][7][49][22][90][76][72][98][26][44][46][66][11][87][12][59][54][30][29][83][12][25][19][89][15][10][26][86][22][87][66][85][6][52][25][33][38][54][40][33][11][48][17][58]
+Second roll: [8][17][27][31][78][37][15][79][7][11][19][71][35][26][81][22][53][45][63][62][72][61][56][100][25][80][90][18][83][54][78][41][42][87][77][39][17][74][10][48][34][12][39][67][11][71][42][34][4][1]
+Third roll: [46][84][92][76][21][73][72][67][26][84][66][93][29][47][51][21][91][52][36][90][10][99][74][81][82][12][23][56][13][4][100][36][54][41][72][55][20][20][57][33][19][55][72][27][49][99][93][4][19][11]
+Testing for proper return values from toString() method
+The current set of dice is [46][84][92][76][21][73][72][67][26][84][66][93][29][47][51][21][91][52][36][90][10][99][74][81][82][12][23][56][13][4][100][36][54][41][72][55][20][20][57][33][19][55][72][27][49][99][93][4][19][11]
+Testing for proper return values from sum() method
+The total of the current dice roll is 2607
+Testing for proper return values from rollIndividual() method
+The new roll at index 33 is 20
+TESTING THE DIE CLASS: TEST CONSTRUCTOR FOR INVALID NUMBERS OF SIDES:
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+   Too few sides requested to constructor....
+TESTING THE DIE CLASS: TESTS ON 4-SIDED DIE:
+   roll() test for 4 sided die: 
+   You rolled a 3
+   You rolled a 3
+   You rolled a 3
+   You rolled a 4
+   You rolled a 3
+   Current value is: [3]
+TESTING THE DIE CLASS: TESTS ON 5-SIDED DIE:
+   roll() test for 5 sided die: 
+   You rolled a 2
+   You rolled a 2
+   You rolled a 3
+   You rolled a 2
+   You rolled a 1
+   Current value is: [1]
+TESTING THE DIE CLASS: TESTS ON 6-SIDED DIE:
+   roll() test for 6 sided die: 
+   You rolled a 6
+   You rolled a 4
+   You rolled a 4
+   You rolled a 6
+   You rolled a 5
+   Current value is: [5]
+TESTING THE DIE CLASS: TESTS ON 7-SIDED DIE:
+   roll() test for 7 sided die: 
+   You rolled a 7
+   You rolled a 1
+   You rolled a 1
+   You rolled a 7
+   You rolled a 4
+   Current value is: [4]
+TESTING THE DIE CLASS: TESTS ON 8-SIDED DIE:
+   roll() test for 8 sided die: 
+   You rolled a 7
+   You rolled a 5
+   You rolled a 8
+   You rolled a 5
+   You rolled a 6
+   Current value is: [6]
+TESTING THE DIE CLASS: TESTS ON 11-SIDED DIE USING NEW SIDE COUNT:
+   Rolling with new side count -- 
+      You rolled a 1
+      You rolled a 10
+      You rolled a 4
+      You rolled a 6
+      You rolled a 1
+TESTING THE DIE CLASS: TESTS ON 17-SIDED DIE USING NEW SIDE COUNT:
+   Rolling with new side count -- 
+      You rolled a 16
+      current value is: 16
+TESTING THE DIE CLASS: TESTS ON 111-SIDED DIE USING NEW SIDE COUNT:
+   Rolling with new side count -- 
+      You rolled a 62
+      current value is: 62
+......End of Die Class Testing.....
+
+
+TESTING THE DICESET CLASS: TEST CONSTRUCTOR FOR 3 SIX-SIDED DICE:
+  DiceSet: 3 dice, six sided - ds36:
+      initialized ds36 contents             : [0][0][0]
+      after collective roll ds36 contents   : [5][5][1]
+      after individual roll(2) ds36 contents: [5][5][6]
+      sum of dice values is: 16
+   Re-rolling all dice
+      after collective roll ds36 contents   : [4][4][1]
+      after individual roll(2) ds36 contents: [4][4][1]
+      sum of dice values is                 : 9
+   Test of getIndividual(): 
+      value of die at index 0: 4
+      value of die at index 1: 4
+      value of die at index 2: 1
+TESTING THE DICESET CLASS: TEST CONSTRUCTOR FOR 6 NINE-SIDED DICE:
+   DiceSet: 6 dice, nine sided - ds69:
+      initialized ds36 contents             : [0][0][0][0][0][0]
+      after collective roll ds69 contents   : [5][2][7][9][4][8]
+      after individual roll(2) ds69 contents: [5][2][1][9][4][8]
+      sum of dice values is                 : 29
+   Re-rolling all dice
+      after collective roll ds69 contents   : [4][9][7][2][2][9]
+      after individual roll(3) ds69 contents: [4][9][7][2][2][9]
+      sum of dice values is                 : 33
+   Test of getIndividual(): 
+      value of die at index 0: 4
+      value of die at index 1: 9
+      value of die at index 2: 7
+      value of die at index 3: 2
+      value of die at index 4: 2
+      value of die at index 5: 9
+TESTING THE DICESET CLASS: TEST CONSTRUCTOR FOR 9 SEVENTEEN-SIDED DICE:
+   DiceSet: 9 dice, 17 sided - ds917:
+      initialized ds36 contents              : [0][0][0][0][0][0][0][0][0]
+      after collective roll ds917 contents   : [13][8][6][14][11][8][11][8][5]
+      after individual roll(6) ds917 contents: [13][8][6][14][11][8][15][8][5]
+      sum of dice values is                  : 88
+   Re-rolling all dice
+      after collective roll ds917 contents   : [3][16][10][2][1][10][5][15][2]
+      after individual roll(8) ds69 contents : [3][16][10][2][1][10][5][15][7]
+      sum of dice values is                  : 69
+   Test of getIndividual(): 
+      value of die at index 0: 3
+      value of die at index 1: 16
+      value of die at index 2: 10
+      value of die at index 3: 2
+      value of die at index 4: 1
+      value of die at index 5: 10
+      value of die at index 6: 5
+      value of die at index 7: 15
+      value of die at index 8: 7
+TESTING THE DICESET CLASS: TEST 'isIdentical()' FOR 9 SEVENTEEN-SIDED DICE:
+   Test of isIndentical(): 
+      Test of ds917 against ds69   : false
+      Test of ds917 against itself : true
+TESTING THE DICESET CLASS: TEST 'isIdentical()' FOR NEW SET OF 9 SEVENTEEN-SIDED DICE:
+   DiceSet ds917 contents       : [12][2][12][2][8][7][12][16][3]
+      New DiceSet ds2_917 contents : [1][16][11][15][11][17][7][1][8]
+      Test of ds917 against ds2_917: false
+......End of DiceSet Class Testing.....
+
+
+
+   Welcome to HighRoll!!
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [2][5][2][5][4].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [6][3][4][3][1].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [6][2][5][2][1].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 2.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 6.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 2.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: c
+Your total score is 18.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: h
+Your high score has been saved.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: d
+The current high score is 18.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [3][1][5][3][4].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [5][2][5][5][4].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 3.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 5.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: c
+Your total score is 20.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: h
+Your high score has been saved.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: d
+The current high score is 20.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: q
+Thanks for playing! See you again soon!
+
+   Welcome to HighRoll!!
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [9][11][12][8][1][5][3][4][3][8][8].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [3][12][6][17][13][17][3][8][2][17][5].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [9][11][6][7][2][3][16][11][9][7][9].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 14.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 16.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 14.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: c
+Your total score is 100.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: h
+Your high score has been saved.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: d
+The current high score is 100.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [8][8][1][4][8][7][10][1][11][15][1].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [12][11][7][8][4][5][17][8][15][1][13].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 3.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 11.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: c
+Your total score is 104.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: h
+Your high score has been saved.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: d
+The current high score is 104.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: q
+Thanks for playing! See you again soon!
+
+   Welcome to HighRoll!!
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [3][2][2][2][3][1][3][4][3][4][4][4][4][2][3][4][3][1][2][3][2][4][2][4][4][2][4][2][2].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [1][4][3][4][4][2][2][4][1][3][3][3][2][1][2][3][1][3][4][3][3][1][3][4][4][2][4][4][3].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [1][2][2][4][1][2][1][2][3][2][3][4][3][3][2][4][3][1][3][1][4][1][4][1][2][3][4][2][4].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 4.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 3.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 4.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: c
+Your total score is 75.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: h
+Your high score has been saved.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: d
+The current high score is 75.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [1][4][2][1][3][1][3][1][1][4][3][1][2][4][3][4][3][2][4][4][1][3][4][4][4][1][3][3][1].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: r
+You rolled [4][4][2][3][2][2][1][4][1][2][4][4][4][2][2][3][3][2][3][3][4][1][2][4][4][2][3][1][1].
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 2.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: s
+Enter the location number of the die you would like to roll: 
+You rolled a 2.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: c
+Your total score is 76.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: h
+Your high score has been saved.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: d
+The current high score is 76.
+
+
+   Menu:
+     Press the 'r' key to roll all your dice.
+     Press the 's' key to roll a single die.
+     Press the 'c' key to calculate your dice score total.
+     Press the 'h' key to save your score as the high score.
+     Press the 'd' key to display the current high score.
+     Press the 'q' key to quit the program.
+>>   You typed: q
+Thanks for playing! See you again soon!
