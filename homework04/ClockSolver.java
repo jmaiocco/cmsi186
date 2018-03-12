@@ -6,7 +6,7 @@
  *  Date written  :  2018-03-01
  *  Description   :  This class provides a bunch of methods which may be useful for the ClockSolver class
  *                   for Homework 4, part 1.  Includes the following:
-  *
+ *
  *  Notes         :  None right now.  I'll add some as they occur.
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the input arguments are "hinky"
@@ -19,7 +19,9 @@ public class ClockSolver {
    private static final double SECONDS_PER_TWELVE_HOURS = 43200;
    private final double MAX_TIME_SLICE_IN_SECONDS  = 1800.00;
    private final double DEFAULT_TIME_SLICE_SECONDS = 60.0;
-   private final double EPSILON_VALUE              = 0.1;      // small value for double-precision comparisons
+   private final double DEFAULT_EPSILON_VALUE      = 0.1;      // small value for double-precision comparisons
+   private static double[] validatedClockArgs;
+   private static double currentTimeSlice;
 
   /**
    *  Constructor
@@ -39,9 +41,32 @@ public class ClockSolver {
         System.exit( 1 );
       }
       Clock initialClock = new Clock();
-      initialClock.validateTimeSliceArg( args[ 0 ] );
-      initialClock.validateAngleArg( args[ 1 ] );
-     // you may want to consider using args[2] for an "angle window"
+      validatedClockArgs = new double[3];
+      if ( 1 == args.length ) {
+        initialClock.validateAngleArg( args[ 0 ] );
+        validatedClockArgs[ 0 ] = Double.parseDouble( args[ 0 ] );
+        validatedClockArgs[ 1 ] = DEFAULT_TIME_SLICE_SECONDS;
+        validatedClockArgs[ 2 ] = DEFAULT_EPSILON_VALUE;
+        currentTimeSlice = validatedClockArgs[ 1 ];
+      } 
+      if ( 2 == args.length ) {
+        initialClock.validateAngleArg( args[ 0 ] );
+        initialClock.validateTimeSliceArg( args[ 1 ] );
+        validatedClockArgs[ 0 ] = Double.parseDouble( args[ 0 ] );
+        validatedClockArgs[ 1 ] = Double.parseDouble( args[ 1 ] );
+        validatedClockArgs[ 2 ] = DEFAULT_EPSILON_VALUE;
+        currentTimeSlice = validatedClockArgs[ 1 ];
+      }
+      if ( 3 == args.length ) {
+        initialClock.validateAngleArg( args[ 0 ] );
+        initialClock.validateTimeSliceArg( args[ 1 ] );
+        initialClock.validateEpsilonArg( args[ 2 ] );
+        validatedClockArgs[ 0 ] = Double.parseDouble( args[ 0 ] );
+        validatedClockArgs[ 1 ] = Double.parseDouble( args[ 1 ] );
+        validatedClockArgs[ 2 ] = Double.parseDouble( args[ 2 ] );
+        currentTimeSlice = validatedClockArgs[ 1 ];
+      }
+
    }
 
   /**
@@ -51,15 +76,17 @@ public class ClockSolver {
    *  @param  args  String array of the arguments from the command line
    *                args[0] is the angle for which we are looking
    *                args[1] is the time slice; this is optional and defaults to 60 seconds
-   */
+   *                args[2] is the epsilon value; this is optional and defaults to 0.1        
+   */       
    public static void main( String args[] ) {
       ClockSolver clockSolver = new ClockSolver();
-      Clock clock = new Clock();
-      double[] timeValues = new double[3];
       clockSolver.handleInitialArguments( args );
-      while( clock.getTotalSeconds() <= SECONDS_PER_TWELVE_HOURS ) {
-        if ( Double.parseDouble( args[ 0 ] ) == clock.getHandAngle() ) {
-          System.out.print( "Found target angle of " + args[ 0 ] + " at " + clock.toString() ); 
+      Clock clock = new Clock();
+      System.out.println( "\nYour simulation is running with\n an angle of " + validatedClockArgs[ 0 ] + " degrees \n and a time slice of " + validatedClockArgs[ 1 ] + " seconds." );
+      System.out.println("\n\n");
+      while( clock.getTotalSeconds() < SECONDS_PER_TWELVE_HOURS ) {
+        if ( ( clock.getHandAngle() >= ( validatedClockArgs[ 0 ] - (validatedClockArgs[ 0 ] * validatedClockArgs[ 2 ] ) ) ) && ( clock.getHandAngle() <= ( validatedClockArgs[ 0 ] + ( validatedClockArgs[ 0 ] * validatedClockArgs[ 2 ] ) ) ) ) {
+          System.out.print( "Found target angle of " + validatedClockArgs[ 0 ] + " degrees at: " + clock.toString() + "\n" ); 
         }
         clock.tick();
       }
