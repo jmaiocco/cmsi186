@@ -13,15 +13,16 @@
 
 public class Clock {
   /**
-   *  Class field definintions go here
+   *  Class field definitions go here
    */
    private static final double SECONDS_PER_TWELVE_HOURS = 43200;
    private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 60.0;
+   private static final double DEFAULT_EPSILON_VALUE = 0.1;
    private static final double INVALID_ARGUMENT_VALUE = -1.0;
    private static final double MAXIMUM_DEGREE_VALUE = 360.0;
    private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
    private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
-   private static double userTimeSlice = 0;
+   private static double currentTimeSlice, userTimeSlice;
    private static double minuteHandAngle = 0;
    private static double hourHandAngle = 0;
    double totalSeconds = 0;
@@ -31,33 +32,22 @@ public class Clock {
    */
    public Clock() {
      totalSeconds = 0;
-     double minuteHandAngle = 0;
-     double hourHandAngle = 0;
+     currentTimeSlice = userTimeSlice;
    }
 
-  /**
-   *
-   *  Method to calculate the next tick from the time increment
-   *  @return double-precision value of the current clock tick
-   */
-   public double tick() {
-     totalSeconds += userTimeSlice;
-     return totalSeconds;
-   }
-
-  /**
+/**
    *  Method to validate the angle argument
    *  @param   argValue  String from the main programs args[0] input
    *  @return  double-precision value of the argument
-   *  @throws  NumberFormatException
+   *  @throws  IllegalArgumentException
    */
    public double validateAngleArg( String argValue ) {
       double argDouble = Double.parseDouble( argValue );
       if ( argDouble <= 0 || argDouble >= MAXIMUM_DEGREE_VALUE ) {
         throw new IllegalArgumentException();
       }
-      double userAngleSlice = argDouble;
-      return userAngleSlice;
+      ///double userAngleSlice = argDouble;
+      return argDouble;
    }
 
   /**
@@ -72,16 +62,45 @@ public class Clock {
    *         to take a VERY LONG TIME to complete!
    */
    public double validateTimeSliceArg( String argValue ) {
-      if ( argValue == "" ) {
+      if ( argValue == "" || argValue == null ) {
         return DEFAULT_TIME_SLICE_IN_SECONDS;
       }
       double argDouble = Double.parseDouble( argValue );
       if ( argDouble <= 0 || argDouble > 1800 ) {
         return INVALID_ARGUMENT_VALUE;
       } else {
-        double userTimeSlice = argDouble;
-        return argDouble;
+        userTimeSlice = argDouble;
+        return userTimeSlice;
       }
+   }
+
+ /**
+  *  Method to validate the optional epsilon slice argument
+  *  @param  argValue  String from the main programs args[2] input
+  *  @return double-precision value of the argument or 0.1 if no epsilon is given
+  *  @throws IllegalArgumentException
+  */
+  public double validateEpsilonArg( String argValue ) {
+    if ( argValue == "" || argValue == null ) {
+      return DEFAULT_EPSILON_VALUE;
+    }
+    double argDouble = Double.parseDouble( argValue );
+    if ( argDouble < 0 || argDouble > 3.0 ) {
+      throw new IllegalArgumentException();
+    } 
+     else {
+      return argDouble;
+    }
+  } 
+
+  /**
+   *
+   *  Method to calculate the next tick from the time increment
+   *  @return double-precision value of the current clock tick
+   */
+   public double tick() {
+     totalSeconds += currentTimeSlice;
+     return totalSeconds;
    }
 
   /**
@@ -89,9 +108,9 @@ public class Clock {
    *  @return double-precision value of the hour hand location
    */
    public double getHourHandAngle() {
-     hourHandAngle = totalSeconds * HOUR_HAND_DEGREES_PER_SECOND;
-     if ( hourHandAngle >= 360 ) {
-       hourHandAngle -= 360;
+     hourHandAngle += currentTimeSlice * HOUR_HAND_DEGREES_PER_SECOND;
+     if ( hourHandAngle >= MAXIMUM_DEGREE_VALUE ) {
+       hourHandAngle -= MAXIMUM_DEGREE_VALUE;
       }
      return hourHandAngle;
    }
@@ -101,8 +120,8 @@ public class Clock {
    *  @return double-precision value of the minute hand location
    */
    public double getMinuteHandAngle() {
-     minuteHandAngle = totalSeconds * MINUTE_HAND_DEGREES_PER_SECOND;
-     if ( minuteHandAngle >= 360 ) {
+     minuteHandAngle += currentTimeSlice * MINUTE_HAND_DEGREES_PER_SECOND;
+     if ( minuteHandAngle >= MAXIMUM_DEGREE_VALUE ) {
        minuteHandAngle -= 360;
       }
      return minuteHandAngle;
@@ -152,7 +171,7 @@ public class Clock {
       Clock clock = new Clock();
       System.out.println( "New clock created: " + clock.toString() );
       System.out.println( "Testing tick() and hand methods" );
-      userTimeSlice = 10;
+      currentTimeSlice = 30;
       while ( clock.getTotalSeconds() <= SECONDS_PER_TWELVE_HOURS ) {
         System.out.println( "Current time is: " + clock.toString() );
         System.out.println( "Current minute hand at " + clock.getMinuteHandAngle() );
@@ -174,12 +193,35 @@ public class Clock {
       catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for 359.9999" ); }
       try { clock.validateAngleArg( "45" ); }
       catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for 45 degrees" ); }
+      try { clock.validateAngleArg( "ABC" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for ABC degrees" ); }
+      try { clock.validateAngleArg( "12C" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for 12C degrees" ); }
       System.out.println( "" );
       System.out.println( "Tests for validateTimeSliceArg()" );
       System.out.println( "0 seconds should return -1: " + clock.validateTimeSliceArg( "0" ) );
       System.out.println( "61 seconds should return 61: " + clock.validateTimeSliceArg( "61" ) );
       System.out.println( "1 second should return 1: " + clock.validateTimeSliceArg( "1" ) );
       System.out.println( "1800 seconds should return 1800: " + clock.validateTimeSliceArg( "1800" ) );
+      System.out.println( "0.00001 seconds should return 0.00001: " + clock.validateTimeSliceArg( "0.00001" ) );
       System.out.println( "Empty seconds should return 60: " + clock.validateTimeSliceArg( "60" ) );
+      System.out.println( "" );
+      System.out.println( "Tests for validateEpsilonArg()" );
+      try { clock.validateEpsilonArg( "0" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 0" ); }
+      try { clock.validateEpsilonArg( "-1" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of -1" ); }
+      try { clock.validateEpsilonArg( "0.0001" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 0.001" ); }
+      try { clock.validateEpsilonArg( "2.99999" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 2.99999" ); }
+      try { clock.validateEpsilonArg( "3" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 3" ); }
+      try { clock.validateEpsilonArg( "3.00001" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 3.00001" ); }
+      try { clock.validateEpsilonArg( "ABC" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of ABC" ); }
+      try { clock.validateEpsilonArg( "1B3" ); }
+      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 1B3" ); }
     }
-}
+  } 
