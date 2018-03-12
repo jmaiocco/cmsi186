@@ -20,7 +20,7 @@ public class Clock {
    private static final double DEFAULT_EPSILON_VALUE = 0.1;
    private static final double INVALID_ARGUMENT_VALUE = -1.0;
    private static final double MAXIMUM_DEGREE_VALUE = 360.0;
-   private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00834;
+   private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00833334;
    private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
    private static double currentTimeSlice, userTimeSlice;
    private static double minuteHandAngle = 0;
@@ -108,10 +108,7 @@ public class Clock {
    *  @return double-precision value of the hour hand location
    */
    public double getHourHandAngle() {
-     hourHandAngle += currentTimeSlice * HOUR_HAND_DEGREES_PER_SECOND;
-     if ( hourHandAngle >= MAXIMUM_DEGREE_VALUE ) {
-       hourHandAngle -= MAXIMUM_DEGREE_VALUE;
-      }
+     hourHandAngle = ( totalSeconds * HOUR_HAND_DEGREES_PER_SECOND ) % 360;
      return hourHandAngle;
    }
 
@@ -120,10 +117,7 @@ public class Clock {
    *  @return double-precision value of the minute hand location
    */
    public double getMinuteHandAngle() {
-     minuteHandAngle += currentTimeSlice * MINUTE_HAND_DEGREES_PER_SECOND;
-     if ( minuteHandAngle >= MAXIMUM_DEGREE_VALUE ) {
-       minuteHandAngle -= 360;
-      }
+     minuteHandAngle = ( totalSeconds * MINUTE_HAND_DEGREES_PER_SECOND ) % 360;
      return minuteHandAngle;
    }
 
@@ -132,7 +126,9 @@ public class Clock {
    *  @return double-precision value of the angle between the two hands
    */
    public double getHandAngle() {
-      return Math.abs( getHourHandAngle() - getMinuteHandAngle() );
+     getHourHandAngle();
+     getMinuteHandAngle();
+     return Math.abs( minuteHandAngle - hourHandAngle );
    }
 
   /**
@@ -154,7 +150,7 @@ public class Clock {
       int minutes = (int) (totalSeconds / 60) % 60;
       int seconds = (int) totalSeconds % 60; 
       return hours + ":" + minutes + ":" + seconds;
-   }
+    }
 
   /**
    *  The main program starts here
@@ -171,7 +167,7 @@ public class Clock {
       Clock clock = new Clock();
       System.out.println( "New clock created: " + clock.toString() );
       System.out.println( "Testing tick() and hand methods" );
-      currentTimeSlice = 30;
+      currentTimeSlice = 10;
       while ( clock.getTotalSeconds() <= SECONDS_PER_TWELVE_HOURS ) {
         System.out.println( "Current time is: " + clock.toString() );
         System.out.println( "Current minute hand at " + clock.getMinuteHandAngle() );
@@ -224,4 +220,4 @@ public class Clock {
       try { clock.validateEpsilonArg( "1B3" ); }
       catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 1B3" ); }
     }
-  } 
+  }      
