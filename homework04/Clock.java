@@ -4,11 +4,20 @@
  *  @author       :  Joe Maiocco
  *  Date written  :  2018-02-22
  *  Description   :  This class provides a bunch of methods which may be useful for the ClockSolver class
- *                   for Homework 4, part 1.  Includes the following:
- *
- *  Notes         :  None right now.  I'll add some as they occur.
+ *                   for Homework 4, part 1. Includes the following:
+ *                      validateAngleArg(), for checking the given angle 
+ *                      validateTimeSliceArg(), for checking the optional given time slice
+ *                      validateEpsilonArg(), for checking the optional epsilon value
+ *                      tick(), for simulating the ticking of a clock
+ *                      getHourHandAngle(), for calculating the position of the hour hand
+ *                      getMinuteHandAngle(), for calculating the position of the minute hand
+ *                      getHandAngle(), for calculating the angle between the hour and minute hand
+ *                      getTotalSeconds(), for keeping track of the seconds passed
+ *                      toString(), for giving a string representation of the clock
+ *                      main(), for running test on the preceding methods
+ *  Notes         :  None 
  *  Warnings      :  None
- *  Exceptions    :  IllegalArgumentException when the input arguments are "hinky"
+ *  Exceptions    :  IllegalArgumentException when the input arguments are unacceptable
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Clock {
@@ -46,7 +55,6 @@ public class Clock {
       if ( argDouble <= 0 || argDouble >= MAXIMUM_DEGREE_VALUE ) {
         throw new IllegalArgumentException();
       }
-      ///double userAngleSlice = argDouble;
       return argDouble;
    }
 
@@ -220,4 +228,4 @@ public class Clock {
       try { clock.validateEpsilonArg( "1B3" ); }
       catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 1B3" ); }
     }
-  }      
+  }
