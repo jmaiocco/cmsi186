@@ -1,15 +1,14 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  ClockSolver.java
  *  Purpose       :  The main program for the ClockSolver class
- *  @see
+ *  @see          :  Clock.java
  *  @author       :  Joe Maiocco
  *  Date written  :  2018-03-01
- *  Description   :  This class provides a bunch of methods which may be useful for the ClockSolver class
- *                   for Homework 4, part 1.  Includes the following:
- *
- *  Notes         :  None right now.  I'll add some as they occur.
+ *  Description   :  This class runs the ClockSolver program, which finds the time at which the clock 
+ *                   hands create a particular angle.
+ *  Notes         :  None
  *  Warnings      :  None
- *  Exceptions    :  IllegalArgumentException when the input arguments are "hinky"
+ *  Exceptions    :  IllegalArgumentException when the input arguments are unacceptable 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class ClockSolver {
@@ -19,10 +18,10 @@ public class ClockSolver {
    private static final double SECONDS_PER_TWELVE_HOURS = 43200;
    private static final double DEGREES_PER_ROTATION = 360.0;
    private final double MAX_TIME_SLICE_IN_SECONDS  = 1800.00;
-   private final double DEFAULT_TIME_SLICE_SECONDS = 60.0;
+   private final double DEFAULT_TIME_SLICE_IN_SECONDS = 60.0;
    private final double DEFAULT_EPSILON_VALUE      = 0.1;      // small value for double-precision comparisons
    private static double[] validatedClockArgs;
-   private static double currentTimeSlice, secondAngleCheck, thirdAngleCheck;
+   private static double userTimeSlice, secondAngleCheck, thirdAngleCheck;
 
   /**
    *  Constructor
@@ -43,17 +42,18 @@ public class ClockSolver {
       }
       Clock initialClock = new Clock();
       validatedClockArgs = new double[3];
-      if ( args.length >= 1 ) {
+      if ( args.length >= 1 && args.length <= 3 ) {
         validatedClockArgs[ 0 ] = initialClock.validateAngleArg( args[ 0 ] );
+        validatedClockArgs[ 1 ] = DEFAULT_TIME_SLICE_IN_SECONDS;
+        validatedClockArgs[ 2 ] = DEFAULT_EPSILON_VALUE;
         if ( args.length >= 2 ) {
           validatedClockArgs[ 1 ] = initialClock.validateTimeSliceArg( args[ 1 ] );
-          validatedClockArgs[ 2 ] = DEFAULT_EPSILON_VALUE;
           if ( args.length == 3 ) {
             validatedClockArgs[ 2 ] = initialClock.validateEpsilonArg( args[ 2 ] );
           } 
         }
-        currentTimeSlice = validatedClockArgs[ 1 ];
       } 
+      userTimeSlice = validatedClockArgs[ 1 ];
    }
 
   /**
@@ -73,11 +73,8 @@ public class ClockSolver {
       thirdAngleCheck  = Math.abs( ( DEGREES_PER_ROTATION - clock.getHourHandAngle() ) + clock.getMinuteHandAngle() );
       System.out.println( "\nYour simulation is running with\n an angle of " + validatedClockArgs[ 0 ] + " degrees \n and a time slice of " + validatedClockArgs[ 1 ] + " seconds." );
       System.out.println("\n\n");
-      System.out.println( validatedClockArgs[ 0 ] );
-      System.out.println( validatedClockArgs[ 1 ] );
-      System.out.println( validatedClockArgs[ 2 ] );
-      while( clock.getTotalSeconds() < SECONDS_PER_TWELVE_HOURS ) {
-        if ( ( clock.getHandAngle() >= ( validatedClockArgs[ 0 ] - (validatedClockArgs[ 0 ] * validatedClockArgs[ 2 ] ) ) ) && ( clock.getHandAngle() <= ( validatedClockArgs[ 0 ] + ( validatedClockArgs[ 0 ] * validatedClockArgs[ 2 ] ) ) ) ) {
+      while( clock.getTotalSeconds() <= SECONDS_PER_TWELVE_HOURS ) {
+        if ( clock.getHandAngle() > ( validatedClockArgs[ 0 ] - ( validatedClockArgs[ 0 ] * validatedClockArgs[ 2 ] ) ) && clock.getHandAngle() < ( validatedClockArgs[ 0 ] + ( validatedClockArgs[ 0 ] * validatedClockArgs[ 2 ] ) ) ) {
           System.out.print( "Found target angle of " + validatedClockArgs[ 0 ] + " degrees at: " + clock.toString() + "\n" ); 
         } else if ( clock.getHandAngle() > ( secondAngleCheck - ( secondAngleCheck * validatedClockArgs[ 2 ] ) ) && clock.getHandAngle() < ( secondAngleCheck + ( secondAngleCheck * validatedClockArgs[ 2 ] ) ) ) {
           System.out.print( "Found target angle of " + validatedClockArgs[ 0 ] + " degrees at: " + clock.toString() + "\n" );
