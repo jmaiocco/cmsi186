@@ -46,7 +46,7 @@ public class Clock {
 
 /**
    *  Method to validate the angle argument
-   *  @param   argValue  String from the main programs args[0] input
+   *  @param   argValue  String from the main program's args[0] input
    *  @return  double-precision value of the argument
    *  @throws  IllegalArgumentException
    */
@@ -60,7 +60,7 @@ public class Clock {
 
   /**
    *  Method to validate the optional time slice argument
-   *  @param  argValue  String from the main programs args[1] input
+   *  @param  argValue  String from the main program's args[1] input
    *  @return double-precision value of the argument or -1.0 if invalid
    *  note: if the main program determines there IS no optional argument supplied,
    *         I have elected to have it substitute the string "60.0" and call this
@@ -84,7 +84,7 @@ public class Clock {
 
  /**
   *  Method to validate the optional epsilon slice argument
-  *  @param  argValue  String from the main programs args[2] input
+  *  @param  argValue  String from the main program's args[2] input
   *  @return double-precision value of the argument or 0.1 if no epsilon is given
   *  @throws IllegalArgumentException
   */
@@ -105,8 +105,12 @@ public class Clock {
    *
    *  Method to calculate the next tick from the time increment
    *  @return double-precision value of the current clock tick
+   *  @throws IllegalArgumentException
    */
    public double tick() {
+     if ( currentTimeSlice <= 0 ) {
+      currentTimeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
+     }
      totalSeconds += currentTimeSlice;
      return totalSeconds;
    }
@@ -228,4 +232,4 @@ public class Clock {
       try { clock.validateEpsilonArg( "1B3" ); }
       catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 1B3" ); }
     }
-  }
+  }     
