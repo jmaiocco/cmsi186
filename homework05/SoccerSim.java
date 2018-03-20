@@ -19,6 +19,7 @@ public class SoccerSim {
   private static final double BALL_RADIUS = 0.308734;
   public static double[] argumentArray;
   public static Ball[] ballArray;
+  public static double ballXSpeed, ballYSpeed, userTimeSlice;
 
   public SoccerSim() {
   	super();
@@ -32,12 +33,19 @@ public class SoccerSim {
   	for ( int i = 0; i < args.length; i++ ) {
   	  argumentArray[ i ] = Double.parseDouble( args[ i ] );
   	}
+  	userTimeSlice = Double.parseDouble( args[ args.length - 1 ] );
   }
 
   public static boolean detectCollision( Ball b1, Ball b2 ) {
   	if ( b1.getXPosition() == b2.getXPosition() && b1.getYPosition() == b2.getYPosition() ) {
   	  return true;	
-  	} else if ( true ) {
+  	} else if ( b1.getXPosition() - BALL_RADIUS >= b2.getXPosition() && b1.getXPosition() + BALL_RADIUS <= b2.getXPosition() ) {
+  	  return true;
+  	} else if ( b1.getYPosition() - BALL_RADIUS >= b2.getYPosition() && b1.getYPosition() + BALL_RADIUS <= b2.getYPosition() ) {
+  	  return true;
+  	} else if ( b2.getXPosition() - BALL_RADIUS >= b1.getXPosition() && b2.getXPosition() + BALL_RADIUS <= b1.getXPosition() ) {
+  	  return true;
+  	} else if ( b2.getYPosition() - BALL_RADIUS >= b1.getXPosition() && b2.getYPosition() + BALL_RADIUS <= b1.getYPosition() ) {
   	  return true;
   	} else {
   	  return false;
@@ -60,21 +68,28 @@ public class SoccerSim {
   	  for ( Ball b: ballArray ) {
   	    b.moveBallVertically();
   	    b.moveBallHorizontally();
-  	    b.applyFriction( this.ballYSpeed );
-  	    b.applyFriction( this.ballXSpeed );
+  	    b.applyFriction( ballYSpeed * userTimeSlice );
+  	    b.applyFriction( ballXSpeed * userTimeSlice );
   	  }
-  	  for ( int i = 0; i < ballArray.length - 2; i++ ) {
-  	  	///if( ballArray[ i ].getXPosition() > FIELD_SIZE/2 ... ) {
-  	  	     ///for removing balls that are out of bounds
-  	  	///}
-  	  	ballArray[ i ].toString();
+  	  System.out.println( "Current ball positions and velocities: \n" );
+  	  for ( int i = 0; i < ballArray.length - 1; i++) {
+  	    ballArray[ i ].toString();	
+  	  } 
+  	  for ( Ball b: ballArray ) {
+  	    if( b.getXPosition() > FIELD_SIZE/2 || b.getYPosition() > FIELD_SIZE/2 || b.getXPosition() < -FIELD_SIZE/2 || b.getYPosition() < -FIELD_SIZE/2 ) {
+  	  	  ///for removing balls that are out of bounds
+  	  	}
   	  }
-  	  for ( int i = 0; i < ballArray.length - 2; i++ ) {
-  	  	if ( detectCollision( ballArray[ i ], ballArray[ i + 1 ] ) ) {
-  	  	  System.out.println( "Collision detected at " + clock.toString() + " between "   );
-  	  	  break;
+  	  for ( int i = 0; i < ballArray.length - 1; i++ ) {
+  	  	for ( int j = i + 1; j < ballArray.length - 1; j++ ) {
+  	  	  if ( detectCollision( ballArray[ i ], ballArray[ j ] ) ) {
+  	  	    System.out.println( "Collision detected at " + clock.toString() + " between "   );
+  	  	    break;
+  	  	  }
   	  	}
   	  }	
+  	  clock.tick();
   	}
+  	System.exit( 0 );
   }
 }
