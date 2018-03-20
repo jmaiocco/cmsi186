@@ -57,7 +57,7 @@ public class Ball {
    *  @return double-precision value of the ball's new speed component
    */
     public double applyFriction( double givenBallSpeed ) {
-      modifiedBallSpeed = ( givenBallSpeed * FRICTIONAL_PERCENTAGE ); ///*timeslice;
+      modifiedBallSpeed = ( givenBallSpeed * FRICTIONAL_PERCENTAGE );
       return modifiedBallSpeed;
     }
 
