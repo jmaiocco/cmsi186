@@ -2,16 +2,11 @@
  *  File name     :  Clock.java
  *  Purpose       :  Provides a class defining methods for the ClockSolver class
  *  @author       :  Joe Maiocco
- *  Date written  :  2018-02-22
+ *  Date written  :  2018-03-22
  *  Description   :  This class provides a bunch of methods which may be useful for the ClockSolver class
  *                   for Homework 4, part 1. Includes the following:
- *                      validateAngleArg(), for checking the given angle 
  *                      validateTimeSliceArg(), for checking the optional given time slice
- *                      validateEpsilonArg(), for checking the optional epsilon value
  *                      tick(), for simulating the ticking of a clock
- *                      getHourHandAngle(), for calculating the position of the hour hand
- *                      getMinuteHandAngle(), for calculating the position of the minute hand
- *                      getHandAngle(), for calculating the angle between the hour and minute hand
  *                      getTotalSeconds(), for keeping track of the seconds passed
  *                      toString(), for giving a string representation of the clock
  *                      main(), for running test on the preceding methods
@@ -25,15 +20,9 @@ public class Clock {
    *  Class field definitions go here
    */
    private static final double SECONDS_PER_TWELVE_HOURS = 43200;
-   private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 60.0;
-   private static final double DEFAULT_EPSILON_VALUE = 0.1;
+   private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 1.0;
    private static final double INVALID_ARGUMENT_VALUE = -1.0;
-   private static final double MAXIMUM_DEGREE_VALUE = 360.0;
-   private static final double HOUR_HAND_DEGREES_PER_SECOND = 0.00833334;
-   private static final double MINUTE_HAND_DEGREES_PER_SECOND = 0.1;
    private static double currentTimeSlice, userTimeSlice;
-   private static double minuteHandAngle = 0;
-   private static double hourHandAngle = 0;
    double totalSeconds = 0;
 
   /**
@@ -43,21 +32,7 @@ public class Clock {
      totalSeconds = 0;
      currentTimeSlice = userTimeSlice;
    }
-
-/**
-   *  Method to validate the angle argument
-   *  @param   argValue  String from the main program's args[0] input
-   *  @return  double-precision value of the argument
-   *  @throws  IllegalArgumentException
-   */
-   public double validateAngleArg( String argValue ) {
-      double argDouble = Double.parseDouble( argValue );
-      if ( argDouble <= 0 || argDouble >= MAXIMUM_DEGREE_VALUE ) {
-        throw new IllegalArgumentException();
-      }
-      return argDouble;
-   }
-
+  
   /**
    *  Method to validate the optional time slice argument
    *  @param  argValue  String from the main program's args[1] input
@@ -82,30 +57,10 @@ public class Clock {
       }
    }
 
- /**
-  *  Method to validate the optional epsilon slice argument
-  *  @param  argValue  String from the main program's args[2] input
-  *  @return double-precision value of the argument or 0.1 if no epsilon is given
-  *  @throws IllegalArgumentException
-  */
-  public double validateEpsilonArg( String argValue ) {
-    if ( argValue == "" || argValue == null ) {
-      return DEFAULT_EPSILON_VALUE;
-    }
-    double argDouble = Double.parseDouble( argValue );
-    if ( argDouble < 0 || argDouble > 3.0 ) {
-      throw new IllegalArgumentException();
-    } 
-     else {
-      return argDouble;
-    }
-  } 
-
   /**
    *
    *  Method to calculate the next tick from the time increment
    *  @return double-precision value of the current clock tick
-   *  @throws IllegalArgumentException
    */
    public double tick() {
      if ( currentTimeSlice <= 0 ) {
@@ -113,34 +68,6 @@ public class Clock {
      }
      totalSeconds += currentTimeSlice;
      return totalSeconds;
-   }
-
-  /**
-   *  Method to calculate and return the current position of the hour hand
-   *  @return double-precision value of the hour hand location
-   */
-   public double getHourHandAngle() {
-     hourHandAngle = ( totalSeconds * HOUR_HAND_DEGREES_PER_SECOND ) % 360;
-     return hourHandAngle;
-   }
-
-  /**
-   *  Method to calculate and return the current position of the minute hand
-   *  @return double-precision value of the minute hand location
-   */
-   public double getMinuteHandAngle() {
-     minuteHandAngle = ( totalSeconds * MINUTE_HAND_DEGREES_PER_SECOND ) % 360;
-     return minuteHandAngle;
-   }
-
-  /**
-   *  Method to calculate and return the angle between the hands
-   *  @return double-precision value of the angle between the two hands
-   */
-   public double getHandAngle() {
-     getHourHandAngle();
-     getMinuteHandAngle();
-     return Math.abs( minuteHandAngle - hourHandAngle );
    }
 
   /**
@@ -232,4 +159,4 @@ public class Clock {
       try { clock.validateEpsilonArg( "1B3" ); }
       catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 1B3" ); }
     }
-  }
+  }     
