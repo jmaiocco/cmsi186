@@ -32,7 +32,8 @@ public class Clock {
      totalSeconds = 0;
      currentTimeSlice = userTimeSlice;
    }
-  
+
+
   /**
    *  Method to validate the optional time slice argument
    *  @param  argValue  String from the main program's args[1] input
@@ -105,34 +106,13 @@ public class Clock {
       System.out.println( "  Creating a new clock: " );
       Clock clock = new Clock();
       System.out.println( "New clock created: " + clock.toString() );
-      System.out.println( "Testing tick() and hand methods" );
+      System.out.println( "Testing tick() methods" );
       currentTimeSlice = 10;
       while ( clock.getTotalSeconds() <= SECONDS_PER_TWELVE_HOURS ) {
         System.out.println( "Current time is: " + clock.toString() );
-        System.out.println( "Current minute hand at " + clock.getMinuteHandAngle() );
-        System.out.println( "Current hour hand at " + clock.getHourHandAngle() );
-        System.out.println( "Current angle between the hands is " + clock.getHandAngle() );
         clock.tick();
         System.out.println( "" );
       }
-      System.out.println( "Tests for validateAngleArg()" );
-      try { clock.validateAngleArg( "0" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for 0 degrees" ); }
-      try { clock.validateAngleArg( "360" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for 360 degrees" ); }
-      try { clock.validateAngleArg( "-90" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for -90 degrees" ); }
-      try { clock.validateAngleArg( "0.0001"); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for 0.0001 degrees" ); }
-      try { clock.validateAngleArg( "359.9999" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for 359.9999" ); }
-      try { clock.validateAngleArg( "45" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for 45 degrees" ); }
-      try { clock.validateAngleArg( "ABC" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for ABC degrees" ); }
-      try { clock.validateAngleArg( "12C" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for 12C degrees" ); }
-      System.out.println( "" );
       System.out.println( "Tests for validateTimeSliceArg()" );
       System.out.println( "0 seconds should return -1: " + clock.validateTimeSliceArg( "0" ) );
       System.out.println( "61 seconds should return 61: " + clock.validateTimeSliceArg( "61" ) );
@@ -141,22 +121,5 @@ public class Clock {
       System.out.println( "0.00001 seconds should return 0.00001: " + clock.validateTimeSliceArg( "0.00001" ) );
       System.out.println( "Empty seconds should return 60: " + clock.validateTimeSliceArg( "60" ) );
       System.out.println( "" );
-      System.out.println( "Tests for validateEpsilonArg()" );
-      try { clock.validateEpsilonArg( "0" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 0" ); }
-      try { clock.validateEpsilonArg( "-1" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of -1" ); }
-      try { clock.validateEpsilonArg( "0.0001" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 0.001" ); }
-      try { clock.validateEpsilonArg( "2.99999" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 2.99999" ); }
-      try { clock.validateEpsilonArg( "3" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 3" ); }
-      try { clock.validateEpsilonArg( "3.00001" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 3.00001" ); }
-      try { clock.validateEpsilonArg( "ABC" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of ABC" ); }
-      try { clock.validateEpsilonArg( "1B3" ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Exception thrown for an epsilon of 1B3" ); }
     }
   }     
