@@ -77,12 +77,21 @@ public class Ball {
       return ballYPosition;
     }
 
+
+   public double getXVelocity() {
+   	 return ballXSpeed;
+   }
+
+   public double getYVelocity() {
+     return ballYSpeed;
+   }
+
   /**
    * Public Instance method that returns a String representation of THIS ball instance
    * @return String representation of this Ball
    */
    public String toString() {
-    return "Position: (" + ballXPosition + "," + ballYPosition + ") and Velocity: <" + ballXSpeed + "," + ballYSpeed + ">" ;
+    return "Position @ (" + ballXPosition + ", " + ballYPosition + ")\n        Velocity of <" + ballXSpeed + ", " + ballYSpeed + ">" ;
    }
 
   /**
@@ -108,7 +117,7 @@ public class Ball {
    	 try { Ball b2 = new Ball( 74, -148, -4, 2.75 ); }
    	 catch( IllegalArgumentException iae ) { System.out.println( "Invalid starting position of (74,-148)"); }
    	 Ball b2 = new Ball( 74, -148, -4, 2.75 );
-   	 b2.toString();
+   	 System.out.println( b2.toString() );
     }
 
 
