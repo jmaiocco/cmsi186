@@ -62,15 +62,15 @@ public class SoccerSim {
   	for ( int i = 0; i < ballArray.length - 1; i++) {
   	  ballArray[ i ].moveBallHorizontally();
   	  ballArray[ i ].moveBallVertically();
-  	  ballArray[ i ].applyFriction( ballArray[ i ].getXVelocity() * timeSlice );
-  	  ballArray[ i ].applyFriction( ballArray[ i ].getYVelocity() * timeSlice );
+  	  ballArray[ i ].applyXFriction( ballArray[ i ].getXVelocity() * timeSlice );
+  	  ballArray[ i ].applyYFriction( ballArray[ i ].getYVelocity() * timeSlice );
   	}
   }
 
   public void reportBallMovements() {
   	System.out.println( "Current ball positions and velocities:" );
   	for ( int i = 0; i < ballArray.length; i++ ) {
-  	  System.out.println( "Ball " + i +  ": " + ballArray[ i ].toString() );
+  	  System.out.println( "Ball " + (i + 1) +  ": " + ballArray[ i ].toString() );
   	}
   	System.out.println( "" );
   }
@@ -108,10 +108,10 @@ public class SoccerSim {
   	   } else {
   	    noCollisionInteger = 1;
   	   }
-  	  if ( -1 == noCollisionInteger ) {
-  	    System.out.println( "NO COLLISION IS POSSIBLE" );
-  	  	System.exit( 0 );
-  	  }
+  	}
+  	if ( -1 == noCollisionInteger ) {
+  	  System.out.println( "NO COLLISION IS POSSIBLE" );
+  	  System.exit( 0 );
   	}
   } 
 
