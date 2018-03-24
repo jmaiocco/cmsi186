@@ -13,9 +13,9 @@ import java.util.Arrays;
 
 public class SoccerSim {
 
-  /**
-   *  Class field definitions go here
-   */
+ /**
+  *  Class field definitions go here
+  */
   public static final double FIELD_SIZE = 400.0;
   public static final double FRICTIONAL_PERCENTAGE = 0.99;
   public static final double MINIMUM_SPEED_FOR_REMOVAL = 0.0834;
@@ -23,45 +23,54 @@ public class SoccerSim {
   public static ArrayList ballArrayList;
   public static double[] argumentArray;
   public static Ball[] ballArray, ballsAndPole;
-  public static Ball initialBall;
-  public static double ballXSpeed, ballYSpeed, timeSlice;
-  public static int noCollisionInteger;
+  public static double timeSlice;
+  public static int numberOfBallArguments;
 
+ /**
+  *  Constructor
+  */
   public SoccerSim() {
   	super();
   }
-
+ 
+ /**
+  * Method to handle all the input arguments from the command line
+  */
   public void handleInitialArguments( String args[] ) {
-  	Clock tempClock = new Clock();
-  	if ( args.length < 4 || args.length % 4 != 0 ) {
+  	if ( args.length < 4 || ( args.length % 4 != 0 && args.length % 4 != 1 ) ) {
   	  System.out.println( "Please start over with a correct number of arguments on the command line." );  	  
   	  System.exit( -1 );
   	}
-  	argumentArray = new double[args.length];
-  	if ( args.length % 4 == 0 ) {
-      for ( int i = 0; i < args.length; i++ ) {
-  	    argumentArray[ i ] = Double.parseDouble( args[ i ] );
-  	   }
-  	   timeSlice = 1.0;
-  	}
-  	if ( args.length % 4 == 1 ) {
-  	  for ( int i = 0; i < args.length - 1; i++ ) {
-  	    argumentArray[ i ] = Double.parseDouble( args[ i ] );
-  	   }
-  	   tempClock.validateTimeSliceArg( args[ args.length - 1 ] );
-  	   timeSlice = Double.parseDouble( args[ args.length - 1 ] );
-  	}
-  	ballArray = new Ball[ argumentArray.length / 4 ];
+  	Clock tempClock = new Clock();
   	ballArrayList = new ArrayList<Ball>();
-  	for ( int i = 0; i < argumentArray.length; i += 4 ) {
-  	  ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
-  	  ballArrayList.add( i / 4, ballArray[ i / 4 ] );
+  	argumentArray = new double[args.length];
+  	for ( int i = 0; i < args.length; i++ ) {
+  	  argumentArray[ i ] = Double.parseDouble( args[ i ] );
+  	}
+  	if ( argumentArray.length % 4 == 0 ) {
+  	  ballArray = new Ball[ argumentArray.length / 4 ];
+  	  timeSlice = tempClock.validateTimeSliceArg( null );
+  	  for ( int i = 0; i < argumentArray.length; i += 4 ) {
+  	    ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
+  	    ballArrayList.add( i / 4, ballArray[ i / 4 ] );
+   	  }
+  	} 
+  	if ( argumentArray.length % 4 == 1 ) {
+  	  ballArray = new Ball[ ( argumentArray.length - 1) / 4 ];
+  	  timeSlice = tempClock.validateTimeSliceArg( args[ args.length - 1 ] );
+  	  for ( int i = 0; i < argumentArray.length - 1; i += 4 ) {
+  	    ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
+  	    ballArrayList.add( i / 4, ballArray[ i / 4 ] );
+  	  }
   	}
   	Ball stationaryPole = new Ball( Math.floor( FIELD_SIZE/2 * Math.random() ), Math.floor( FIELD_SIZE/2 * Math.random() ), 0, 0 );
     ballsAndPole = Arrays.copyOf( ballArray, ballArray.length + 1 );
     ballsAndPole[ ballsAndPole.length - 1 ] = stationaryPole;
   }
 
+ /**
+  * Method to move each ball in the simulation 
+  */
   public void updateBallMovements() {
   	for ( int i = 0; i < ballArray.length; i++) {
   	  ballsAndPole[ i ].moveBallHorizontally();
@@ -71,14 +80,22 @@ public class SoccerSim {
   	}
   }
 
+
+ /**
+  * Method to tell the user where balls are within the simulation
+  */
   public void reportBallMovements() {
   	System.out.println( "Current ball positions and velocities:" );
-  	for ( int i = 0; i < ballsAndPole.length; i++ ) {
+  	for ( int i = 0; i < ballsAndPole.length - 1; i++ ) {
   	  System.out.println( "Ball " + (i + 1) +  ": " + ballsAndPole[ i ].toString() );
   	}
+  	System.out.println( "Pole:   " + ballsAndPole[ ballsAndPole.length - 1  ].toString() );
   	System.out.println( "" );
   }
 
+ /**
+  * Method to remove balls from the simulation that have left the field or stopped moving
+  */
   public void removeDeadBalls() {
     for ( int i = 0; i < ballsAndPole.length - 1; i++ ) {
   	  if( ballsAndPole[ i ].getXPosition() > FIELD_SIZE/2 || ballsAndPole[ i ].getYPosition() > FIELD_SIZE/2 || ballsAndPole[ i ].getXPosition() < -FIELD_SIZE/2 || ballsAndPole[ i ].getYPosition() < -FIELD_SIZE/2 ) {
@@ -89,6 +106,9 @@ public class SoccerSim {
   	}
   }
 
+ /**
+  * Method to calculate whether two balls or one ball and the pole have collided
+  */
   public static boolean detectCollision( Ball b1, Ball b2 ) {
   	if ( b1.getXPosition() == b2.getXPosition() && b1.getYPosition() == b2.getYPosition() ) {
   	  return true;	
@@ -105,6 +125,9 @@ public class SoccerSim {
   	}
   }
 
+ /**
+  * Method to tell the user that no collisions are possible
+  */
   public void recognizeNoCollisionPossible() {
     if ( ballArrayList.isEmpty() ) {
   	  System.out.println( "NO COLLISION IS POSSIBLE" );
@@ -112,6 +135,9 @@ public class SoccerSim {
   	}
   } 
 
+ /**
+  * Main program
+  */
   public static void main( String args[] ) {
   	SoccerSim soccerSim = new SoccerSim();
   	Clock clock = new Clock();
@@ -124,11 +150,15 @@ public class SoccerSim {
   	  clock.tick();
   	  soccerSim.removeDeadBalls();
   	  soccerSim.recognizeNoCollisionPossible();
-  	  for ( int i = 0; i < ballArray.length; i++ ) {
-  	  	for ( int j = i + 1; j < ballArray.length; j++ ) {
-  	  	  if ( soccerSim.detectCollision( ballArray[ i ], ballArray[ j ] ) ) {
-  	  	    System.out.println( "Collision detected at time " + clock.toString() + " at position (" + ballArray[ i ].getXPosition() + ", " + ballArray[ i ].getYPosition() + ") between Balls " + ( i + 1 ) + " & " + ( j + 1 ) );
-  	  	    System.exit( 0 );
+  	  for ( int i = 0; i < ballsAndPole.length; i++ ) {
+  	  	for ( int j = i + 1; j < ballsAndPole.length; j++ ) {
+  	  	  if ( soccerSim.detectCollision( ballsAndPole[ i ], ballsAndPole[ j ] ) ) {
+  	  	  	if ( j == ballsAndPole.length - 1 ) {
+  	  	  	  System.out.println( "Collision detected at time " + clock.toString() + " at position (" + ballsAndPole[ i ].getXPosition() + ", " + ballsAndPole[ i ].getYPosition() + ") between Ball " + ( i + 1 ) + " & Pole" );
+  	  	  	} else {
+  	  	  	  System.out.println( "Collision detected at time " + clock.toString() + " at position (" + ballsAndPole[ i ].getXPosition() + ", " + ballsAndPole[ i ].getYPosition() + ") between Balls " + ( i + 1 ) + " & " + ( j + 1 ) );
+  	  	      System.exit( 0 );
+  	  	  	}
   	  	  }
   	  	}
   	  }	
