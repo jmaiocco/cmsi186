@@ -121,17 +121,17 @@ public class SoccerSim {
   	  System.out.println( "Current time: " + clock.toString() );
   	  soccerSim.reportBallMovements();
   	  soccerSim.updateBallMovements(); 
+  	  clock.tick();
   	  soccerSim.removeDeadBalls();
-  	  for ( int i = 0; i < ballArray.length - 1; i++ ) {
-  	  	for ( int j = i + 1; j < ballArray.length - 1; j++ ) {
+  	  soccerSim.recognizeNoCollisionPossible();
+  	  for ( int i = 0; i < ballArray.length; i++ ) {
+  	  	for ( int j = i + 1; j < ballArray.length; j++ ) {
   	  	  if ( soccerSim.detectCollision( ballArray[ i ], ballArray[ j ] ) ) {
-  	  	    System.out.println( "Collision detected at " + clock.toString() + " between Balls " + ( i + 1 ) + " & " + ( j + 1 ) );
+  	  	    System.out.println( "Collision detected at time " + clock.toString() + " at position (" + ballArray[ i ].getXPosition() + ", " + ballArray[ i ].getYPosition() + ") between Balls " + ( i + 1 ) + " & " + ( j + 1 ) );
   	  	    System.exit( 0 );
   	  	  }
   	  	}
   	  }	
-  	  clock.tick();
-  	  soccerSim.recognizeNoCollisionPossible();
   	}
   }
 }
