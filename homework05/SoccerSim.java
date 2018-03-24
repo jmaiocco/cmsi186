@@ -34,7 +34,7 @@ public class SoccerSim {
   public void handleInitialArguments( String args[] ) {
   	Clock tempClock = new Clock();
   	if ( args.length < 4 || args.length % 4 != 0 ) {
-  	  System.out.println( "Please start over, with a correct number of arguments on the command line." );
+  	  System.out.println( "Please start over with a correct number of arguments on the command line." );  	  
   	  System.exit( -1 );
   	}
   	argumentArray = new double[args.length];
@@ -53,7 +53,7 @@ public class SoccerSim {
   	}
   	ballArray = new Ball[ argumentArray.length / 4 ];
   	ballArrayList = new ArrayList<Ball>();
-  	for ( int i = 0; i < argumentArray.length / 4 ; i += 4 ) {
+  	for ( int i = 0; i < argumentArray.length; i += 4 ) {
   	  ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
   	  ballArrayList.add( i / 4, ballArray[ i / 4 ] );
   	}
@@ -125,7 +125,7 @@ public class SoccerSim {
   	  for ( int i = 0; i < ballArray.length - 1; i++ ) {
   	  	for ( int j = i + 1; j < ballArray.length - 1; j++ ) {
   	  	  if ( soccerSim.detectCollision( ballArray[ i ], ballArray[ j ] ) ) {
-  	  	    System.out.println( "Collision detected at " + clock.toString() + " between Balls " + i + " & " + j );
+  	  	    System.out.println( "Collision detected at " + clock.toString() + " between Balls " + ( i + 1 ) + " & " + ( j + 1 ) );
   	  	    System.exit( 0 );
   	  	  }
   	  	}
