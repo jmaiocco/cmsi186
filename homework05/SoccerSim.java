@@ -9,6 +9,7 @@
  *  Exceptions    :  IllegalArgumentException when the input arguments are unacceptable 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SoccerSim {
 
@@ -17,10 +18,11 @@ public class SoccerSim {
    */
   public static final double FIELD_SIZE = 400.0;
   public static final double FRICTIONAL_PERCENTAGE = 0.99;
-  public static final double MINIMUM_SPEED_FOR_REMOVAL = 0.00001;
+  public static final double MINIMUM_SPEED_FOR_REMOVAL = 0.0834;
   private static final double BALL_RADIUS = 0.308734;
+  public static ArrayList ballArrayList;
   public static double[] argumentArray;
-  public static Ball[] ballArray;
+  public static Ball[] ballArray, ballsAndPole;
   public static Ball initialBall;
   public static double ballXSpeed, ballYSpeed, timeSlice;
   public static int noCollisionInteger;
@@ -49,38 +51,40 @@ public class SoccerSim {
   	   tempClock.validateTimeSliceArg( args[ args.length - 1 ] );
   	   timeSlice = Double.parseDouble( args[ args.length - 1 ] );
   	}
-  	ballArray = new Ball[ argumentArray.length / 4 + 1];
-  	for ( int i = 0; i < args.length / 4 ; i += 4 ) {
-  	  initialBall = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
-  	  ballArray[ i / 4 ] = initialBall;
+  	ballArray = new Ball[ argumentArray.length / 4 ];
+  	ballArrayList = new ArrayList<Ball>();
+  	for ( int i = 0; i < argumentArray.length / 4 ; i += 4 ) {
+  	  ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
+  	  ballArrayList.add( i / 4, ballArray[ i / 4 ] );
   	}
   	Ball stationaryPole = new Ball( Math.floor( FIELD_SIZE/2 * Math.random() ), Math.floor( FIELD_SIZE/2 * Math.random() ), 0, 0 );
-    ballArray[ ballArray.length - 1 ] = stationaryPole;	
+    ballsAndPole = Arrays.copyOf( ballArray, ballArray.length + 1 );
+    ballsAndPole[ ballsAndPole.length - 1 ] = stationaryPole;
   }
 
   public void updateBallMovements() {
-  	for ( int i = 0; i < ballArray.length - 1; i++) {
-  	  ballArray[ i ].moveBallHorizontally();
-  	  ballArray[ i ].moveBallVertically();
-  	  ballArray[ i ].applyXFriction( ballArray[ i ].getXVelocity() * timeSlice );
-  	  ballArray[ i ].applyYFriction( ballArray[ i ].getYVelocity() * timeSlice );
+  	for ( int i = 0; i < ballArray.length; i++) {
+  	  ballsAndPole[ i ].moveBallHorizontally();
+  	  ballsAndPole[ i ].moveBallVertically();
+  	  ballsAndPole[ i ].applyXFriction( ballsAndPole[ i ].getXVelocity() * timeSlice );
+  	  ballsAndPole[ i ].applyYFriction( ballsAndPole[ i ].getYVelocity() * timeSlice );
   	}
   }
 
   public void reportBallMovements() {
   	System.out.println( "Current ball positions and velocities:" );
-  	for ( int i = 0; i < ballArray.length; i++ ) {
-  	  System.out.println( "Ball " + (i + 1) +  ": " + ballArray[ i ].toString() );
+  	for ( int i = 0; i < ballsAndPole.length; i++ ) {
+  	  System.out.println( "Ball " + (i + 1) +  ": " + ballsAndPole[ i ].toString() );
   	}
   	System.out.println( "" );
   }
 
   public void removeDeadBalls() {
-    for ( int i = 0; i < ballArray.length - 2; i++ ) {
-  	  if( ballArray[ i ].getXPosition() > FIELD_SIZE/2 || ballArray[ i ].getYPosition() > FIELD_SIZE/2 || ballArray[ i ].getXPosition() < -FIELD_SIZE/2 || ballArray[ i ].getYPosition() < -FIELD_SIZE/2 ) {
-  	    ballArray[ i ] = null;
-  	  } else if ( ballArray[ i ].getXVelocity() < MINIMUM_SPEED_FOR_REMOVAL && ballArray[ i ].getYVelocity() < MINIMUM_SPEED_FOR_REMOVAL ) {
-  	  	ballArray[ i ] = null;
+    for ( int i = 0; i < ballsAndPole.length - 1; i++ ) {
+  	  if( ballsAndPole[ i ].getXPosition() > FIELD_SIZE/2 || ballsAndPole[ i ].getYPosition() > FIELD_SIZE/2 || ballsAndPole[ i ].getXPosition() < -FIELD_SIZE/2 || ballsAndPole[ i ].getYPosition() < -FIELD_SIZE/2 ) {
+  	    ballArrayList.remove( ballArrayList.size() - 1 );
+  	  } else if ( ballArray[ i ].getXVelocity() < MINIMUM_SPEED_FOR_REMOVAL && ballsAndPole[ i ].getYVelocity() < MINIMUM_SPEED_FOR_REMOVAL ) {
+  	    ballArrayList.remove( ballArrayList.size() - 1 );
   	  }
   	}
   }
@@ -102,14 +106,7 @@ public class SoccerSim {
   }
 
   public void recognizeNoCollisionPossible() {
-  	for ( int i = 0; i < ballArray.length - 1; i++ ) {
-  	  if ( ballArray[ i ] == null ) {
-        noCollisionInteger = -1;
-  	   } else {
-  	    noCollisionInteger = 1;
-  	   }
-  	}
-  	if ( -1 == noCollisionInteger ) {
+    if ( ballArrayList.isEmpty() ) {
   	  System.out.println( "NO COLLISION IS POSSIBLE" );
   	  System.exit( 0 );
   	}
@@ -119,7 +116,8 @@ public class SoccerSim {
   	SoccerSim soccerSim = new SoccerSim();
   	Clock clock = new Clock();
   	soccerSim.handleInitialArguments( args );
-  	for ( int k = 1; k < 4; k++ ) {
+  	System.out.println( "\nNumber of balls on the field: " + ballsAndPole.length + "\n" );
+  	while ( true ) {
   	  System.out.println( "Current time: " + clock.toString() );
   	  soccerSim.reportBallMovements();
   	  soccerSim.updateBallMovements(); 
@@ -127,7 +125,7 @@ public class SoccerSim {
   	  for ( int i = 0; i < ballArray.length - 1; i++ ) {
   	  	for ( int j = i + 1; j < ballArray.length - 1; j++ ) {
   	  	  if ( soccerSim.detectCollision( ballArray[ i ], ballArray[ j ] ) ) {
-  	  	    System.out.println( "Collision detected at " + clock.toString() + " between "   );
+  	  	    System.out.println( "Collision detected at " + clock.toString() + " between Balls " + i + " & " + j );
   	  	    System.exit( 0 );
   	  	  }
   	  	}
