@@ -124,7 +124,7 @@ public class SoccerSim {
   	  return false;
   	}
   }
-
+ 
  /**
   * Method to tell the user that no collisions are possible
   */
@@ -146,22 +146,22 @@ public class SoccerSim {
   	while ( true ) {
   	  System.out.println( "Current time: " + clock.toString() );
   	  soccerSim.reportBallMovements();
-  	  soccerSim.updateBallMovements(); 
+  	  soccerSim.updateBallMovements();
+  	  for ( int i = 0; i < ballsAndPole.length; i++ ) {
+  	    for ( int j = i + 1; j < ballsAndPole.length; j++ ) {
+  	      if ( soccerSim.detectCollision( ballsAndPole[ i ], ballsAndPole[ j ] ) ) {
+  	  	    if ( j == ballsAndPole.length - 1 ) {
+  	  	      System.out.println( "Collision detected at time " + clock.toString() + " at position (" + ballsAndPole[ i ].getXPosition() + ", " + ballsAndPole[ i ].getYPosition() + ") between Ball " + ( i + 1 ) + " & Pole" );
+  	  	    } else {
+  	  	  	  System.out.println( "Collision detected at time " + clock.toString() + " at position (" + ballsAndPole[ i ].getXPosition() + ", " + ballsAndPole[ i ].getYPosition() + ") between Balls " + ( i + 1 ) + " & " + ( j + 1 ) );
+  	  	    }
+  	  	    System.exit( 0 );
+  	  	  }
+  	    }
+  	  }
   	  clock.tick( timeSlice );
   	  soccerSim.removeDeadBalls();
-  	  soccerSim.recognizeNoCollisionPossible();
-  	  for ( int i = 0; i < ballsAndPole.length; i++ ) {
-  	  	for ( int j = i + 1; j < ballsAndPole.length; j++ ) {
-  	  	  if ( soccerSim.detectCollision( ballsAndPole[ i ], ballsAndPole[ j ] ) ) {
-  	  	  	if ( j == ballsAndPole.length - 1 ) {
-  	  	  	  System.out.println( "Collision detected at time " + clock.toString() + " at position (" + ballsAndPole[ i ].getXPosition() + ", " + ballsAndPole[ i ].getYPosition() + ") between Ball " + ( i + 1 ) + " & Pole" );
-  	  	  	} else {
-  	  	  	  System.out.println( "Collision detected at time " + clock.toString() + " at position (" + ballsAndPole[ i ].getXPosition() + ", " + ballsAndPole[ i ].getYPosition() + ") between Balls " + ( i + 1 ) + " & " + ( j + 1 ) );
-  	  	      System.exit( 0 );
-  	  	  	}
-  	  	  }
-  	  	}
-  	  }	
+  	  soccerSim.recognizeNoCollisionPossible();	
   	}
   }
 }
