@@ -22,7 +22,7 @@ public class Clock {
    private static final double SECONDS_PER_TWELVE_HOURS = 43200;
    private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 1.0;
    private static final double INVALID_ARGUMENT_VALUE = -1.0;
-   private static double currentTimeSlice, userTimeSlice;
+   private static double timeSlice, userTimeSlice;
    double totalSeconds = 0;
 
   /**
@@ -30,7 +30,6 @@ public class Clock {
    */
    public Clock() {
      totalSeconds = 0;
-     currentTimeSlice = userTimeSlice;
    }
 
 
@@ -45,16 +44,17 @@ public class Clock {
    *  note: remember that the time slice, if it is small will cause the simulation
    *         to take a VERY LONG TIME to complete!
    */
-   public double validateTimeSliceArg( String argValue ) {
-      if ( argValue == "" || argValue == null ) {
+   public double validateTimeSliceArg( String argValue ) throws IllegalArgumentException, NumberFormatException {
+      if ( argValue.equals("") ){
         return DEFAULT_TIME_SLICE_IN_SECONDS;
       }
-      double argDouble = Double.parseDouble( argValue );
-      if ( argDouble <= 0 || argDouble > 1800 ) {
-        return INVALID_ARGUMENT_VALUE;
+      double argDouble = Double.parseDouble(argValue);
+      if ( !( argDouble > 0 ) ){ 
+        throw new IllegalArgumentException( "Time slice is out of acceptable range" );
+      } else if ( argDouble > 0 ) {
+         return argDouble;
       } else {
-        userTimeSlice = argDouble;
-        return userTimeSlice;
+        throw new NumberFormatException( "Time slice is not a double-precision number" );
       }
    }
 
@@ -63,11 +63,11 @@ public class Clock {
    *  Method to calculate the next tick from the time increment
    *  @return double-precision value of the current clock tick
    */
-   public double tick() {
-     if ( currentTimeSlice <= 0 ) {
-      currentTimeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
+   public double tick( double timeSlice ) {
+     if ( timeSlice <= 0 ) {
+      timeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
      }
-     totalSeconds += currentTimeSlice;
+     totalSeconds += timeSlice;
      return totalSeconds;
    }
 
@@ -107,19 +107,24 @@ public class Clock {
       Clock clock = new Clock();
       System.out.println( "New clock created: " + clock.toString() );
       System.out.println( "Testing tick() methods" );
-      currentTimeSlice = 10;
+      timeSlice = 20;
       while ( clock.getTotalSeconds() <= SECONDS_PER_TWELVE_HOURS ) {
         System.out.println( "Current time is: " + clock.toString() );
-        clock.tick();
+        clock.tick( timeSlice );
         System.out.println( "" );
       }
       System.out.println( "Tests for validateTimeSliceArg()" );
-      System.out.println( "0 seconds should return -1: " + clock.validateTimeSliceArg( "0" ) );
-      System.out.println( "61 seconds should return 61: " + clock.validateTimeSliceArg( "61" ) );
+      try { clock.validateTimeSliceArg( "0" ); } 
+      catch( IllegalArgumentException iae ) { System.out.println( "0 is unacceptable!" ); }
+      try { clock.validateTimeSliceArg( "-1" ); } 
+      catch( IllegalArgumentException iae ) { System.out.println( "-1 is unacceptable!" ); }
+      try { clock.validateTimeSliceArg( "ABC" ); }
+      catch( NumberFormatException nfe ) {  System.out.println( "ABC is unacceptable!" ); }
+      System.out.println( "61 seconds should return 61: " + clock.validateTimeSliceArg( "61") );
       System.out.println( "1 second should return 1: " + clock.validateTimeSliceArg( "1" ) );
       System.out.println( "1800 seconds should return 1800: " + clock.validateTimeSliceArg( "1800" ) );
       System.out.println( "0.00001 seconds should return 0.00001: " + clock.validateTimeSliceArg( "0.00001" ) );
-      System.out.println( "Empty seconds should return 60: " + clock.validateTimeSliceArg( "60" ) );
+      System.out.println( "Empty seconds should return 1: " + clock.validateTimeSliceArg( "" ) );
       System.out.println( "" );
     }
   }     
