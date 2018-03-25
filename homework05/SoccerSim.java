@@ -49,7 +49,7 @@ public class SoccerSim {
   	}
   	if ( argumentArray.length % 4 == 0 ) {
   	  ballArray = new Ball[ argumentArray.length / 4 ];
-  	  timeSlice = tempClock.validateTimeSliceArg( null );
+  	  timeSlice = tempClock.validateTimeSliceArg( "" );
   	  for ( int i = 0; i < argumentArray.length; i += 4 ) {
   	    ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
   	    ballArrayList.add( i / 4, ballArray[ i / 4 ] );
@@ -57,7 +57,7 @@ public class SoccerSim {
   	} 
   	if ( argumentArray.length % 4 == 1 ) {
   	  ballArray = new Ball[ ( argumentArray.length - 1) / 4 ];
-  	  timeSlice = tempClock.validateTimeSliceArg( args[ args.length - 1 ] );
+  	  timeSlice = tempClock.validateTimeSliceArg( args[ args.length - 1 ] + "");
   	  for ( int i = 0; i < argumentArray.length - 1; i += 4 ) {
   	    ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
   	    ballArrayList.add( i / 4, ballArray[ i / 4 ] );
@@ -142,12 +142,12 @@ public class SoccerSim {
   	SoccerSim soccerSim = new SoccerSim();
   	Clock clock = new Clock();
   	soccerSim.handleInitialArguments( args );
-  	System.out.println( "\nNumber of balls on the field: " + ballsAndPole.length + "\n" );
+  	System.out.println( "\nNumber of objects on the field: " + ballsAndPole.length + "\n" );
   	while ( true ) {
   	  System.out.println( "Current time: " + clock.toString() );
   	  soccerSim.reportBallMovements();
   	  soccerSim.updateBallMovements(); 
-  	  clock.tick();
+  	  clock.tick( timeSlice );
   	  soccerSim.removeDeadBalls();
   	  soccerSim.recognizeNoCollisionPossible();
   	  for ( int i = 0; i < ballsAndPole.length; i++ ) {
