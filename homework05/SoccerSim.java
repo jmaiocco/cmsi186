@@ -73,13 +73,12 @@ public class SoccerSim {
   */
   public void updateBallMovements() {
   	for ( int i = 0; i < ballArray.length; i++) {
-  	  ballsAndPole[ i ].moveBallHorizontally();
-  	  ballsAndPole[ i ].moveBallVertically();
-  	  ballsAndPole[ i ].applyXFriction( ballsAndPole[ i ].getXVelocity() * timeSlice );
-  	  ballsAndPole[ i ].applyYFriction( ballsAndPole[ i ].getYVelocity() * timeSlice );
+  	  ballsAndPole[ i ].moveBallHorizontally( timeSlice );
+  	  ballsAndPole[ i ].moveBallVertically( timeSlice );
+  	  ballsAndPole[ i ].applyXFriction( ballsAndPole[ i ].getXVelocity(), timeSlice );
+  	  ballsAndPole[ i ].applyYFriction( ballsAndPole[ i ].getYVelocity(), timeSlice );
   	}
   }
-
 
  /**
   * Method to tell the user where balls are within the simulation
@@ -146,7 +145,7 @@ public class SoccerSim {
   	while ( true ) {
   	  System.out.println( "Current time: " + clock.toString() );
   	  soccerSim.reportBallMovements();
-  	  soccerSim.updateBallMovements();
+  	  soccerSim.recognizeNoCollisionPossible();	
   	  for ( int i = 0; i < ballsAndPole.length; i++ ) {
   	    for ( int j = i + 1; j < ballsAndPole.length; j++ ) {
   	      if ( soccerSim.detectCollision( ballsAndPole[ i ], ballsAndPole[ j ] ) ) {
@@ -160,8 +159,8 @@ public class SoccerSim {
   	    }
   	  }
   	  clock.tick( timeSlice );
+  	  soccerSim.updateBallMovements();
   	  soccerSim.removeDeadBalls();
-  	  soccerSim.recognizeNoCollisionPossible();	
   	}
   }
 }
