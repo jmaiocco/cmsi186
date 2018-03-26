@@ -37,8 +37,8 @@ public class Ball {
    *  Method to update a ball's horizontal position
    *  @return double-precision value of the ball's new x-position 
    */
-    public double moveBallHorizontally() {
-      ballXPosition += ballXSpeed;
+    public double moveBallHorizontally( double timeSlice ) {
+      ballXPosition += ( ballXSpeed * timeSlice );
       return ballXPosition;
     }
 
@@ -46,8 +46,8 @@ public class Ball {
    *  Method to update a ball's vertical position
    *  @return double-precision value of the ball's new y-position 
    */
-    public double moveBallVertically() {
-      ballYPosition += ballYSpeed;
+    public double moveBallVertically( double timeSlice ) {
+      ballYPosition += ( ballYSpeed * timeSlice) ;
       return ballYPosition;
     }
 
@@ -56,9 +56,19 @@ public class Ball {
    *  @param  givenBallSpeed  double-precision value of the ball's original speed component  
    *  @return double-precision value of the ball's new speed component
    */
-    public double applyFriction( double givenBallSpeed ) {
-      modifiedBallSpeed = ( givenBallSpeed * FRICTIONAL_PERCENTAGE );
-      return modifiedBallSpeed;
+    public double applyXFriction( double givenXSpeed, double timeSlice ) {
+      this.ballXSpeed = ( givenXSpeed * Math.pow( FRICTIONAL_PERCENTAGE, timeSlice ) );
+      return this.ballXSpeed;
+    }
+
+    /**
+   *  Method to reduce a ball's velocity using 
+   *  @param  givenBallSpeed  double-precision value of the ball's original speed component  
+   *  @return double-precision value of the ball's new speed component
+   */
+    public double applyYFriction( double givenYSpeed, double timeSlice ) {
+      this.ballYSpeed = ( givenYSpeed * Math.pow( FRICTIONAL_PERCENTAGE, timeSlice ) );
+      return this.ballYSpeed;
     }
 
   /**
