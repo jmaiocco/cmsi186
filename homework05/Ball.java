@@ -21,6 +21,11 @@ public class Ball {
 
   /**
    *  Constructor
+   *  @param  xPosition  double gives the ball's starting x-coordinate  
+   *  @param  yPosition  double gives the ball's starting y-coordinate
+   *  @param  xSpeed     double gives the ball's initial velocity along the x-axis
+   *  @param  ySpeed     double gives the ball's initial velocity along the y-axis
+   *  @throws IllegalArgumentException if either position args do not make sense
    */
    public Ball( double xPosition, double yPosition, double xSpeed, double ySpeed ) {
    	 if ( ( ( xPosition > FIELD_SIZE/2 ) || ( xPosition < -FIELD_SIZE/2 ) || ( yPosition > FIELD_SIZE/2 ) || ( yPosition < -FIELD_SIZE/2 ) ) ) {
@@ -35,6 +40,7 @@ public class Ball {
 
   /**
    *  Method to update a ball's horizontal position
+   *  @param timeSlice  double  Value to calculate new velocity
    *  @return double-precision value of the ball's new x-position 
    */
     public double moveBallHorizontally( double timeSlice ) {
@@ -44,6 +50,7 @@ public class Ball {
 
   /**
    *  Method to update a ball's vertical position
+   *  @param timeSlice  double  Value to calculate new velocity
    *  @return double-precision value of the ball's new y-position 
    */
     public double moveBallVertically( double timeSlice ) {
@@ -53,7 +60,8 @@ public class Ball {
 
   /**
    *  Method to reduce a ball's velocity using 
-   *  @param  givenBallSpeed  double-precision value of the ball's original speed component  
+   *  @param  givenBallSpeed  double-precision value of the ball's original x-velocity component 
+   *  @param  timeSlice       double-precision value of the current time slice
    *  @return double-precision value of the ball's new speed component
    */
     public double applyXFriction( double givenXSpeed, double timeSlice ) {
@@ -63,7 +71,8 @@ public class Ball {
 
     /**
    *  Method to reduce a ball's velocity using 
-   *  @param  givenBallSpeed  double-precision value of the ball's original speed component  
+   *  @param  givenBallSpeed  double-precision value of the ball's original speed component 
+   *  @param  timeSlice       double-precision value of the current time slice
    *  @return double-precision value of the ball's new speed component
    */
     public double applyYFriction( double givenYSpeed, double timeSlice ) {
