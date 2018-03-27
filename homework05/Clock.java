@@ -12,7 +12,7 @@
  *                      main(), for running test on the preceding methods
  *  Notes         :  None 
  *  Warnings      :  None
- *  Exceptions    :  IllegalArgumentException when the input arguments are unacceptable
+ *  Exceptions    :  IllegalArgumentException, NumberFormatException
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 public class Clock {
@@ -61,6 +61,7 @@ public class Clock {
   /**
    *
    *  Method to calculate the next tick from the time increment
+   *  @param  timeSlice  Double to calculate the next clock tick
    *  @return double-precision value of the current clock tick
    */
    public double tick( double timeSlice ) {
@@ -88,7 +89,7 @@ public class Clock {
    public String toString() {
       int hours = (int) totalSeconds / 3600;
       int minutes = (int) (totalSeconds / 60) % 60;
-      int seconds = (int) totalSeconds % 60; 
+      double seconds = (double) totalSeconds % 60; 
       return hours + ":" + minutes + ":" + seconds;
     }
 
