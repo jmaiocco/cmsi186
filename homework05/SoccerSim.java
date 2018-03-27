@@ -3,10 +3,11 @@
  *  Purpose       :  The main SoccerSim program 
  *  @author       :  Joe Maiocco
  *  Date written  :  2018-03-13
- *  Description   :  
+ *  Description   :  Runs a simulation to see whether or not any number of balls placed on a field 
+ *                   will collide
  *  Notes         :  Default measurements are in ft
  *  Warnings      :  None
- *  Exceptions    :  IllegalArgumentException when the input arguments are unacceptable 
+ *  Exceptions    :  Catches IlegalArgumentExceptions and NumberFormatExceptions 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,33 +36,44 @@ public class SoccerSim {
  
  /**
   * Method to handle all the input arguments from the command line
+  * @param args  String values to parse from the command line
   */
   public void handleInitialArguments( String args[] ) {
   	if ( args.length < 4 || ( args.length % 4 != 0 && args.length % 4 != 1 ) ) {
-  	  System.out.println( "Please start over with a correct number of arguments on the command line." );  	  
+  	  System.out.println( "\nPlease start over with a correct number of arguments on the command line." );  	  
   	  System.exit( -1 );
   	}
   	Clock tempClock = new Clock();
   	ballArrayList = new ArrayList<Ball>();
   	argumentArray = new double[args.length];
-  	for ( int i = 0; i < args.length; i++ ) {
-  	  argumentArray[ i ] = Double.parseDouble( args[ i ] );
+  	try {
+  	  for ( int i = 0; i < args.length; i++ ) {
+  	    argumentArray[ i ] = Double.parseDouble( args[ i ] );
+      }
+  	} catch( NumberFormatException nfe ) {
+  	  System.out.println( "\nOne of the arguments you entered is unacceptable. Please start over." );
+  	  System.exit( 1 );
   	}
-  	if ( argumentArray.length % 4 == 0 ) {
-  	  ballArray = new Ball[ argumentArray.length / 4 ];
-  	  timeSlice = tempClock.validateTimeSliceArg( "" );
-  	  for ( int i = 0; i < argumentArray.length; i += 4 ) {
-  	    ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
-  	    ballArrayList.add( i / 4, ballArray[ i / 4 ] );
-   	  }
-  	} 
-  	if ( argumentArray.length % 4 == 1 ) {
-  	  ballArray = new Ball[ ( argumentArray.length - 1) / 4 ];
-  	  timeSlice = tempClock.validateTimeSliceArg( args[ args.length - 1 ] + "");
-  	  for ( int i = 0; i < argumentArray.length - 1; i += 4 ) {
-  	    ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
-  	    ballArrayList.add( i / 4, ballArray[ i / 4 ] );
+  	try {
+  	  if ( argumentArray.length % 4 == 0 ) {
+  	    ballArray = new Ball[ argumentArray.length / 4 ];
+  	    timeSlice = tempClock.validateTimeSliceArg( "" );
+  	    for ( int i = 0; i < argumentArray.length; i += 4 ) {
+  	      ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
+  	      ballArrayList.add( i / 4, ballArray[ i / 4 ] );
+   	    }
+  	  } 
+  	  if ( argumentArray.length % 4 == 1 ) {
+  	    ballArray = new Ball[ ( argumentArray.length - 1) / 4 ];
+  	    timeSlice = tempClock.validateTimeSliceArg( args[ args.length - 1 ] + "");
+  	    for ( int i = 0; i < argumentArray.length - 1; i += 4 ) {
+  	      ballArray[ i / 4 ] = new Ball( argumentArray[ i ], argumentArray[ i + 1 ], argumentArray[ i + 2 ], argumentArray[ i + 3 ] );
+  	      ballArrayList.add( i / 4, ballArray[ i / 4 ] );
+  	    }
   	  }
+  	} catch( IllegalArgumentException iae ) {
+  	    System.out.println( "\nAt least one ball is not on the " + FIELD_SIZE + " ft by " + FIELD_SIZE + " ft field."  );
+  	    System.exit( 2 );
   	}
   	Ball stationaryPole = new Ball( Math.floor( FIELD_SIZE/2 * Math.random() ), Math.floor( FIELD_SIZE/2 * Math.random() ), 0, 0 );
     ballsAndPole = Arrays.copyOf( ballArray, ballArray.length + 1 );
@@ -107,6 +119,8 @@ public class SoccerSim {
 
  /**
   * Method to calculate whether two balls or one ball and the pole have collided
+  * @param b1  Ball  first ball to compare in the collision detection
+  * @param b2  Ball  second ball to compare in the collision detection
   */
   public static boolean detectCollision( Ball b1, Ball b2 ) {
   	if ( b1.getXPosition() == b2.getXPosition() && b1.getYPosition() == b2.getYPosition() ) {
@@ -136,6 +150,7 @@ public class SoccerSim {
 
  /**
   * Main program
+  * @param args  String  values to parse from the command line
   */
   public static void main( String args[] ) {
   	SoccerSim soccerSim = new SoccerSim();
