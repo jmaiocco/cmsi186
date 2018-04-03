@@ -1,0 +1,6338 @@
+.                                       
+.                                       
+======================================  
+... Testing Ball class ...              
+======================================  
+Invalid starting position of (250,250)
+Invalid starting position of (-250,-249)
+Invalid starting position of (251,0)
+Position @ (74.0, -148.0)
+        Velocity of <-4.0, 2.75>
+.                                       
+.                                       
+.                                       
+.                                       
+======================================  
+... Testing Clock class ...                
+======================================  
+
+CLOCK CLASS TESTER PROGRAM
+--------------------------
+
+  Creating a new clock: 
+New clock created: 0:0:0.0
+Testing tick() methods
+Current time is: 0:0:0.0
+
+Current time is: 0:0:20.0
+
+Current time is: 0:0:40.0
+
+Current time is: 0:1:0.0
+
+Current time is: 0:1:20.0
+
+Current time is: 0:1:40.0
+
+Current time is: 0:2:0.0
+
+Current time is: 0:2:20.0
+
+Current time is: 0:2:40.0
+
+Current time is: 0:3:0.0
+
+Current time is: 0:3:20.0
+
+Current time is: 0:3:40.0
+
+Current time is: 0:4:0.0
+
+Current time is: 0:4:20.0
+
+Current time is: 0:4:40.0
+
+Current time is: 0:5:0.0
+
+Current time is: 0:5:20.0
+
+Current time is: 0:5:40.0
+
+Current time is: 0:6:0.0
+
+Current time is: 0:6:20.0
+
+Current time is: 0:6:40.0
+
+Current time is: 0:7:0.0
+
+Current time is: 0:7:20.0
+
+Current time is: 0:7:40.0
+
+Current time is: 0:8:0.0
+
+Current time is: 0:8:20.0
+
+Current time is: 0:8:40.0
+
+Current time is: 0:9:0.0
+
+Current time is: 0:9:20.0
+
+Current time is: 0:9:40.0
+
+Current time is: 0:10:0.0
+
+Current time is: 0:10:20.0
+
+Current time is: 0:10:40.0
+
+Current time is: 0:11:0.0
+
+Current time is: 0:11:20.0
+
+Current time is: 0:11:40.0
+
+Current time is: 0:12:0.0
+
+Current time is: 0:12:20.0
+
+Current time is: 0:12:40.0
+
+Current time is: 0:13:0.0
+
+Current time is: 0:13:20.0
+
+Current time is: 0:13:40.0
+
+Current time is: 0:14:0.0
+
+Current time is: 0:14:20.0
+
+Current time is: 0:14:40.0
+
+Current time is: 0:15:0.0
+
+Current time is: 0:15:20.0
+
+Current time is: 0:15:40.0
+
+Current time is: 0:16:0.0
+
+Current time is: 0:16:20.0
+
+Current time is: 0:16:40.0
+
+Current time is: 0:17:0.0
+
+Current time is: 0:17:20.0
+
+Current time is: 0:17:40.0
+
+Current time is: 0:18:0.0
+
+Current time is: 0:18:20.0
+
+Current time is: 0:18:40.0
+
+Current time is: 0:19:0.0
+
+Current time is: 0:19:20.0
+
+Current time is: 0:19:40.0
+
+Current time is: 0:20:0.0
+
+Current time is: 0:20:20.0
+
+Current time is: 0:20:40.0
+
+Current time is: 0:21:0.0
+
+Current time is: 0:21:20.0
+
+Current time is: 0:21:40.0
+
+Current time is: 0:22:0.0
+
+Current time is: 0:22:20.0
+
+Current time is: 0:22:40.0
+
+Current time is: 0:23:0.0
+
+Current time is: 0:23:20.0
+
+Current time is: 0:23:40.0
+
+Current time is: 0:24:0.0
+
+Current time is: 0:24:20.0
+
+Current time is: 0:24:40.0
+
+Current time is: 0:25:0.0
+
+Current time is: 0:25:20.0
+
+Current time is: 0:25:40.0
+
+Current time is: 0:26:0.0
+
+Current time is: 0:26:20.0
+
+Current time is: 0:26:40.0
+
+Current time is: 0:27:0.0
+
+Current time is: 0:27:20.0
+
+Current time is: 0:27:40.0
+
+Current time is: 0:28:0.0
+
+Current time is: 0:28:20.0
+
+Current time is: 0:28:40.0
+
+Current time is: 0:29:0.0
+
+Current time is: 0:29:20.0
+
+Current time is: 0:29:40.0
+
+Current time is: 0:30:0.0
+
+Current time is: 0:30:20.0
+
+Current time is: 0:30:40.0
+
+Current time is: 0:31:0.0
+
+Current time is: 0:31:20.0
+
+Current time is: 0:31:40.0
+
+Current time is: 0:32:0.0
+
+Current time is: 0:32:20.0
+
+Current time is: 0:32:40.0
+
+Current time is: 0:33:0.0
+
+Current time is: 0:33:20.0
+
+Current time is: 0:33:40.0
+
+Current time is: 0:34:0.0
+
+Current time is: 0:34:20.0
+
+Current time is: 0:34:40.0
+
+Current time is: 0:35:0.0
+
+Current time is: 0:35:20.0
+
+Current time is: 0:35:40.0
+
+Current time is: 0:36:0.0
+
+Current time is: 0:36:20.0
+
+Current time is: 0:36:40.0
+
+Current time is: 0:37:0.0
+
+Current time is: 0:37:20.0
+
+Current time is: 0:37:40.0
+
+Current time is: 0:38:0.0
+
+Current time is: 0:38:20.0
+
+Current time is: 0:38:40.0
+
+Current time is: 0:39:0.0
+
+Current time is: 0:39:20.0
+
+Current time is: 0:39:40.0
+
+Current time is: 0:40:0.0
+
+Current time is: 0:40:20.0
+
+Current time is: 0:40:40.0
+
+Current time is: 0:41:0.0
+
+Current time is: 0:41:20.0
+
+Current time is: 0:41:40.0
+
+Current time is: 0:42:0.0
+
+Current time is: 0:42:20.0
+
+Current time is: 0:42:40.0
+
+Current time is: 0:43:0.0
+
+Current time is: 0:43:20.0
+
+Current time is: 0:43:40.0
+
+Current time is: 0:44:0.0
+
+Current time is: 0:44:20.0
+
+Current time is: 0:44:40.0
+
+Current time is: 0:45:0.0
+
+Current time is: 0:45:20.0
+
+Current time is: 0:45:40.0
+
+Current time is: 0:46:0.0
+
+Current time is: 0:46:20.0
+
+Current time is: 0:46:40.0
+
+Current time is: 0:47:0.0
+
+Current time is: 0:47:20.0
+
+Current time is: 0:47:40.0
+
+Current time is: 0:48:0.0
+
+Current time is: 0:48:20.0
+
+Current time is: 0:48:40.0
+
+Current time is: 0:49:0.0
+
+Current time is: 0:49:20.0
+
+Current time is: 0:49:40.0
+
+Current time is: 0:50:0.0
+
+Current time is: 0:50:20.0
+
+Current time is: 0:50:40.0
+
+Current time is: 0:51:0.0
+
+Current time is: 0:51:20.0
+
+Current time is: 0:51:40.0
+
+Current time is: 0:52:0.0
+
+Current time is: 0:52:20.0
+
+Current time is: 0:52:40.0
+
+Current time is: 0:53:0.0
+
+Current time is: 0:53:20.0
+
+Current time is: 0:53:40.0
+
+Current time is: 0:54:0.0
+
+Current time is: 0:54:20.0
+
+Current time is: 0:54:40.0
+
+Current time is: 0:55:0.0
+
+Current time is: 0:55:20.0
+
+Current time is: 0:55:40.0
+
+Current time is: 0:56:0.0
+
+Current time is: 0:56:20.0
+
+Current time is: 0:56:40.0
+
+Current time is: 0:57:0.0
+
+Current time is: 0:57:20.0
+
+Current time is: 0:57:40.0
+
+Current time is: 0:58:0.0
+
+Current time is: 0:58:20.0
+
+Current time is: 0:58:40.0
+
+Current time is: 0:59:0.0
+
+Current time is: 0:59:20.0
+
+Current time is: 0:59:40.0
+
+Current time is: 1:0:0.0
+
+Current time is: 1:0:20.0
+
+Current time is: 1:0:40.0
+
+Current time is: 1:1:0.0
+
+Current time is: 1:1:20.0
+
+Current time is: 1:1:40.0
+
+Current time is: 1:2:0.0
+
+Current time is: 1:2:20.0
+
+Current time is: 1:2:40.0
+
+Current time is: 1:3:0.0
+
+Current time is: 1:3:20.0
+
+Current time is: 1:3:40.0
+
+Current time is: 1:4:0.0
+
+Current time is: 1:4:20.0
+
+Current time is: 1:4:40.0
+
+Current time is: 1:5:0.0
+
+Current time is: 1:5:20.0
+
+Current time is: 1:5:40.0
+
+Current time is: 1:6:0.0
+
+Current time is: 1:6:20.0
+
+Current time is: 1:6:40.0
+
+Current time is: 1:7:0.0
+
+Current time is: 1:7:20.0
+
+Current time is: 1:7:40.0
+
+Current time is: 1:8:0.0
+
+Current time is: 1:8:20.0
+
+Current time is: 1:8:40.0
+
+Current time is: 1:9:0.0
+
+Current time is: 1:9:20.0
+
+Current time is: 1:9:40.0
+
+Current time is: 1:10:0.0
+
+Current time is: 1:10:20.0
+
+Current time is: 1:10:40.0
+
+Current time is: 1:11:0.0
+
+Current time is: 1:11:20.0
+
+Current time is: 1:11:40.0
+
+Current time is: 1:12:0.0
+
+Current time is: 1:12:20.0
+
+Current time is: 1:12:40.0
+
+Current time is: 1:13:0.0
+
+Current time is: 1:13:20.0
+
+Current time is: 1:13:40.0
+
+Current time is: 1:14:0.0
+
+Current time is: 1:14:20.0
+
+Current time is: 1:14:40.0
+
+Current time is: 1:15:0.0
+
+Current time is: 1:15:20.0
+
+Current time is: 1:15:40.0
+
+Current time is: 1:16:0.0
+
+Current time is: 1:16:20.0
+
+Current time is: 1:16:40.0
+
+Current time is: 1:17:0.0
+
+Current time is: 1:17:20.0
+
+Current time is: 1:17:40.0
+
+Current time is: 1:18:0.0
+
+Current time is: 1:18:20.0
+
+Current time is: 1:18:40.0
+
+Current time is: 1:19:0.0
+
+Current time is: 1:19:20.0
+
+Current time is: 1:19:40.0
+
+Current time is: 1:20:0.0
+
+Current time is: 1:20:20.0
+
+Current time is: 1:20:40.0
+
+Current time is: 1:21:0.0
+
+Current time is: 1:21:20.0
+
+Current time is: 1:21:40.0
+
+Current time is: 1:22:0.0
+
+Current time is: 1:22:20.0
+
+Current time is: 1:22:40.0
+
+Current time is: 1:23:0.0
+
+Current time is: 1:23:20.0
+
+Current time is: 1:23:40.0
+
+Current time is: 1:24:0.0
+
+Current time is: 1:24:20.0
+
+Current time is: 1:24:40.0
+
+Current time is: 1:25:0.0
+
+Current time is: 1:25:20.0
+
+Current time is: 1:25:40.0
+
+Current time is: 1:26:0.0
+
+Current time is: 1:26:20.0
+
+Current time is: 1:26:40.0
+
+Current time is: 1:27:0.0
+
+Current time is: 1:27:20.0
+
+Current time is: 1:27:40.0
+
+Current time is: 1:28:0.0
+
+Current time is: 1:28:20.0
+
+Current time is: 1:28:40.0
+
+Current time is: 1:29:0.0
+
+Current time is: 1:29:20.0
+
+Current time is: 1:29:40.0
+
+Current time is: 1:30:0.0
+
+Current time is: 1:30:20.0
+
+Current time is: 1:30:40.0
+
+Current time is: 1:31:0.0
+
+Current time is: 1:31:20.0
+
+Current time is: 1:31:40.0
+
+Current time is: 1:32:0.0
+
+Current time is: 1:32:20.0
+
+Current time is: 1:32:40.0
+
+Current time is: 1:33:0.0
+
+Current time is: 1:33:20.0
+
+Current time is: 1:33:40.0
+
+Current time is: 1:34:0.0
+
+Current time is: 1:34:20.0
+
+Current time is: 1:34:40.0
+
+Current time is: 1:35:0.0
+
+Current time is: 1:35:20.0
+
+Current time is: 1:35:40.0
+
+Current time is: 1:36:0.0
+
+Current time is: 1:36:20.0
+
+Current time is: 1:36:40.0
+
+Current time is: 1:37:0.0
+
+Current time is: 1:37:20.0
+
+Current time is: 1:37:40.0
+
+Current time is: 1:38:0.0
+
+Current time is: 1:38:20.0
+
+Current time is: 1:38:40.0
+
+Current time is: 1:39:0.0
+
+Current time is: 1:39:20.0
+
+Current time is: 1:39:40.0
+
+Current time is: 1:40:0.0
+
+Current time is: 1:40:20.0
+
+Current time is: 1:40:40.0
+
+Current time is: 1:41:0.0
+
+Current time is: 1:41:20.0
+
+Current time is: 1:41:40.0
+
+Current time is: 1:42:0.0
+
+Current time is: 1:42:20.0
+
+Current time is: 1:42:40.0
+
+Current time is: 1:43:0.0
+
+Current time is: 1:43:20.0
+
+Current time is: 1:43:40.0
+
+Current time is: 1:44:0.0
+
+Current time is: 1:44:20.0
+
+Current time is: 1:44:40.0
+
+Current time is: 1:45:0.0
+
+Current time is: 1:45:20.0
+
+Current time is: 1:45:40.0
+
+Current time is: 1:46:0.0
+
+Current time is: 1:46:20.0
+
+Current time is: 1:46:40.0
+
+Current time is: 1:47:0.0
+
+Current time is: 1:47:20.0
+
+Current time is: 1:47:40.0
+
+Current time is: 1:48:0.0
+
+Current time is: 1:48:20.0
+
+Current time is: 1:48:40.0
+
+Current time is: 1:49:0.0
+
+Current time is: 1:49:20.0
+
+Current time is: 1:49:40.0
+
+Current time is: 1:50:0.0
+
+Current time is: 1:50:20.0
+
+Current time is: 1:50:40.0
+
+Current time is: 1:51:0.0
+
+Current time is: 1:51:20.0
+
+Current time is: 1:51:40.0
+
+Current time is: 1:52:0.0
+
+Current time is: 1:52:20.0
+
+Current time is: 1:52:40.0
+
+Current time is: 1:53:0.0
+
+Current time is: 1:53:20.0
+
+Current time is: 1:53:40.0
+
+Current time is: 1:54:0.0
+
+Current time is: 1:54:20.0
+
+Current time is: 1:54:40.0
+
+Current time is: 1:55:0.0
+
+Current time is: 1:55:20.0
+
+Current time is: 1:55:40.0
+
+Current time is: 1:56:0.0
+
+Current time is: 1:56:20.0
+
+Current time is: 1:56:40.0
+
+Current time is: 1:57:0.0
+
+Current time is: 1:57:20.0
+
+Current time is: 1:57:40.0
+
+Current time is: 1:58:0.0
+
+Current time is: 1:58:20.0
+
+Current time is: 1:58:40.0
+
+Current time is: 1:59:0.0
+
+Current time is: 1:59:20.0
+
+Current time is: 1:59:40.0
+
+Current time is: 2:0:0.0
+
+Current time is: 2:0:20.0
+
+Current time is: 2:0:40.0
+
+Current time is: 2:1:0.0
+
+Current time is: 2:1:20.0
+
+Current time is: 2:1:40.0
+
+Current time is: 2:2:0.0
+
+Current time is: 2:2:20.0
+
+Current time is: 2:2:40.0
+
+Current time is: 2:3:0.0
+
+Current time is: 2:3:20.0
+
+Current time is: 2:3:40.0
+
+Current time is: 2:4:0.0
+
+Current time is: 2:4:20.0
+
+Current time is: 2:4:40.0
+
+Current time is: 2:5:0.0
+
+Current time is: 2:5:20.0
+
+Current time is: 2:5:40.0
+
+Current time is: 2:6:0.0
+
+Current time is: 2:6:20.0
+
+Current time is: 2:6:40.0
+
+Current time is: 2:7:0.0
+
+Current time is: 2:7:20.0
+
+Current time is: 2:7:40.0
+
+Current time is: 2:8:0.0
+
+Current time is: 2:8:20.0
+
+Current time is: 2:8:40.0
+
+Current time is: 2:9:0.0
+
+Current time is: 2:9:20.0
+
+Current time is: 2:9:40.0
+
+Current time is: 2:10:0.0
+
+Current time is: 2:10:20.0
+
+Current time is: 2:10:40.0
+
+Current time is: 2:11:0.0
+
+Current time is: 2:11:20.0
+
+Current time is: 2:11:40.0
+
+Current time is: 2:12:0.0
+
+Current time is: 2:12:20.0
+
+Current time is: 2:12:40.0
+
+Current time is: 2:13:0.0
+
+Current time is: 2:13:20.0
+
+Current time is: 2:13:40.0
+
+Current time is: 2:14:0.0
+
+Current time is: 2:14:20.0
+
+Current time is: 2:14:40.0
+
+Current time is: 2:15:0.0
+
+Current time is: 2:15:20.0
+
+Current time is: 2:15:40.0
+
+Current time is: 2:16:0.0
+
+Current time is: 2:16:20.0
+
+Current time is: 2:16:40.0
+
+Current time is: 2:17:0.0
+
+Current time is: 2:17:20.0
+
+Current time is: 2:17:40.0
+
+Current time is: 2:18:0.0
+
+Current time is: 2:18:20.0
+
+Current time is: 2:18:40.0
+
+Current time is: 2:19:0.0
+
+Current time is: 2:19:20.0
+
+Current time is: 2:19:40.0
+
+Current time is: 2:20:0.0
+
+Current time is: 2:20:20.0
+
+Current time is: 2:20:40.0
+
+Current time is: 2:21:0.0
+
+Current time is: 2:21:20.0
+
+Current time is: 2:21:40.0
+
+Current time is: 2:22:0.0
+
+Current time is: 2:22:20.0
+
+Current time is: 2:22:40.0
+
+Current time is: 2:23:0.0
+
+Current time is: 2:23:20.0
+
+Current time is: 2:23:40.0
+
+Current time is: 2:24:0.0
+
+Current time is: 2:24:20.0
+
+Current time is: 2:24:40.0
+
+Current time is: 2:25:0.0
+
+Current time is: 2:25:20.0
+
+Current time is: 2:25:40.0
+
+Current time is: 2:26:0.0
+
+Current time is: 2:26:20.0
+
+Current time is: 2:26:40.0
+
+Current time is: 2:27:0.0
+
+Current time is: 2:27:20.0
+
+Current time is: 2:27:40.0
+
+Current time is: 2:28:0.0
+
+Current time is: 2:28:20.0
+
+Current time is: 2:28:40.0
+
+Current time is: 2:29:0.0
+
+Current time is: 2:29:20.0
+
+Current time is: 2:29:40.0
+
+Current time is: 2:30:0.0
+
+Current time is: 2:30:20.0
+
+Current time is: 2:30:40.0
+
+Current time is: 2:31:0.0
+
+Current time is: 2:31:20.0
+
+Current time is: 2:31:40.0
+
+Current time is: 2:32:0.0
+
+Current time is: 2:32:20.0
+
+Current time is: 2:32:40.0
+
+Current time is: 2:33:0.0
+
+Current time is: 2:33:20.0
+
+Current time is: 2:33:40.0
+
+Current time is: 2:34:0.0
+
+Current time is: 2:34:20.0
+
+Current time is: 2:34:40.0
+
+Current time is: 2:35:0.0
+
+Current time is: 2:35:20.0
+
+Current time is: 2:35:40.0
+
+Current time is: 2:36:0.0
+
+Current time is: 2:36:20.0
+
+Current time is: 2:36:40.0
+
+Current time is: 2:37:0.0
+
+Current time is: 2:37:20.0
+
+Current time is: 2:37:40.0
+
+Current time is: 2:38:0.0
+
+Current time is: 2:38:20.0
+
+Current time is: 2:38:40.0
+
+Current time is: 2:39:0.0
+
+Current time is: 2:39:20.0
+
+Current time is: 2:39:40.0
+
+Current time is: 2:40:0.0
+
+Current time is: 2:40:20.0
+
+Current time is: 2:40:40.0
+
+Current time is: 2:41:0.0
+
+Current time is: 2:41:20.0
+
+Current time is: 2:41:40.0
+
+Current time is: 2:42:0.0
+
+Current time is: 2:42:20.0
+
+Current time is: 2:42:40.0
+
+Current time is: 2:43:0.0
+
+Current time is: 2:43:20.0
+
+Current time is: 2:43:40.0
+
+Current time is: 2:44:0.0
+
+Current time is: 2:44:20.0
+
+Current time is: 2:44:40.0
+
+Current time is: 2:45:0.0
+
+Current time is: 2:45:20.0
+
+Current time is: 2:45:40.0
+
+Current time is: 2:46:0.0
+
+Current time is: 2:46:20.0
+
+Current time is: 2:46:40.0
+
+Current time is: 2:47:0.0
+
+Current time is: 2:47:20.0
+
+Current time is: 2:47:40.0
+
+Current time is: 2:48:0.0
+
+Current time is: 2:48:20.0
+
+Current time is: 2:48:40.0
+
+Current time is: 2:49:0.0
+
+Current time is: 2:49:20.0
+
+Current time is: 2:49:40.0
+
+Current time is: 2:50:0.0
+
+Current time is: 2:50:20.0
+
+Current time is: 2:50:40.0
+
+Current time is: 2:51:0.0
+
+Current time is: 2:51:20.0
+
+Current time is: 2:51:40.0
+
+Current time is: 2:52:0.0
+
+Current time is: 2:52:20.0
+
+Current time is: 2:52:40.0
+
+Current time is: 2:53:0.0
+
+Current time is: 2:53:20.0
+
+Current time is: 2:53:40.0
+
+Current time is: 2:54:0.0
+
+Current time is: 2:54:20.0
+
+Current time is: 2:54:40.0
+
+Current time is: 2:55:0.0
+
+Current time is: 2:55:20.0
+
+Current time is: 2:55:40.0
+
+Current time is: 2:56:0.0
+
+Current time is: 2:56:20.0
+
+Current time is: 2:56:40.0
+
+Current time is: 2:57:0.0
+
+Current time is: 2:57:20.0
+
+Current time is: 2:57:40.0
+
+Current time is: 2:58:0.0
+
+Current time is: 2:58:20.0
+
+Current time is: 2:58:40.0
+
+Current time is: 2:59:0.0
+
+Current time is: 2:59:20.0
+
+Current time is: 2:59:40.0
+
+Current time is: 3:0:0.0
+
+Current time is: 3:0:20.0
+
+Current time is: 3:0:40.0
+
+Current time is: 3:1:0.0
+
+Current time is: 3:1:20.0
+
+Current time is: 3:1:40.0
+
+Current time is: 3:2:0.0
+
+Current time is: 3:2:20.0
+
+Current time is: 3:2:40.0
+
+Current time is: 3:3:0.0
+
+Current time is: 3:3:20.0
+
+Current time is: 3:3:40.0
+
+Current time is: 3:4:0.0
+
+Current time is: 3:4:20.0
+
+Current time is: 3:4:40.0
+
+Current time is: 3:5:0.0
+
+Current time is: 3:5:20.0
+
+Current time is: 3:5:40.0
+
+Current time is: 3:6:0.0
+
+Current time is: 3:6:20.0
+
+Current time is: 3:6:40.0
+
+Current time is: 3:7:0.0
+
+Current time is: 3:7:20.0
+
+Current time is: 3:7:40.0
+
+Current time is: 3:8:0.0
+
+Current time is: 3:8:20.0
+
+Current time is: 3:8:40.0
+
+Current time is: 3:9:0.0
+
+Current time is: 3:9:20.0
+
+Current time is: 3:9:40.0
+
+Current time is: 3:10:0.0
+
+Current time is: 3:10:20.0
+
+Current time is: 3:10:40.0
+
+Current time is: 3:11:0.0
+
+Current time is: 3:11:20.0
+
+Current time is: 3:11:40.0
+
+Current time is: 3:12:0.0
+
+Current time is: 3:12:20.0
+
+Current time is: 3:12:40.0
+
+Current time is: 3:13:0.0
+
+Current time is: 3:13:20.0
+
+Current time is: 3:13:40.0
+
+Current time is: 3:14:0.0
+
+Current time is: 3:14:20.0
+
+Current time is: 3:14:40.0
+
+Current time is: 3:15:0.0
+
+Current time is: 3:15:20.0
+
+Current time is: 3:15:40.0
+
+Current time is: 3:16:0.0
+
+Current time is: 3:16:20.0
+
+Current time is: 3:16:40.0
+
+Current time is: 3:17:0.0
+
+Current time is: 3:17:20.0
+
+Current time is: 3:17:40.0
+
+Current time is: 3:18:0.0
+
+Current time is: 3:18:20.0
+
+Current time is: 3:18:40.0
+
+Current time is: 3:19:0.0
+
+Current time is: 3:19:20.0
+
+Current time is: 3:19:40.0
+
+Current time is: 3:20:0.0
+
+Current time is: 3:20:20.0
+
+Current time is: 3:20:40.0
+
+Current time is: 3:21:0.0
+
+Current time is: 3:21:20.0
+
+Current time is: 3:21:40.0
+
+Current time is: 3:22:0.0
+
+Current time is: 3:22:20.0
+
+Current time is: 3:22:40.0
+
+Current time is: 3:23:0.0
+
+Current time is: 3:23:20.0
+
+Current time is: 3:23:40.0
+
+Current time is: 3:24:0.0
+
+Current time is: 3:24:20.0
+
+Current time is: 3:24:40.0
+
+Current time is: 3:25:0.0
+
+Current time is: 3:25:20.0
+
+Current time is: 3:25:40.0
+
+Current time is: 3:26:0.0
+
+Current time is: 3:26:20.0
+
+Current time is: 3:26:40.0
+
+Current time is: 3:27:0.0
+
+Current time is: 3:27:20.0
+
+Current time is: 3:27:40.0
+
+Current time is: 3:28:0.0
+
+Current time is: 3:28:20.0
+
+Current time is: 3:28:40.0
+
+Current time is: 3:29:0.0
+
+Current time is: 3:29:20.0
+
+Current time is: 3:29:40.0
+
+Current time is: 3:30:0.0
+
+Current time is: 3:30:20.0
+
+Current time is: 3:30:40.0
+
+Current time is: 3:31:0.0
+
+Current time is: 3:31:20.0
+
+Current time is: 3:31:40.0
+
+Current time is: 3:32:0.0
+
+Current time is: 3:32:20.0
+
+Current time is: 3:32:40.0
+
+Current time is: 3:33:0.0
+
+Current time is: 3:33:20.0
+
+Current time is: 3:33:40.0
+
+Current time is: 3:34:0.0
+
+Current time is: 3:34:20.0
+
+Current time is: 3:34:40.0
+
+Current time is: 3:35:0.0
+
+Current time is: 3:35:20.0
+
+Current time is: 3:35:40.0
+
+Current time is: 3:36:0.0
+
+Current time is: 3:36:20.0
+
+Current time is: 3:36:40.0
+
+Current time is: 3:37:0.0
+
+Current time is: 3:37:20.0
+
+Current time is: 3:37:40.0
+
+Current time is: 3:38:0.0
+
+Current time is: 3:38:20.0
+
+Current time is: 3:38:40.0
+
+Current time is: 3:39:0.0
+
+Current time is: 3:39:20.0
+
+Current time is: 3:39:40.0
+
+Current time is: 3:40:0.0
+
+Current time is: 3:40:20.0
+
+Current time is: 3:40:40.0
+
+Current time is: 3:41:0.0
+
+Current time is: 3:41:20.0
+
+Current time is: 3:41:40.0
+
+Current time is: 3:42:0.0
+
+Current time is: 3:42:20.0
+
+Current time is: 3:42:40.0
+
+Current time is: 3:43:0.0
+
+Current time is: 3:43:20.0
+
+Current time is: 3:43:40.0
+
+Current time is: 3:44:0.0
+
+Current time is: 3:44:20.0
+
+Current time is: 3:44:40.0
+
+Current time is: 3:45:0.0
+
+Current time is: 3:45:20.0
+
+Current time is: 3:45:40.0
+
+Current time is: 3:46:0.0
+
+Current time is: 3:46:20.0
+
+Current time is: 3:46:40.0
+
+Current time is: 3:47:0.0
+
+Current time is: 3:47:20.0
+
+Current time is: 3:47:40.0
+
+Current time is: 3:48:0.0
+
+Current time is: 3:48:20.0
+
+Current time is: 3:48:40.0
+
+Current time is: 3:49:0.0
+
+Current time is: 3:49:20.0
+
+Current time is: 3:49:40.0
+
+Current time is: 3:50:0.0
+
+Current time is: 3:50:20.0
+
+Current time is: 3:50:40.0
+
+Current time is: 3:51:0.0
+
+Current time is: 3:51:20.0
+
+Current time is: 3:51:40.0
+
+Current time is: 3:52:0.0
+
+Current time is: 3:52:20.0
+
+Current time is: 3:52:40.0
+
+Current time is: 3:53:0.0
+
+Current time is: 3:53:20.0
+
+Current time is: 3:53:40.0
+
+Current time is: 3:54:0.0
+
+Current time is: 3:54:20.0
+
+Current time is: 3:54:40.0
+
+Current time is: 3:55:0.0
+
+Current time is: 3:55:20.0
+
+Current time is: 3:55:40.0
+
+Current time is: 3:56:0.0
+
+Current time is: 3:56:20.0
+
+Current time is: 3:56:40.0
+
+Current time is: 3:57:0.0
+
+Current time is: 3:57:20.0
+
+Current time is: 3:57:40.0
+
+Current time is: 3:58:0.0
+
+Current time is: 3:58:20.0
+
+Current time is: 3:58:40.0
+
+Current time is: 3:59:0.0
+
+Current time is: 3:59:20.0
+
+Current time is: 3:59:40.0
+
+Current time is: 4:0:0.0
+
+Current time is: 4:0:20.0
+
+Current time is: 4:0:40.0
+
+Current time is: 4:1:0.0
+
+Current time is: 4:1:20.0
+
+Current time is: 4:1:40.0
+
+Current time is: 4:2:0.0
+
+Current time is: 4:2:20.0
+
+Current time is: 4:2:40.0
+
+Current time is: 4:3:0.0
+
+Current time is: 4:3:20.0
+
+Current time is: 4:3:40.0
+
+Current time is: 4:4:0.0
+
+Current time is: 4:4:20.0
+
+Current time is: 4:4:40.0
+
+Current time is: 4:5:0.0
+
+Current time is: 4:5:20.0
+
+Current time is: 4:5:40.0
+
+Current time is: 4:6:0.0
+
+Current time is: 4:6:20.0
+
+Current time is: 4:6:40.0
+
+Current time is: 4:7:0.0
+
+Current time is: 4:7:20.0
+
+Current time is: 4:7:40.0
+
+Current time is: 4:8:0.0
+
+Current time is: 4:8:20.0
+
+Current time is: 4:8:40.0
+
+Current time is: 4:9:0.0
+
+Current time is: 4:9:20.0
+
+Current time is: 4:9:40.0
+
+Current time is: 4:10:0.0
+
+Current time is: 4:10:20.0
+
+Current time is: 4:10:40.0
+
+Current time is: 4:11:0.0
+
+Current time is: 4:11:20.0
+
+Current time is: 4:11:40.0
+
+Current time is: 4:12:0.0
+
+Current time is: 4:12:20.0
+
+Current time is: 4:12:40.0
+
+Current time is: 4:13:0.0
+
+Current time is: 4:13:20.0
+
+Current time is: 4:13:40.0
+
+Current time is: 4:14:0.0
+
+Current time is: 4:14:20.0
+
+Current time is: 4:14:40.0
+
+Current time is: 4:15:0.0
+
+Current time is: 4:15:20.0
+
+Current time is: 4:15:40.0
+
+Current time is: 4:16:0.0
+
+Current time is: 4:16:20.0
+
+Current time is: 4:16:40.0
+
+Current time is: 4:17:0.0
+
+Current time is: 4:17:20.0
+
+Current time is: 4:17:40.0
+
+Current time is: 4:18:0.0
+
+Current time is: 4:18:20.0
+
+Current time is: 4:18:40.0
+
+Current time is: 4:19:0.0
+
+Current time is: 4:19:20.0
+
+Current time is: 4:19:40.0
+
+Current time is: 4:20:0.0
+
+Current time is: 4:20:20.0
+
+Current time is: 4:20:40.0
+
+Current time is: 4:21:0.0
+
+Current time is: 4:21:20.0
+
+Current time is: 4:21:40.0
+
+Current time is: 4:22:0.0
+
+Current time is: 4:22:20.0
+
+Current time is: 4:22:40.0
+
+Current time is: 4:23:0.0
+
+Current time is: 4:23:20.0
+
+Current time is: 4:23:40.0
+
+Current time is: 4:24:0.0
+
+Current time is: 4:24:20.0
+
+Current time is: 4:24:40.0
+
+Current time is: 4:25:0.0
+
+Current time is: 4:25:20.0
+
+Current time is: 4:25:40.0
+
+Current time is: 4:26:0.0
+
+Current time is: 4:26:20.0
+
+Current time is: 4:26:40.0
+
+Current time is: 4:27:0.0
+
+Current time is: 4:27:20.0
+
+Current time is: 4:27:40.0
+
+Current time is: 4:28:0.0
+
+Current time is: 4:28:20.0
+
+Current time is: 4:28:40.0
+
+Current time is: 4:29:0.0
+
+Current time is: 4:29:20.0
+
+Current time is: 4:29:40.0
+
+Current time is: 4:30:0.0
+
+Current time is: 4:30:20.0
+
+Current time is: 4:30:40.0
+
+Current time is: 4:31:0.0
+
+Current time is: 4:31:20.0
+
+Current time is: 4:31:40.0
+
+Current time is: 4:32:0.0
+
+Current time is: 4:32:20.0
+
+Current time is: 4:32:40.0
+
+Current time is: 4:33:0.0
+
+Current time is: 4:33:20.0
+
+Current time is: 4:33:40.0
+
+Current time is: 4:34:0.0
+
+Current time is: 4:34:20.0
+
+Current time is: 4:34:40.0
+
+Current time is: 4:35:0.0
+
+Current time is: 4:35:20.0
+
+Current time is: 4:35:40.0
+
+Current time is: 4:36:0.0
+
+Current time is: 4:36:20.0
+
+Current time is: 4:36:40.0
+
+Current time is: 4:37:0.0
+
+Current time is: 4:37:20.0
+
+Current time is: 4:37:40.0
+
+Current time is: 4:38:0.0
+
+Current time is: 4:38:20.0
+
+Current time is: 4:38:40.0
+
+Current time is: 4:39:0.0
+
+Current time is: 4:39:20.0
+
+Current time is: 4:39:40.0
+
+Current time is: 4:40:0.0
+
+Current time is: 4:40:20.0
+
+Current time is: 4:40:40.0
+
+Current time is: 4:41:0.0
+
+Current time is: 4:41:20.0
+
+Current time is: 4:41:40.0
+
+Current time is: 4:42:0.0
+
+Current time is: 4:42:20.0
+
+Current time is: 4:42:40.0
+
+Current time is: 4:43:0.0
+
+Current time is: 4:43:20.0
+
+Current time is: 4:43:40.0
+
+Current time is: 4:44:0.0
+
+Current time is: 4:44:20.0
+
+Current time is: 4:44:40.0
+
+Current time is: 4:45:0.0
+
+Current time is: 4:45:20.0
+
+Current time is: 4:45:40.0
+
+Current time is: 4:46:0.0
+
+Current time is: 4:46:20.0
+
+Current time is: 4:46:40.0
+
+Current time is: 4:47:0.0
+
+Current time is: 4:47:20.0
+
+Current time is: 4:47:40.0
+
+Current time is: 4:48:0.0
+
+Current time is: 4:48:20.0
+
+Current time is: 4:48:40.0
+
+Current time is: 4:49:0.0
+
+Current time is: 4:49:20.0
+
+Current time is: 4:49:40.0
+
+Current time is: 4:50:0.0
+
+Current time is: 4:50:20.0
+
+Current time is: 4:50:40.0
+
+Current time is: 4:51:0.0
+
+Current time is: 4:51:20.0
+
+Current time is: 4:51:40.0
+
+Current time is: 4:52:0.0
+
+Current time is: 4:52:20.0
+
+Current time is: 4:52:40.0
+
+Current time is: 4:53:0.0
+
+Current time is: 4:53:20.0
+
+Current time is: 4:53:40.0
+
+Current time is: 4:54:0.0
+
+Current time is: 4:54:20.0
+
+Current time is: 4:54:40.0
+
+Current time is: 4:55:0.0
+
+Current time is: 4:55:20.0
+
+Current time is: 4:55:40.0
+
+Current time is: 4:56:0.0
+
+Current time is: 4:56:20.0
+
+Current time is: 4:56:40.0
+
+Current time is: 4:57:0.0
+
+Current time is: 4:57:20.0
+
+Current time is: 4:57:40.0
+
+Current time is: 4:58:0.0
+
+Current time is: 4:58:20.0
+
+Current time is: 4:58:40.0
+
+Current time is: 4:59:0.0
+
+Current time is: 4:59:20.0
+
+Current time is: 4:59:40.0
+
+Current time is: 5:0:0.0
+
+Current time is: 5:0:20.0
+
+Current time is: 5:0:40.0
+
+Current time is: 5:1:0.0
+
+Current time is: 5:1:20.0
+
+Current time is: 5:1:40.0
+
+Current time is: 5:2:0.0
+
+Current time is: 5:2:20.0
+
+Current time is: 5:2:40.0
+
+Current time is: 5:3:0.0
+
+Current time is: 5:3:20.0
+
+Current time is: 5:3:40.0
+
+Current time is: 5:4:0.0
+
+Current time is: 5:4:20.0
+
+Current time is: 5:4:40.0
+
+Current time is: 5:5:0.0
+
+Current time is: 5:5:20.0
+
+Current time is: 5:5:40.0
+
+Current time is: 5:6:0.0
+
+Current time is: 5:6:20.0
+
+Current time is: 5:6:40.0
+
+Current time is: 5:7:0.0
+
+Current time is: 5:7:20.0
+
+Current time is: 5:7:40.0
+
+Current time is: 5:8:0.0
+
+Current time is: 5:8:20.0
+
+Current time is: 5:8:40.0
+
+Current time is: 5:9:0.0
+
+Current time is: 5:9:20.0
+
+Current time is: 5:9:40.0
+
+Current time is: 5:10:0.0
+
+Current time is: 5:10:20.0
+
+Current time is: 5:10:40.0
+
+Current time is: 5:11:0.0
+
+Current time is: 5:11:20.0
+
+Current time is: 5:11:40.0
+
+Current time is: 5:12:0.0
+
+Current time is: 5:12:20.0
+
+Current time is: 5:12:40.0
+
+Current time is: 5:13:0.0
+
+Current time is: 5:13:20.0
+
+Current time is: 5:13:40.0
+
+Current time is: 5:14:0.0
+
+Current time is: 5:14:20.0
+
+Current time is: 5:14:40.0
+
+Current time is: 5:15:0.0
+
+Current time is: 5:15:20.0
+
+Current time is: 5:15:40.0
+
+Current time is: 5:16:0.0
+
+Current time is: 5:16:20.0
+
+Current time is: 5:16:40.0
+
+Current time is: 5:17:0.0
+
+Current time is: 5:17:20.0
+
+Current time is: 5:17:40.0
+
+Current time is: 5:18:0.0
+
+Current time is: 5:18:20.0
+
+Current time is: 5:18:40.0
+
+Current time is: 5:19:0.0
+
+Current time is: 5:19:20.0
+
+Current time is: 5:19:40.0
+
+Current time is: 5:20:0.0
+
+Current time is: 5:20:20.0
+
+Current time is: 5:20:40.0
+
+Current time is: 5:21:0.0
+
+Current time is: 5:21:20.0
+
+Current time is: 5:21:40.0
+
+Current time is: 5:22:0.0
+
+Current time is: 5:22:20.0
+
+Current time is: 5:22:40.0
+
+Current time is: 5:23:0.0
+
+Current time is: 5:23:20.0
+
+Current time is: 5:23:40.0
+
+Current time is: 5:24:0.0
+
+Current time is: 5:24:20.0
+
+Current time is: 5:24:40.0
+
+Current time is: 5:25:0.0
+
+Current time is: 5:25:20.0
+
+Current time is: 5:25:40.0
+
+Current time is: 5:26:0.0
+
+Current time is: 5:26:20.0
+
+Current time is: 5:26:40.0
+
+Current time is: 5:27:0.0
+
+Current time is: 5:27:20.0
+
+Current time is: 5:27:40.0
+
+Current time is: 5:28:0.0
+
+Current time is: 5:28:20.0
+
+Current time is: 5:28:40.0
+
+Current time is: 5:29:0.0
+
+Current time is: 5:29:20.0
+
+Current time is: 5:29:40.0
+
+Current time is: 5:30:0.0
+
+Current time is: 5:30:20.0
+
+Current time is: 5:30:40.0
+
+Current time is: 5:31:0.0
+
+Current time is: 5:31:20.0
+
+Current time is: 5:31:40.0
+
+Current time is: 5:32:0.0
+
+Current time is: 5:32:20.0
+
+Current time is: 5:32:40.0
+
+Current time is: 5:33:0.0
+
+Current time is: 5:33:20.0
+
+Current time is: 5:33:40.0
+
+Current time is: 5:34:0.0
+
+Current time is: 5:34:20.0
+
+Current time is: 5:34:40.0
+
+Current time is: 5:35:0.0
+
+Current time is: 5:35:20.0
+
+Current time is: 5:35:40.0
+
+Current time is: 5:36:0.0
+
+Current time is: 5:36:20.0
+
+Current time is: 5:36:40.0
+
+Current time is: 5:37:0.0
+
+Current time is: 5:37:20.0
+
+Current time is: 5:37:40.0
+
+Current time is: 5:38:0.0
+
+Current time is: 5:38:20.0
+
+Current time is: 5:38:40.0
+
+Current time is: 5:39:0.0
+
+Current time is: 5:39:20.0
+
+Current time is: 5:39:40.0
+
+Current time is: 5:40:0.0
+
+Current time is: 5:40:20.0
+
+Current time is: 5:40:40.0
+
+Current time is: 5:41:0.0
+
+Current time is: 5:41:20.0
+
+Current time is: 5:41:40.0
+
+Current time is: 5:42:0.0
+
+Current time is: 5:42:20.0
+
+Current time is: 5:42:40.0
+
+Current time is: 5:43:0.0
+
+Current time is: 5:43:20.0
+
+Current time is: 5:43:40.0
+
+Current time is: 5:44:0.0
+
+Current time is: 5:44:20.0
+
+Current time is: 5:44:40.0
+
+Current time is: 5:45:0.0
+
+Current time is: 5:45:20.0
+
+Current time is: 5:45:40.0
+
+Current time is: 5:46:0.0
+
+Current time is: 5:46:20.0
+
+Current time is: 5:46:40.0
+
+Current time is: 5:47:0.0
+
+Current time is: 5:47:20.0
+
+Current time is: 5:47:40.0
+
+Current time is: 5:48:0.0
+
+Current time is: 5:48:20.0
+
+Current time is: 5:48:40.0
+
+Current time is: 5:49:0.0
+
+Current time is: 5:49:20.0
+
+Current time is: 5:49:40.0
+
+Current time is: 5:50:0.0
+
+Current time is: 5:50:20.0
+
+Current time is: 5:50:40.0
+
+Current time is: 5:51:0.0
+
+Current time is: 5:51:20.0
+
+Current time is: 5:51:40.0
+
+Current time is: 5:52:0.0
+
+Current time is: 5:52:20.0
+
+Current time is: 5:52:40.0
+
+Current time is: 5:53:0.0
+
+Current time is: 5:53:20.0
+
+Current time is: 5:53:40.0
+
+Current time is: 5:54:0.0
+
+Current time is: 5:54:20.0
+
+Current time is: 5:54:40.0
+
+Current time is: 5:55:0.0
+
+Current time is: 5:55:20.0
+
+Current time is: 5:55:40.0
+
+Current time is: 5:56:0.0
+
+Current time is: 5:56:20.0
+
+Current time is: 5:56:40.0
+
+Current time is: 5:57:0.0
+
+Current time is: 5:57:20.0
+
+Current time is: 5:57:40.0
+
+Current time is: 5:58:0.0
+
+Current time is: 5:58:20.0
+
+Current time is: 5:58:40.0
+
+Current time is: 5:59:0.0
+
+Current time is: 5:59:20.0
+
+Current time is: 5:59:40.0
+
+Current time is: 6:0:0.0
+
+Current time is: 6:0:20.0
+
+Current time is: 6:0:40.0
+
+Current time is: 6:1:0.0
+
+Current time is: 6:1:20.0
+
+Current time is: 6:1:40.0
+
+Current time is: 6:2:0.0
+
+Current time is: 6:2:20.0
+
+Current time is: 6:2:40.0
+
+Current time is: 6:3:0.0
+
+Current time is: 6:3:20.0
+
+Current time is: 6:3:40.0
+
+Current time is: 6:4:0.0
+
+Current time is: 6:4:20.0
+
+Current time is: 6:4:40.0
+
+Current time is: 6:5:0.0
+
+Current time is: 6:5:20.0
+
+Current time is: 6:5:40.0
+
+Current time is: 6:6:0.0
+
+Current time is: 6:6:20.0
+
+Current time is: 6:6:40.0
+
+Current time is: 6:7:0.0
+
+Current time is: 6:7:20.0
+
+Current time is: 6:7:40.0
+
+Current time is: 6:8:0.0
+
+Current time is: 6:8:20.0
+
+Current time is: 6:8:40.0
+
+Current time is: 6:9:0.0
+
+Current time is: 6:9:20.0
+
+Current time is: 6:9:40.0
+
+Current time is: 6:10:0.0
+
+Current time is: 6:10:20.0
+
+Current time is: 6:10:40.0
+
+Current time is: 6:11:0.0
+
+Current time is: 6:11:20.0
+
+Current time is: 6:11:40.0
+
+Current time is: 6:12:0.0
+
+Current time is: 6:12:20.0
+
+Current time is: 6:12:40.0
+
+Current time is: 6:13:0.0
+
+Current time is: 6:13:20.0
+
+Current time is: 6:13:40.0
+
+Current time is: 6:14:0.0
+
+Current time is: 6:14:20.0
+
+Current time is: 6:14:40.0
+
+Current time is: 6:15:0.0
+
+Current time is: 6:15:20.0
+
+Current time is: 6:15:40.0
+
+Current time is: 6:16:0.0
+
+Current time is: 6:16:20.0
+
+Current time is: 6:16:40.0
+
+Current time is: 6:17:0.0
+
+Current time is: 6:17:20.0
+
+Current time is: 6:17:40.0
+
+Current time is: 6:18:0.0
+
+Current time is: 6:18:20.0
+
+Current time is: 6:18:40.0
+
+Current time is: 6:19:0.0
+
+Current time is: 6:19:20.0
+
+Current time is: 6:19:40.0
+
+Current time is: 6:20:0.0
+
+Current time is: 6:20:20.0
+
+Current time is: 6:20:40.0
+
+Current time is: 6:21:0.0
+
+Current time is: 6:21:20.0
+
+Current time is: 6:21:40.0
+
+Current time is: 6:22:0.0
+
+Current time is: 6:22:20.0
+
+Current time is: 6:22:40.0
+
+Current time is: 6:23:0.0
+
+Current time is: 6:23:20.0
+
+Current time is: 6:23:40.0
+
+Current time is: 6:24:0.0
+
+Current time is: 6:24:20.0
+
+Current time is: 6:24:40.0
+
+Current time is: 6:25:0.0
+
+Current time is: 6:25:20.0
+
+Current time is: 6:25:40.0
+
+Current time is: 6:26:0.0
+
+Current time is: 6:26:20.0
+
+Current time is: 6:26:40.0
+
+Current time is: 6:27:0.0
+
+Current time is: 6:27:20.0
+
+Current time is: 6:27:40.0
+
+Current time is: 6:28:0.0
+
+Current time is: 6:28:20.0
+
+Current time is: 6:28:40.0
+
+Current time is: 6:29:0.0
+
+Current time is: 6:29:20.0
+
+Current time is: 6:29:40.0
+
+Current time is: 6:30:0.0
+
+Current time is: 6:30:20.0
+
+Current time is: 6:30:40.0
+
+Current time is: 6:31:0.0
+
+Current time is: 6:31:20.0
+
+Current time is: 6:31:40.0
+
+Current time is: 6:32:0.0
+
+Current time is: 6:32:20.0
+
+Current time is: 6:32:40.0
+
+Current time is: 6:33:0.0
+
+Current time is: 6:33:20.0
+
+Current time is: 6:33:40.0
+
+Current time is: 6:34:0.0
+
+Current time is: 6:34:20.0
+
+Current time is: 6:34:40.0
+
+Current time is: 6:35:0.0
+
+Current time is: 6:35:20.0
+
+Current time is: 6:35:40.0
+
+Current time is: 6:36:0.0
+
+Current time is: 6:36:20.0
+
+Current time is: 6:36:40.0
+
+Current time is: 6:37:0.0
+
+Current time is: 6:37:20.0
+
+Current time is: 6:37:40.0
+
+Current time is: 6:38:0.0
+
+Current time is: 6:38:20.0
+
+Current time is: 6:38:40.0
+
+Current time is: 6:39:0.0
+
+Current time is: 6:39:20.0
+
+Current time is: 6:39:40.0
+
+Current time is: 6:40:0.0
+
+Current time is: 6:40:20.0
+
+Current time is: 6:40:40.0
+
+Current time is: 6:41:0.0
+
+Current time is: 6:41:20.0
+
+Current time is: 6:41:40.0
+
+Current time is: 6:42:0.0
+
+Current time is: 6:42:20.0
+
+Current time is: 6:42:40.0
+
+Current time is: 6:43:0.0
+
+Current time is: 6:43:20.0
+
+Current time is: 6:43:40.0
+
+Current time is: 6:44:0.0
+
+Current time is: 6:44:20.0
+
+Current time is: 6:44:40.0
+
+Current time is: 6:45:0.0
+
+Current time is: 6:45:20.0
+
+Current time is: 6:45:40.0
+
+Current time is: 6:46:0.0
+
+Current time is: 6:46:20.0
+
+Current time is: 6:46:40.0
+
+Current time is: 6:47:0.0
+
+Current time is: 6:47:20.0
+
+Current time is: 6:47:40.0
+
+Current time is: 6:48:0.0
+
+Current time is: 6:48:20.0
+
+Current time is: 6:48:40.0
+
+Current time is: 6:49:0.0
+
+Current time is: 6:49:20.0
+
+Current time is: 6:49:40.0
+
+Current time is: 6:50:0.0
+
+Current time is: 6:50:20.0
+
+Current time is: 6:50:40.0
+
+Current time is: 6:51:0.0
+
+Current time is: 6:51:20.0
+
+Current time is: 6:51:40.0
+
+Current time is: 6:52:0.0
+
+Current time is: 6:52:20.0
+
+Current time is: 6:52:40.0
+
+Current time is: 6:53:0.0
+
+Current time is: 6:53:20.0
+
+Current time is: 6:53:40.0
+
+Current time is: 6:54:0.0
+
+Current time is: 6:54:20.0
+
+Current time is: 6:54:40.0
+
+Current time is: 6:55:0.0
+
+Current time is: 6:55:20.0
+
+Current time is: 6:55:40.0
+
+Current time is: 6:56:0.0
+
+Current time is: 6:56:20.0
+
+Current time is: 6:56:40.0
+
+Current time is: 6:57:0.0
+
+Current time is: 6:57:20.0
+
+Current time is: 6:57:40.0
+
+Current time is: 6:58:0.0
+
+Current time is: 6:58:20.0
+
+Current time is: 6:58:40.0
+
+Current time is: 6:59:0.0
+
+Current time is: 6:59:20.0
+
+Current time is: 6:59:40.0
+
+Current time is: 7:0:0.0
+
+Current time is: 7:0:20.0
+
+Current time is: 7:0:40.0
+
+Current time is: 7:1:0.0
+
+Current time is: 7:1:20.0
+
+Current time is: 7:1:40.0
+
+Current time is: 7:2:0.0
+
+Current time is: 7:2:20.0
+
+Current time is: 7:2:40.0
+
+Current time is: 7:3:0.0
+
+Current time is: 7:3:20.0
+
+Current time is: 7:3:40.0
+
+Current time is: 7:4:0.0
+
+Current time is: 7:4:20.0
+
+Current time is: 7:4:40.0
+
+Current time is: 7:5:0.0
+
+Current time is: 7:5:20.0
+
+Current time is: 7:5:40.0
+
+Current time is: 7:6:0.0
+
+Current time is: 7:6:20.0
+
+Current time is: 7:6:40.0
+
+Current time is: 7:7:0.0
+
+Current time is: 7:7:20.0
+
+Current time is: 7:7:40.0
+
+Current time is: 7:8:0.0
+
+Current time is: 7:8:20.0
+
+Current time is: 7:8:40.0
+
+Current time is: 7:9:0.0
+
+Current time is: 7:9:20.0
+
+Current time is: 7:9:40.0
+
+Current time is: 7:10:0.0
+
+Current time is: 7:10:20.0
+
+Current time is: 7:10:40.0
+
+Current time is: 7:11:0.0
+
+Current time is: 7:11:20.0
+
+Current time is: 7:11:40.0
+
+Current time is: 7:12:0.0
+
+Current time is: 7:12:20.0
+
+Current time is: 7:12:40.0
+
+Current time is: 7:13:0.0
+
+Current time is: 7:13:20.0
+
+Current time is: 7:13:40.0
+
+Current time is: 7:14:0.0
+
+Current time is: 7:14:20.0
+
+Current time is: 7:14:40.0
+
+Current time is: 7:15:0.0
+
+Current time is: 7:15:20.0
+
+Current time is: 7:15:40.0
+
+Current time is: 7:16:0.0
+
+Current time is: 7:16:20.0
+
+Current time is: 7:16:40.0
+
+Current time is: 7:17:0.0
+
+Current time is: 7:17:20.0
+
+Current time is: 7:17:40.0
+
+Current time is: 7:18:0.0
+
+Current time is: 7:18:20.0
+
+Current time is: 7:18:40.0
+
+Current time is: 7:19:0.0
+
+Current time is: 7:19:20.0
+
+Current time is: 7:19:40.0
+
+Current time is: 7:20:0.0
+
+Current time is: 7:20:20.0
+
+Current time is: 7:20:40.0
+
+Current time is: 7:21:0.0
+
+Current time is: 7:21:20.0
+
+Current time is: 7:21:40.0
+
+Current time is: 7:22:0.0
+
+Current time is: 7:22:20.0
+
+Current time is: 7:22:40.0
+
+Current time is: 7:23:0.0
+
+Current time is: 7:23:20.0
+
+Current time is: 7:23:40.0
+
+Current time is: 7:24:0.0
+
+Current time is: 7:24:20.0
+
+Current time is: 7:24:40.0
+
+Current time is: 7:25:0.0
+
+Current time is: 7:25:20.0
+
+Current time is: 7:25:40.0
+
+Current time is: 7:26:0.0
+
+Current time is: 7:26:20.0
+
+Current time is: 7:26:40.0
+
+Current time is: 7:27:0.0
+
+Current time is: 7:27:20.0
+
+Current time is: 7:27:40.0
+
+Current time is: 7:28:0.0
+
+Current time is: 7:28:20.0
+
+Current time is: 7:28:40.0
+
+Current time is: 7:29:0.0
+
+Current time is: 7:29:20.0
+
+Current time is: 7:29:40.0
+
+Current time is: 7:30:0.0
+
+Current time is: 7:30:20.0
+
+Current time is: 7:30:40.0
+
+Current time is: 7:31:0.0
+
+Current time is: 7:31:20.0
+
+Current time is: 7:31:40.0
+
+Current time is: 7:32:0.0
+
+Current time is: 7:32:20.0
+
+Current time is: 7:32:40.0
+
+Current time is: 7:33:0.0
+
+Current time is: 7:33:20.0
+
+Current time is: 7:33:40.0
+
+Current time is: 7:34:0.0
+
+Current time is: 7:34:20.0
+
+Current time is: 7:34:40.0
+
+Current time is: 7:35:0.0
+
+Current time is: 7:35:20.0
+
+Current time is: 7:35:40.0
+
+Current time is: 7:36:0.0
+
+Current time is: 7:36:20.0
+
+Current time is: 7:36:40.0
+
+Current time is: 7:37:0.0
+
+Current time is: 7:37:20.0
+
+Current time is: 7:37:40.0
+
+Current time is: 7:38:0.0
+
+Current time is: 7:38:20.0
+
+Current time is: 7:38:40.0
+
+Current time is: 7:39:0.0
+
+Current time is: 7:39:20.0
+
+Current time is: 7:39:40.0
+
+Current time is: 7:40:0.0
+
+Current time is: 7:40:20.0
+
+Current time is: 7:40:40.0
+
+Current time is: 7:41:0.0
+
+Current time is: 7:41:20.0
+
+Current time is: 7:41:40.0
+
+Current time is: 7:42:0.0
+
+Current time is: 7:42:20.0
+
+Current time is: 7:42:40.0
+
+Current time is: 7:43:0.0
+
+Current time is: 7:43:20.0
+
+Current time is: 7:43:40.0
+
+Current time is: 7:44:0.0
+
+Current time is: 7:44:20.0
+
+Current time is: 7:44:40.0
+
+Current time is: 7:45:0.0
+
+Current time is: 7:45:20.0
+
+Current time is: 7:45:40.0
+
+Current time is: 7:46:0.0
+
+Current time is: 7:46:20.0
+
+Current time is: 7:46:40.0
+
+Current time is: 7:47:0.0
+
+Current time is: 7:47:20.0
+
+Current time is: 7:47:40.0
+
+Current time is: 7:48:0.0
+
+Current time is: 7:48:20.0
+
+Current time is: 7:48:40.0
+
+Current time is: 7:49:0.0
+
+Current time is: 7:49:20.0
+
+Current time is: 7:49:40.0
+
+Current time is: 7:50:0.0
+
+Current time is: 7:50:20.0
+
+Current time is: 7:50:40.0
+
+Current time is: 7:51:0.0
+
+Current time is: 7:51:20.0
+
+Current time is: 7:51:40.0
+
+Current time is: 7:52:0.0
+
+Current time is: 7:52:20.0
+
+Current time is: 7:52:40.0
+
+Current time is: 7:53:0.0
+
+Current time is: 7:53:20.0
+
+Current time is: 7:53:40.0
+
+Current time is: 7:54:0.0
+
+Current time is: 7:54:20.0
+
+Current time is: 7:54:40.0
+
+Current time is: 7:55:0.0
+
+Current time is: 7:55:20.0
+
+Current time is: 7:55:40.0
+
+Current time is: 7:56:0.0
+
+Current time is: 7:56:20.0
+
+Current time is: 7:56:40.0
+
+Current time is: 7:57:0.0
+
+Current time is: 7:57:20.0
+
+Current time is: 7:57:40.0
+
+Current time is: 7:58:0.0
+
+Current time is: 7:58:20.0
+
+Current time is: 7:58:40.0
+
+Current time is: 7:59:0.0
+
+Current time is: 7:59:20.0
+
+Current time is: 7:59:40.0
+
+Current time is: 8:0:0.0
+
+Current time is: 8:0:20.0
+
+Current time is: 8:0:40.0
+
+Current time is: 8:1:0.0
+
+Current time is: 8:1:20.0
+
+Current time is: 8:1:40.0
+
+Current time is: 8:2:0.0
+
+Current time is: 8:2:20.0
+
+Current time is: 8:2:40.0
+
+Current time is: 8:3:0.0
+
+Current time is: 8:3:20.0
+
+Current time is: 8:3:40.0
+
+Current time is: 8:4:0.0
+
+Current time is: 8:4:20.0
+
+Current time is: 8:4:40.0
+
+Current time is: 8:5:0.0
+
+Current time is: 8:5:20.0
+
+Current time is: 8:5:40.0
+
+Current time is: 8:6:0.0
+
+Current time is: 8:6:20.0
+
+Current time is: 8:6:40.0
+
+Current time is: 8:7:0.0
+
+Current time is: 8:7:20.0
+
+Current time is: 8:7:40.0
+
+Current time is: 8:8:0.0
+
+Current time is: 8:8:20.0
+
+Current time is: 8:8:40.0
+
+Current time is: 8:9:0.0
+
+Current time is: 8:9:20.0
+
+Current time is: 8:9:40.0
+
+Current time is: 8:10:0.0
+
+Current time is: 8:10:20.0
+
+Current time is: 8:10:40.0
+
+Current time is: 8:11:0.0
+
+Current time is: 8:11:20.0
+
+Current time is: 8:11:40.0
+
+Current time is: 8:12:0.0
+
+Current time is: 8:12:20.0
+
+Current time is: 8:12:40.0
+
+Current time is: 8:13:0.0
+
+Current time is: 8:13:20.0
+
+Current time is: 8:13:40.0
+
+Current time is: 8:14:0.0
+
+Current time is: 8:14:20.0
+
+Current time is: 8:14:40.0
+
+Current time is: 8:15:0.0
+
+Current time is: 8:15:20.0
+
+Current time is: 8:15:40.0
+
+Current time is: 8:16:0.0
+
+Current time is: 8:16:20.0
+
+Current time is: 8:16:40.0
+
+Current time is: 8:17:0.0
+
+Current time is: 8:17:20.0
+
+Current time is: 8:17:40.0
+
+Current time is: 8:18:0.0
+
+Current time is: 8:18:20.0
+
+Current time is: 8:18:40.0
+
+Current time is: 8:19:0.0
+
+Current time is: 8:19:20.0
+
+Current time is: 8:19:40.0
+
+Current time is: 8:20:0.0
+
+Current time is: 8:20:20.0
+
+Current time is: 8:20:40.0
+
+Current time is: 8:21:0.0
+
+Current time is: 8:21:20.0
+
+Current time is: 8:21:40.0
+
+Current time is: 8:22:0.0
+
+Current time is: 8:22:20.0
+
+Current time is: 8:22:40.0
+
+Current time is: 8:23:0.0
+
+Current time is: 8:23:20.0
+
+Current time is: 8:23:40.0
+
+Current time is: 8:24:0.0
+
+Current time is: 8:24:20.0
+
+Current time is: 8:24:40.0
+
+Current time is: 8:25:0.0
+
+Current time is: 8:25:20.0
+
+Current time is: 8:25:40.0
+
+Current time is: 8:26:0.0
+
+Current time is: 8:26:20.0
+
+Current time is: 8:26:40.0
+
+Current time is: 8:27:0.0
+
+Current time is: 8:27:20.0
+
+Current time is: 8:27:40.0
+
+Current time is: 8:28:0.0
+
+Current time is: 8:28:20.0
+
+Current time is: 8:28:40.0
+
+Current time is: 8:29:0.0
+
+Current time is: 8:29:20.0
+
+Current time is: 8:29:40.0
+
+Current time is: 8:30:0.0
+
+Current time is: 8:30:20.0
+
+Current time is: 8:30:40.0
+
+Current time is: 8:31:0.0
+
+Current time is: 8:31:20.0
+
+Current time is: 8:31:40.0
+
+Current time is: 8:32:0.0
+
+Current time is: 8:32:20.0
+
+Current time is: 8:32:40.0
+
+Current time is: 8:33:0.0
+
+Current time is: 8:33:20.0
+
+Current time is: 8:33:40.0
+
+Current time is: 8:34:0.0
+
+Current time is: 8:34:20.0
+
+Current time is: 8:34:40.0
+
+Current time is: 8:35:0.0
+
+Current time is: 8:35:20.0
+
+Current time is: 8:35:40.0
+
+Current time is: 8:36:0.0
+
+Current time is: 8:36:20.0
+
+Current time is: 8:36:40.0
+
+Current time is: 8:37:0.0
+
+Current time is: 8:37:20.0
+
+Current time is: 8:37:40.0
+
+Current time is: 8:38:0.0
+
+Current time is: 8:38:20.0
+
+Current time is: 8:38:40.0
+
+Current time is: 8:39:0.0
+
+Current time is: 8:39:20.0
+
+Current time is: 8:39:40.0
+
+Current time is: 8:40:0.0
+
+Current time is: 8:40:20.0
+
+Current time is: 8:40:40.0
+
+Current time is: 8:41:0.0
+
+Current time is: 8:41:20.0
+
+Current time is: 8:41:40.0
+
+Current time is: 8:42:0.0
+
+Current time is: 8:42:20.0
+
+Current time is: 8:42:40.0
+
+Current time is: 8:43:0.0
+
+Current time is: 8:43:20.0
+
+Current time is: 8:43:40.0
+
+Current time is: 8:44:0.0
+
+Current time is: 8:44:20.0
+
+Current time is: 8:44:40.0
+
+Current time is: 8:45:0.0
+
+Current time is: 8:45:20.0
+
+Current time is: 8:45:40.0
+
+Current time is: 8:46:0.0
+
+Current time is: 8:46:20.0
+
+Current time is: 8:46:40.0
+
+Current time is: 8:47:0.0
+
+Current time is: 8:47:20.0
+
+Current time is: 8:47:40.0
+
+Current time is: 8:48:0.0
+
+Current time is: 8:48:20.0
+
+Current time is: 8:48:40.0
+
+Current time is: 8:49:0.0
+
+Current time is: 8:49:20.0
+
+Current time is: 8:49:40.0
+
+Current time is: 8:50:0.0
+
+Current time is: 8:50:20.0
+
+Current time is: 8:50:40.0
+
+Current time is: 8:51:0.0
+
+Current time is: 8:51:20.0
+
+Current time is: 8:51:40.0
+
+Current time is: 8:52:0.0
+
+Current time is: 8:52:20.0
+
+Current time is: 8:52:40.0
+
+Current time is: 8:53:0.0
+
+Current time is: 8:53:20.0
+
+Current time is: 8:53:40.0
+
+Current time is: 8:54:0.0
+
+Current time is: 8:54:20.0
+
+Current time is: 8:54:40.0
+
+Current time is: 8:55:0.0
+
+Current time is: 8:55:20.0
+
+Current time is: 8:55:40.0
+
+Current time is: 8:56:0.0
+
+Current time is: 8:56:20.0
+
+Current time is: 8:56:40.0
+
+Current time is: 8:57:0.0
+
+Current time is: 8:57:20.0
+
+Current time is: 8:57:40.0
+
+Current time is: 8:58:0.0
+
+Current time is: 8:58:20.0
+
+Current time is: 8:58:40.0
+
+Current time is: 8:59:0.0
+
+Current time is: 8:59:20.0
+
+Current time is: 8:59:40.0
+
+Current time is: 9:0:0.0
+
+Current time is: 9:0:20.0
+
+Current time is: 9:0:40.0
+
+Current time is: 9:1:0.0
+
+Current time is: 9:1:20.0
+
+Current time is: 9:1:40.0
+
+Current time is: 9:2:0.0
+
+Current time is: 9:2:20.0
+
+Current time is: 9:2:40.0
+
+Current time is: 9:3:0.0
+
+Current time is: 9:3:20.0
+
+Current time is: 9:3:40.0
+
+Current time is: 9:4:0.0
+
+Current time is: 9:4:20.0
+
+Current time is: 9:4:40.0
+
+Current time is: 9:5:0.0
+
+Current time is: 9:5:20.0
+
+Current time is: 9:5:40.0
+
+Current time is: 9:6:0.0
+
+Current time is: 9:6:20.0
+
+Current time is: 9:6:40.0
+
+Current time is: 9:7:0.0
+
+Current time is: 9:7:20.0
+
+Current time is: 9:7:40.0
+
+Current time is: 9:8:0.0
+
+Current time is: 9:8:20.0
+
+Current time is: 9:8:40.0
+
+Current time is: 9:9:0.0
+
+Current time is: 9:9:20.0
+
+Current time is: 9:9:40.0
+
+Current time is: 9:10:0.0
+
+Current time is: 9:10:20.0
+
+Current time is: 9:10:40.0
+
+Current time is: 9:11:0.0
+
+Current time is: 9:11:20.0
+
+Current time is: 9:11:40.0
+
+Current time is: 9:12:0.0
+
+Current time is: 9:12:20.0
+
+Current time is: 9:12:40.0
+
+Current time is: 9:13:0.0
+
+Current time is: 9:13:20.0
+
+Current time is: 9:13:40.0
+
+Current time is: 9:14:0.0
+
+Current time is: 9:14:20.0
+
+Current time is: 9:14:40.0
+
+Current time is: 9:15:0.0
+
+Current time is: 9:15:20.0
+
+Current time is: 9:15:40.0
+
+Current time is: 9:16:0.0
+
+Current time is: 9:16:20.0
+
+Current time is: 9:16:40.0
+
+Current time is: 9:17:0.0
+
+Current time is: 9:17:20.0
+
+Current time is: 9:17:40.0
+
+Current time is: 9:18:0.0
+
+Current time is: 9:18:20.0
+
+Current time is: 9:18:40.0
+
+Current time is: 9:19:0.0
+
+Current time is: 9:19:20.0
+
+Current time is: 9:19:40.0
+
+Current time is: 9:20:0.0
+
+Current time is: 9:20:20.0
+
+Current time is: 9:20:40.0
+
+Current time is: 9:21:0.0
+
+Current time is: 9:21:20.0
+
+Current time is: 9:21:40.0
+
+Current time is: 9:22:0.0
+
+Current time is: 9:22:20.0
+
+Current time is: 9:22:40.0
+
+Current time is: 9:23:0.0
+
+Current time is: 9:23:20.0
+
+Current time is: 9:23:40.0
+
+Current time is: 9:24:0.0
+
+Current time is: 9:24:20.0
+
+Current time is: 9:24:40.0
+
+Current time is: 9:25:0.0
+
+Current time is: 9:25:20.0
+
+Current time is: 9:25:40.0
+
+Current time is: 9:26:0.0
+
+Current time is: 9:26:20.0
+
+Current time is: 9:26:40.0
+
+Current time is: 9:27:0.0
+
+Current time is: 9:27:20.0
+
+Current time is: 9:27:40.0
+
+Current time is: 9:28:0.0
+
+Current time is: 9:28:20.0
+
+Current time is: 9:28:40.0
+
+Current time is: 9:29:0.0
+
+Current time is: 9:29:20.0
+
+Current time is: 9:29:40.0
+
+Current time is: 9:30:0.0
+
+Current time is: 9:30:20.0
+
+Current time is: 9:30:40.0
+
+Current time is: 9:31:0.0
+
+Current time is: 9:31:20.0
+
+Current time is: 9:31:40.0
+
+Current time is: 9:32:0.0
+
+Current time is: 9:32:20.0
+
+Current time is: 9:32:40.0
+
+Current time is: 9:33:0.0
+
+Current time is: 9:33:20.0
+
+Current time is: 9:33:40.0
+
+Current time is: 9:34:0.0
+
+Current time is: 9:34:20.0
+
+Current time is: 9:34:40.0
+
+Current time is: 9:35:0.0
+
+Current time is: 9:35:20.0
+
+Current time is: 9:35:40.0
+
+Current time is: 9:36:0.0
+
+Current time is: 9:36:20.0
+
+Current time is: 9:36:40.0
+
+Current time is: 9:37:0.0
+
+Current time is: 9:37:20.0
+
+Current time is: 9:37:40.0
+
+Current time is: 9:38:0.0
+
+Current time is: 9:38:20.0
+
+Current time is: 9:38:40.0
+
+Current time is: 9:39:0.0
+
+Current time is: 9:39:20.0
+
+Current time is: 9:39:40.0
+
+Current time is: 9:40:0.0
+
+Current time is: 9:40:20.0
+
+Current time is: 9:40:40.0
+
+Current time is: 9:41:0.0
+
+Current time is: 9:41:20.0
+
+Current time is: 9:41:40.0
+
+Current time is: 9:42:0.0
+
+Current time is: 9:42:20.0
+
+Current time is: 9:42:40.0
+
+Current time is: 9:43:0.0
+
+Current time is: 9:43:20.0
+
+Current time is: 9:43:40.0
+
+Current time is: 9:44:0.0
+
+Current time is: 9:44:20.0
+
+Current time is: 9:44:40.0
+
+Current time is: 9:45:0.0
+
+Current time is: 9:45:20.0
+
+Current time is: 9:45:40.0
+
+Current time is: 9:46:0.0
+
+Current time is: 9:46:20.0
+
+Current time is: 9:46:40.0
+
+Current time is: 9:47:0.0
+
+Current time is: 9:47:20.0
+
+Current time is: 9:47:40.0
+
+Current time is: 9:48:0.0
+
+Current time is: 9:48:20.0
+
+Current time is: 9:48:40.0
+
+Current time is: 9:49:0.0
+
+Current time is: 9:49:20.0
+
+Current time is: 9:49:40.0
+
+Current time is: 9:50:0.0
+
+Current time is: 9:50:20.0
+
+Current time is: 9:50:40.0
+
+Current time is: 9:51:0.0
+
+Current time is: 9:51:20.0
+
+Current time is: 9:51:40.0
+
+Current time is: 9:52:0.0
+
+Current time is: 9:52:20.0
+
+Current time is: 9:52:40.0
+
+Current time is: 9:53:0.0
+
+Current time is: 9:53:20.0
+
+Current time is: 9:53:40.0
+
+Current time is: 9:54:0.0
+
+Current time is: 9:54:20.0
+
+Current time is: 9:54:40.0
+
+Current time is: 9:55:0.0
+
+Current time is: 9:55:20.0
+
+Current time is: 9:55:40.0
+
+Current time is: 9:56:0.0
+
+Current time is: 9:56:20.0
+
+Current time is: 9:56:40.0
+
+Current time is: 9:57:0.0
+
+Current time is: 9:57:20.0
+
+Current time is: 9:57:40.0
+
+Current time is: 9:58:0.0
+
+Current time is: 9:58:20.0
+
+Current time is: 9:58:40.0
+
+Current time is: 9:59:0.0
+
+Current time is: 9:59:20.0
+
+Current time is: 9:59:40.0
+
+Current time is: 10:0:0.0
+
+Current time is: 10:0:20.0
+
+Current time is: 10:0:40.0
+
+Current time is: 10:1:0.0
+
+Current time is: 10:1:20.0
+
+Current time is: 10:1:40.0
+
+Current time is: 10:2:0.0
+
+Current time is: 10:2:20.0
+
+Current time is: 10:2:40.0
+
+Current time is: 10:3:0.0
+
+Current time is: 10:3:20.0
+
+Current time is: 10:3:40.0
+
+Current time is: 10:4:0.0
+
+Current time is: 10:4:20.0
+
+Current time is: 10:4:40.0
+
+Current time is: 10:5:0.0
+
+Current time is: 10:5:20.0
+
+Current time is: 10:5:40.0
+
+Current time is: 10:6:0.0
+
+Current time is: 10:6:20.0
+
+Current time is: 10:6:40.0
+
+Current time is: 10:7:0.0
+
+Current time is: 10:7:20.0
+
+Current time is: 10:7:40.0
+
+Current time is: 10:8:0.0
+
+Current time is: 10:8:20.0
+
+Current time is: 10:8:40.0
+
+Current time is: 10:9:0.0
+
+Current time is: 10:9:20.0
+
+Current time is: 10:9:40.0
+
+Current time is: 10:10:0.0
+
+Current time is: 10:10:20.0
+
+Current time is: 10:10:40.0
+
+Current time is: 10:11:0.0
+
+Current time is: 10:11:20.0
+
+Current time is: 10:11:40.0
+
+Current time is: 10:12:0.0
+
+Current time is: 10:12:20.0
+
+Current time is: 10:12:40.0
+
+Current time is: 10:13:0.0
+
+Current time is: 10:13:20.0
+
+Current time is: 10:13:40.0
+
+Current time is: 10:14:0.0
+
+Current time is: 10:14:20.0
+
+Current time is: 10:14:40.0
+
+Current time is: 10:15:0.0
+
+Current time is: 10:15:20.0
+
+Current time is: 10:15:40.0
+
+Current time is: 10:16:0.0
+
+Current time is: 10:16:20.0
+
+Current time is: 10:16:40.0
+
+Current time is: 10:17:0.0
+
+Current time is: 10:17:20.0
+
+Current time is: 10:17:40.0
+
+Current time is: 10:18:0.0
+
+Current time is: 10:18:20.0
+
+Current time is: 10:18:40.0
+
+Current time is: 10:19:0.0
+
+Current time is: 10:19:20.0
+
+Current time is: 10:19:40.0
+
+Current time is: 10:20:0.0
+
+Current time is: 10:20:20.0
+
+Current time is: 10:20:40.0
+
+Current time is: 10:21:0.0
+
+Current time is: 10:21:20.0
+
+Current time is: 10:21:40.0
+
+Current time is: 10:22:0.0
+
+Current time is: 10:22:20.0
+
+Current time is: 10:22:40.0
+
+Current time is: 10:23:0.0
+
+Current time is: 10:23:20.0
+
+Current time is: 10:23:40.0
+
+Current time is: 10:24:0.0
+
+Current time is: 10:24:20.0
+
+Current time is: 10:24:40.0
+
+Current time is: 10:25:0.0
+
+Current time is: 10:25:20.0
+
+Current time is: 10:25:40.0
+
+Current time is: 10:26:0.0
+
+Current time is: 10:26:20.0
+
+Current time is: 10:26:40.0
+
+Current time is: 10:27:0.0
+
+Current time is: 10:27:20.0
+
+Current time is: 10:27:40.0
+
+Current time is: 10:28:0.0
+
+Current time is: 10:28:20.0
+
+Current time is: 10:28:40.0
+
+Current time is: 10:29:0.0
+
+Current time is: 10:29:20.0
+
+Current time is: 10:29:40.0
+
+Current time is: 10:30:0.0
+
+Current time is: 10:30:20.0
+
+Current time is: 10:30:40.0
+
+Current time is: 10:31:0.0
+
+Current time is: 10:31:20.0
+
+Current time is: 10:31:40.0
+
+Current time is: 10:32:0.0
+
+Current time is: 10:32:20.0
+
+Current time is: 10:32:40.0
+
+Current time is: 10:33:0.0
+
+Current time is: 10:33:20.0
+
+Current time is: 10:33:40.0
+
+Current time is: 10:34:0.0
+
+Current time is: 10:34:20.0
+
+Current time is: 10:34:40.0
+
+Current time is: 10:35:0.0
+
+Current time is: 10:35:20.0
+
+Current time is: 10:35:40.0
+
+Current time is: 10:36:0.0
+
+Current time is: 10:36:20.0
+
+Current time is: 10:36:40.0
+
+Current time is: 10:37:0.0
+
+Current time is: 10:37:20.0
+
+Current time is: 10:37:40.0
+
+Current time is: 10:38:0.0
+
+Current time is: 10:38:20.0
+
+Current time is: 10:38:40.0
+
+Current time is: 10:39:0.0
+
+Current time is: 10:39:20.0
+
+Current time is: 10:39:40.0
+
+Current time is: 10:40:0.0
+
+Current time is: 10:40:20.0
+
+Current time is: 10:40:40.0
+
+Current time is: 10:41:0.0
+
+Current time is: 10:41:20.0
+
+Current time is: 10:41:40.0
+
+Current time is: 10:42:0.0
+
+Current time is: 10:42:20.0
+
+Current time is: 10:42:40.0
+
+Current time is: 10:43:0.0
+
+Current time is: 10:43:20.0
+
+Current time is: 10:43:40.0
+
+Current time is: 10:44:0.0
+
+Current time is: 10:44:20.0
+
+Current time is: 10:44:40.0
+
+Current time is: 10:45:0.0
+
+Current time is: 10:45:20.0
+
+Current time is: 10:45:40.0
+
+Current time is: 10:46:0.0
+
+Current time is: 10:46:20.0
+
+Current time is: 10:46:40.0
+
+Current time is: 10:47:0.0
+
+Current time is: 10:47:20.0
+
+Current time is: 10:47:40.0
+
+Current time is: 10:48:0.0
+
+Current time is: 10:48:20.0
+
+Current time is: 10:48:40.0
+
+Current time is: 10:49:0.0
+
+Current time is: 10:49:20.0
+
+Current time is: 10:49:40.0
+
+Current time is: 10:50:0.0
+
+Current time is: 10:50:20.0
+
+Current time is: 10:50:40.0
+
+Current time is: 10:51:0.0
+
+Current time is: 10:51:20.0
+
+Current time is: 10:51:40.0
+
+Current time is: 10:52:0.0
+
+Current time is: 10:52:20.0
+
+Current time is: 10:52:40.0
+
+Current time is: 10:53:0.0
+
+Current time is: 10:53:20.0
+
+Current time is: 10:53:40.0
+
+Current time is: 10:54:0.0
+
+Current time is: 10:54:20.0
+
+Current time is: 10:54:40.0
+
+Current time is: 10:55:0.0
+
+Current time is: 10:55:20.0
+
+Current time is: 10:55:40.0
+
+Current time is: 10:56:0.0
+
+Current time is: 10:56:20.0
+
+Current time is: 10:56:40.0
+
+Current time is: 10:57:0.0
+
+Current time is: 10:57:20.0
+
+Current time is: 10:57:40.0
+
+Current time is: 10:58:0.0
+
+Current time is: 10:58:20.0
+
+Current time is: 10:58:40.0
+
+Current time is: 10:59:0.0
+
+Current time is: 10:59:20.0
+
+Current time is: 10:59:40.0
+
+Current time is: 11:0:0.0
+
+Current time is: 11:0:20.0
+
+Current time is: 11:0:40.0
+
+Current time is: 11:1:0.0
+
+Current time is: 11:1:20.0
+
+Current time is: 11:1:40.0
+
+Current time is: 11:2:0.0
+
+Current time is: 11:2:20.0
+
+Current time is: 11:2:40.0
+
+Current time is: 11:3:0.0
+
+Current time is: 11:3:20.0
+
+Current time is: 11:3:40.0
+
+Current time is: 11:4:0.0
+
+Current time is: 11:4:20.0
+
+Current time is: 11:4:40.0
+
+Current time is: 11:5:0.0
+
+Current time is: 11:5:20.0
+
+Current time is: 11:5:40.0
+
+Current time is: 11:6:0.0
+
+Current time is: 11:6:20.0
+
+Current time is: 11:6:40.0
+
+Current time is: 11:7:0.0
+
+Current time is: 11:7:20.0
+
+Current time is: 11:7:40.0
+
+Current time is: 11:8:0.0
+
+Current time is: 11:8:20.0
+
+Current time is: 11:8:40.0
+
+Current time is: 11:9:0.0
+
+Current time is: 11:9:20.0
+
+Current time is: 11:9:40.0
+
+Current time is: 11:10:0.0
+
+Current time is: 11:10:20.0
+
+Current time is: 11:10:40.0
+
+Current time is: 11:11:0.0
+
+Current time is: 11:11:20.0
+
+Current time is: 11:11:40.0
+
+Current time is: 11:12:0.0
+
+Current time is: 11:12:20.0
+
+Current time is: 11:12:40.0
+
+Current time is: 11:13:0.0
+
+Current time is: 11:13:20.0
+
+Current time is: 11:13:40.0
+
+Current time is: 11:14:0.0
+
+Current time is: 11:14:20.0
+
+Current time is: 11:14:40.0
+
+Current time is: 11:15:0.0
+
+Current time is: 11:15:20.0
+
+Current time is: 11:15:40.0
+
+Current time is: 11:16:0.0
+
+Current time is: 11:16:20.0
+
+Current time is: 11:16:40.0
+
+Current time is: 11:17:0.0
+
+Current time is: 11:17:20.0
+
+Current time is: 11:17:40.0
+
+Current time is: 11:18:0.0
+
+Current time is: 11:18:20.0
+
+Current time is: 11:18:40.0
+
+Current time is: 11:19:0.0
+
+Current time is: 11:19:20.0
+
+Current time is: 11:19:40.0
+
+Current time is: 11:20:0.0
+
+Current time is: 11:20:20.0
+
+Current time is: 11:20:40.0
+
+Current time is: 11:21:0.0
+
+Current time is: 11:21:20.0
+
+Current time is: 11:21:40.0
+
+Current time is: 11:22:0.0
+
+Current time is: 11:22:20.0
+
+Current time is: 11:22:40.0
+
+Current time is: 11:23:0.0
+
+Current time is: 11:23:20.0
+
+Current time is: 11:23:40.0
+
+Current time is: 11:24:0.0
+
+Current time is: 11:24:20.0
+
+Current time is: 11:24:40.0
+
+Current time is: 11:25:0.0
+
+Current time is: 11:25:20.0
+
+Current time is: 11:25:40.0
+
+Current time is: 11:26:0.0
+
+Current time is: 11:26:20.0
+
+Current time is: 11:26:40.0
+
+Current time is: 11:27:0.0
+
+Current time is: 11:27:20.0
+
+Current time is: 11:27:40.0
+
+Current time is: 11:28:0.0
+
+Current time is: 11:28:20.0
+
+Current time is: 11:28:40.0
+
+Current time is: 11:29:0.0
+
+Current time is: 11:29:20.0
+
+Current time is: 11:29:40.0
+
+Current time is: 11:30:0.0
+
+Current time is: 11:30:20.0
+
+Current time is: 11:30:40.0
+
+Current time is: 11:31:0.0
+
+Current time is: 11:31:20.0
+
+Current time is: 11:31:40.0
+
+Current time is: 11:32:0.0
+
+Current time is: 11:32:20.0
+
+Current time is: 11:32:40.0
+
+Current time is: 11:33:0.0
+
+Current time is: 11:33:20.0
+
+Current time is: 11:33:40.0
+
+Current time is: 11:34:0.0
+
+Current time is: 11:34:20.0
+
+Current time is: 11:34:40.0
+
+Current time is: 11:35:0.0
+
+Current time is: 11:35:20.0
+
+Current time is: 11:35:40.0
+
+Current time is: 11:36:0.0
+
+Current time is: 11:36:20.0
+
+Current time is: 11:36:40.0
+
+Current time is: 11:37:0.0
+
+Current time is: 11:37:20.0
+
+Current time is: 11:37:40.0
+
+Current time is: 11:38:0.0
+
+Current time is: 11:38:20.0
+
+Current time is: 11:38:40.0
+
+Current time is: 11:39:0.0
+
+Current time is: 11:39:20.0
+
+Current time is: 11:39:40.0
+
+Current time is: 11:40:0.0
+
+Current time is: 11:40:20.0
+
+Current time is: 11:40:40.0
+
+Current time is: 11:41:0.0
+
+Current time is: 11:41:20.0
+
+Current time is: 11:41:40.0
+
+Current time is: 11:42:0.0
+
+Current time is: 11:42:20.0
+
+Current time is: 11:42:40.0
+
+Current time is: 11:43:0.0
+
+Current time is: 11:43:20.0
+
+Current time is: 11:43:40.0
+
+Current time is: 11:44:0.0
+
+Current time is: 11:44:20.0
+
+Current time is: 11:44:40.0
+
+Current time is: 11:45:0.0
+
+Current time is: 11:45:20.0
+
+Current time is: 11:45:40.0
+
+Current time is: 11:46:0.0
+
+Current time is: 11:46:20.0
+
+Current time is: 11:46:40.0
+
+Current time is: 11:47:0.0
+
+Current time is: 11:47:20.0
+
+Current time is: 11:47:40.0
+
+Current time is: 11:48:0.0
+
+Current time is: 11:48:20.0
+
+Current time is: 11:48:40.0
+
+Current time is: 11:49:0.0
+
+Current time is: 11:49:20.0
+
+Current time is: 11:49:40.0
+
+Current time is: 11:50:0.0
+
+Current time is: 11:50:20.0
+
+Current time is: 11:50:40.0
+
+Current time is: 11:51:0.0
+
+Current time is: 11:51:20.0
+
+Current time is: 11:51:40.0
+
+Current time is: 11:52:0.0
+
+Current time is: 11:52:20.0
+
+Current time is: 11:52:40.0
+
+Current time is: 11:53:0.0
+
+Current time is: 11:53:20.0
+
+Current time is: 11:53:40.0
+
+Current time is: 11:54:0.0
+
+Current time is: 11:54:20.0
+
+Current time is: 11:54:40.0
+
+Current time is: 11:55:0.0
+
+Current time is: 11:55:20.0
+
+Current time is: 11:55:40.0
+
+Current time is: 11:56:0.0
+
+Current time is: 11:56:20.0
+
+Current time is: 11:56:40.0
+
+Current time is: 11:57:0.0
+
+Current time is: 11:57:20.0
+
+Current time is: 11:57:40.0
+
+Current time is: 11:58:0.0
+
+Current time is: 11:58:20.0
+
+Current time is: 11:58:40.0
+
+Current time is: 11:59:0.0
+
+Current time is: 11:59:20.0
+
+Current time is: 11:59:40.0
+
+Current time is: 12:0:0.0
+
+Tests for validateTimeSliceArg()
+0 is unacceptable!
+-1 is unacceptable!
+ABC is unacceptable!
+61 seconds should return 61: 61.0
+1 second should return 1: 1.0
+1800 seconds should return 1800: 1800.0
+0.00001 seconds should return 0.00001: 1.0E-5
+Empty seconds should return 1: 1.0
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim no args...        
+======================================  
+
+Please start over with a correct number of arguments on the command line.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim one arg...        
+======================================  
+
+Please start over with a correct number of arguments on the command line.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim two args...       
+======================================  
+
+Please start over with a correct number of arguments on the command line.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim three args...     
+======================================  
+
+Please start over with a correct number of arguments on the command line.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim six args...       
+======================================  
+
+Please start over with a correct number of arguments on the command line.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim out of bounds...  
+======================================  
+
+At least one ball is not on the 400.0 ft by 400.0 ft field.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim negative time slice...
+======================================  
+
+At least one ball is not on the 400.0 ft by 400.0 ft field.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice too large...
+======================================  
+
+Number of objects on the field: 2
+
+Current time: 0:0:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (10.0, 10.0)
+        Velocity of <5.0, 5.0>
+Pole:   Position @ (79.0, 90.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:30:0.09999999999990905
+Current ball positions and velocities:
+Ball 1: Position @ (9010.5, 9010.5)
+        Velocity of <6.94838380505555E-8, 6.94838380505555E-8>
+Pole:   Position @ (79.0, 90.0)
+        Velocity of <0.0, 0.0>
+
+NO COLLISION IS POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice value of zero...
+======================================  
+
+At least one ball is not on the 400.0 ft by 400.0 ft field.
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim check for collision...
+======================================  
+
+Number of objects on the field: 3
+
+Current time: 0:0:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (10.0, 10.0)
+        Velocity of <1.0, 1.0>
+Ball 2: Position @ (20.0, 20.0)
+        Velocity of <-1.0, -1.0>
+Pole:   Position @ (11.0, 102.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:1.0
+Current ball positions and velocities:
+Ball 1: Position @ (11.0, 11.0)
+        Velocity of <0.99, 0.99>
+Ball 2: Position @ (19.0, 19.0)
+        Velocity of <-0.99, -0.99>
+Pole:   Position @ (11.0, 102.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:2.0
+Current ball positions and velocities:
+Ball 1: Position @ (11.99, 11.99)
+        Velocity of <0.9801, 0.9801>
+Ball 2: Position @ (18.01, 18.01)
+        Velocity of <-0.9801, -0.9801>
+Pole:   Position @ (11.0, 102.0)
+        Velocity of <0.0, 0.0>
+
+NO COLLISION IS POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should come to rest...
+======================================  
+
+Number of objects on the field: 2
+
+Current time: 0:0:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (10.0, 10.0)
+        Velocity of <1.0, 1.0>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:1.0
+Current ball positions and velocities:
+Ball 1: Position @ (11.0, 11.0)
+        Velocity of <0.99, 0.99>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:2.0
+Current ball positions and velocities:
+Ball 1: Position @ (11.99, 11.99)
+        Velocity of <0.9801, 0.9801>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:3.0
+Current ball positions and velocities:
+Ball 1: Position @ (12.9701, 12.9701)
+        Velocity of <0.9702989999999999, 0.9702989999999999>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:4.0
+Current ball positions and velocities:
+Ball 1: Position @ (13.940399000000001, 13.940399000000001)
+        Velocity of <0.96059601, 0.96059601>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:5.0
+Current ball positions and velocities:
+Ball 1: Position @ (14.90099501, 14.90099501)
+        Velocity of <0.9509900498999999, 0.9509900498999999>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:6.0
+Current ball positions and velocities:
+Ball 1: Position @ (15.8519850599, 15.8519850599)
+        Velocity of <0.9414801494009999, 0.9414801494009999>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:7.0
+Current ball positions and velocities:
+Ball 1: Position @ (16.793465209301, 16.793465209301)
+        Velocity of <0.9320653479069899, 0.9320653479069899>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:8.0
+Current ball positions and velocities:
+Ball 1: Position @ (17.72553055720799, 17.72553055720799)
+        Velocity of <0.92274469442792, 0.92274469442792>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:9.0
+Current ball positions and velocities:
+Ball 1: Position @ (18.64827525163591, 18.64827525163591)
+        Velocity of <0.9135172474836407, 0.9135172474836407>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:10.0
+Current ball positions and velocities:
+Ball 1: Position @ (19.561792499119548, 19.561792499119548)
+        Velocity of <0.9043820750088043, 0.9043820750088043>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:11.0
+Current ball positions and velocities:
+Ball 1: Position @ (20.466174574128353, 20.466174574128353)
+        Velocity of <0.8953382542587163, 0.8953382542587163>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:12.0
+Current ball positions and velocities:
+Ball 1: Position @ (21.36151282838707, 21.36151282838707)
+        Velocity of <0.8863848717161291, 0.8863848717161291>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:13.0
+Current ball positions and velocities:
+Ball 1: Position @ (22.2478977001032, 22.2478977001032)
+        Velocity of <0.8775210229989678, 0.8775210229989678>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:14.0
+Current ball positions and velocities:
+Ball 1: Position @ (23.125418723102165, 23.125418723102165)
+        Velocity of <0.8687458127689781, 0.8687458127689781>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:15.0
+Current ball positions and velocities:
+Ball 1: Position @ (23.994164535871143, 23.994164535871143)
+        Velocity of <0.8600583546412883, 0.8600583546412883>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:16.0
+Current ball positions and velocities:
+Ball 1: Position @ (24.854222890512432, 24.854222890512432)
+        Velocity of <0.8514577710948754, 0.8514577710948754>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:17.0
+Current ball positions and velocities:
+Ball 1: Position @ (25.705680661607307, 25.705680661607307)
+        Velocity of <0.8429431933839266, 0.8429431933839266>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:18.0
+Current ball positions and velocities:
+Ball 1: Position @ (26.548623854991234, 26.548623854991234)
+        Velocity of <0.8345137614500874, 0.8345137614500874>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:19.0
+Current ball positions and velocities:
+Ball 1: Position @ (27.38313761644132, 27.38313761644132)
+        Velocity of <0.8261686238355865, 0.8261686238355865>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:20.0
+Current ball positions and velocities:
+Ball 1: Position @ (28.209306240276906, 28.209306240276906)
+        Velocity of <0.8179069375972307, 0.8179069375972307>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:21.0
+Current ball positions and velocities:
+Ball 1: Position @ (29.027213177874135, 29.027213177874135)
+        Velocity of <0.8097278682212583, 0.8097278682212583>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:22.0
+Current ball positions and velocities:
+Ball 1: Position @ (29.836941046095394, 29.836941046095394)
+        Velocity of <0.8016305895390458, 0.8016305895390458>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:23.0
+Current ball positions and velocities:
+Ball 1: Position @ (30.638571635634438, 30.638571635634438)
+        Velocity of <0.7936142836436553, 0.7936142836436553>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:24.0
+Current ball positions and velocities:
+Ball 1: Position @ (31.432185919278094, 31.432185919278094)
+        Velocity of <0.7856781408072188, 0.7856781408072188>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:25.0
+Current ball positions and velocities:
+Ball 1: Position @ (32.21786406008531, 32.21786406008531)
+        Velocity of <0.7778213593991465, 0.7778213593991465>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:26.0
+Current ball positions and velocities:
+Ball 1: Position @ (32.99568541948446, 32.99568541948446)
+        Velocity of <0.7700431458051551, 0.7700431458051551>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:27.0
+Current ball positions and velocities:
+Ball 1: Position @ (33.76572856528961, 33.76572856528961)
+        Velocity of <0.7623427143471035, 0.7623427143471035>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:28.0
+Current ball positions and velocities:
+Ball 1: Position @ (34.52807127963672, 34.52807127963672)
+        Velocity of <0.7547192872036325, 0.7547192872036325>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:29.0
+Current ball positions and velocities:
+Ball 1: Position @ (35.282790566840355, 35.282790566840355)
+        Velocity of <0.7471720943315961, 0.7471720943315961>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:30.0
+Current ball positions and velocities:
+Ball 1: Position @ (36.02996266117195, 36.02996266117195)
+        Velocity of <0.7397003733882802, 0.7397003733882802>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:31.0
+Current ball positions and velocities:
+Ball 1: Position @ (36.76966303456023, 36.76966303456023)
+        Velocity of <0.7323033696543974, 0.7323033696543974>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:32.0
+Current ball positions and velocities:
+Ball 1: Position @ (37.50196640421463, 37.50196640421463)
+        Velocity of <0.7249803359578534, 0.7249803359578534>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:33.0
+Current ball positions and velocities:
+Ball 1: Position @ (38.22694674017248, 38.22694674017248)
+        Velocity of <0.7177305325982748, 0.7177305325982748>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:34.0
+Current ball positions and velocities:
+Ball 1: Position @ (38.944677272770754, 38.944677272770754)
+        Velocity of <0.7105532272722921, 0.7105532272722921>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:35.0
+Current ball positions and velocities:
+Ball 1: Position @ (39.65523050004305, 39.65523050004305)
+        Velocity of <0.7034476949995692, 0.7034476949995692>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:36.0
+Current ball positions and velocities:
+Ball 1: Position @ (40.358678195042614, 40.358678195042614)
+        Velocity of <0.6964132180495735, 0.6964132180495735>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:37.0
+Current ball positions and velocities:
+Ball 1: Position @ (41.055091413092185, 41.055091413092185)
+        Velocity of <0.6894490858690777, 0.6894490858690777>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:38.0
+Current ball positions and velocities:
+Ball 1: Position @ (41.744540498961264, 41.744540498961264)
+        Velocity of <0.682554595010387, 0.682554595010387>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:39.0
+Current ball positions and velocities:
+Ball 1: Position @ (42.42709509397165, 42.42709509397165)
+        Velocity of <0.6757290490602831, 0.6757290490602831>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:40.0
+Current ball positions and velocities:
+Ball 1: Position @ (43.10282414303193, 43.10282414303193)
+        Velocity of <0.6689717585696803, 0.6689717585696803>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:41.0
+Current ball positions and velocities:
+Ball 1: Position @ (43.771795901601614, 43.771795901601614)
+        Velocity of <0.6622820409839835, 0.6622820409839835>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:42.0
+Current ball positions and velocities:
+Ball 1: Position @ (44.434077942585596, 44.434077942585596)
+        Velocity of <0.6556592205741436, 0.6556592205741436>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:43.0
+Current ball positions and velocities:
+Ball 1: Position @ (45.08973716315974, 45.08973716315974)
+        Velocity of <0.6491026283684022, 0.6491026283684022>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:44.0
+Current ball positions and velocities:
+Ball 1: Position @ (45.73883979152814, 45.73883979152814)
+        Velocity of <0.6426116020847181, 0.6426116020847181>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:45.0
+Current ball positions and velocities:
+Ball 1: Position @ (46.38145139361286, 46.38145139361286)
+        Velocity of <0.6361854860638709, 0.6361854860638709>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:46.0
+Current ball positions and velocities:
+Ball 1: Position @ (47.017636879676736, 47.017636879676736)
+        Velocity of <0.6298236312032323, 0.6298236312032323>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:47.0
+Current ball positions and velocities:
+Ball 1: Position @ (47.64746051087997, 47.64746051087997)
+        Velocity of <0.6235253948912, 0.6235253948912>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:48.0
+Current ball positions and velocities:
+Ball 1: Position @ (48.27098590577117, 48.27098590577117)
+        Velocity of <0.617290140942288, 0.617290140942288>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:49.0
+Current ball positions and velocities:
+Ball 1: Position @ (48.88827604671346, 48.88827604671346)
+        Velocity of <0.6111172395328651, 0.6111172395328651>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:50.0
+Current ball positions and velocities:
+Ball 1: Position @ (49.499393286246324, 49.499393286246324)
+        Velocity of <0.6050060671375365, 0.6050060671375365>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:51.0
+Current ball positions and velocities:
+Ball 1: Position @ (50.10439935338386, 50.10439935338386)
+        Velocity of <0.5989560064661611, 0.5989560064661611>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:52.0
+Current ball positions and velocities:
+Ball 1: Position @ (50.70335535985002, 50.70335535985002)
+        Velocity of <0.5929664464014994, 0.5929664464014994>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:53.0
+Current ball positions and velocities:
+Ball 1: Position @ (51.29632180625152, 51.29632180625152)
+        Velocity of <0.5870367819374844, 0.5870367819374844>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:54.0
+Current ball positions and velocities:
+Ball 1: Position @ (51.883358588189004, 51.883358588189004)
+        Velocity of <0.5811664141181095, 0.5811664141181095>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:55.0
+Current ball positions and velocities:
+Ball 1: Position @ (52.46452500230711, 52.46452500230711)
+        Velocity of <0.5753547499769285, 0.5753547499769285>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:56.0
+Current ball positions and velocities:
+Ball 1: Position @ (53.039879752284044, 53.039879752284044)
+        Velocity of <0.5696012024771592, 0.5696012024771592>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:57.0
+Current ball positions and velocities:
+Ball 1: Position @ (53.6094809547612, 53.6094809547612)
+        Velocity of <0.5639051904523876, 0.5639051904523876>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:58.0
+Current ball positions and velocities:
+Ball 1: Position @ (54.17338614521359, 54.17338614521359)
+        Velocity of <0.5582661385478638, 0.5582661385478638>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:59.0
+Current ball positions and velocities:
+Ball 1: Position @ (54.731652283761456, 54.731652283761456)
+        Velocity of <0.5526834771623851, 0.5526834771623851>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (55.28433576092384, 55.28433576092384)
+        Velocity of <0.5471566423907612, 0.5471566423907612>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:1.0
+Current ball positions and velocities:
+Ball 1: Position @ (55.8314924033146, 55.8314924033146)
+        Velocity of <0.5416850759668536, 0.5416850759668536>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:2.0
+Current ball positions and velocities:
+Ball 1: Position @ (56.37317747928145, 56.37317747928145)
+        Velocity of <0.536268225207185, 0.536268225207185>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:3.0
+Current ball positions and velocities:
+Ball 1: Position @ (56.90944570448864, 56.90944570448864)
+        Velocity of <0.5309055429551132, 0.5309055429551132>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:4.0
+Current ball positions and velocities:
+Ball 1: Position @ (57.44035124744375, 57.44035124744375)
+        Velocity of <0.525596487525562, 0.525596487525562>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:5.0
+Current ball positions and velocities:
+Ball 1: Position @ (57.96594773496931, 57.96594773496931)
+        Velocity of <0.5203405226503064, 0.5203405226503064>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:6.0
+Current ball positions and velocities:
+Ball 1: Position @ (58.48628825761962, 58.48628825761962)
+        Velocity of <0.5151371174238033, 0.5151371174238033>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:7.0
+Current ball positions and velocities:
+Ball 1: Position @ (59.001425375043425, 59.001425375043425)
+        Velocity of <0.5099857462495653, 0.5099857462495653>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:8.0
+Current ball positions and velocities:
+Ball 1: Position @ (59.51141112129299, 59.51141112129299)
+        Velocity of <0.5048858887870696, 0.5048858887870696>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:9.0
+Current ball positions and velocities:
+Ball 1: Position @ (60.01629701008006, 60.01629701008006)
+        Velocity of <0.4998370298991989, 0.4998370298991989>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:10.0
+Current ball positions and velocities:
+Ball 1: Position @ (60.516134039979256, 60.516134039979256)
+        Velocity of <0.49483865960020695, 0.49483865960020695>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:11.0
+Current ball positions and velocities:
+Ball 1: Position @ (61.01097269957946, 61.01097269957946)
+        Velocity of <0.4898902730042049, 0.4898902730042049>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:12.0
+Current ball positions and velocities:
+Ball 1: Position @ (61.50086297258367, 61.50086297258367)
+        Velocity of <0.48499137027416284, 0.48499137027416284>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:13.0
+Current ball positions and velocities:
+Ball 1: Position @ (61.985854342857834, 61.985854342857834)
+        Velocity of <0.4801414565714212, 0.4801414565714212>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:14.0
+Current ball positions and velocities:
+Ball 1: Position @ (62.46599579942926, 62.46599579942926)
+        Velocity of <0.475340042005707, 0.475340042005707>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:15.0
+Current ball positions and velocities:
+Ball 1: Position @ (62.94133584143496, 62.94133584143496)
+        Velocity of <0.47058664158564995, 0.47058664158564995>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:16.0
+Current ball positions and velocities:
+Ball 1: Position @ (63.41192248302061, 63.41192248302061)
+        Velocity of <0.4658807751697934, 0.4658807751697934>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:17.0
+Current ball positions and velocities:
+Ball 1: Position @ (63.877803258190404, 63.877803258190404)
+        Velocity of <0.4612219674180955, 0.4612219674180955>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:18.0
+Current ball positions and velocities:
+Ball 1: Position @ (64.3390252256085, 64.3390252256085)
+        Velocity of <0.45660974774391455, 0.45660974774391455>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:19.0
+Current ball positions and velocities:
+Ball 1: Position @ (64.7956349733524, 64.7956349733524)
+        Velocity of <0.4520436502664754, 0.4520436502664754>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:20.0
+Current ball positions and velocities:
+Ball 1: Position @ (65.24767862361888, 65.24767862361888)
+        Velocity of <0.44752321376381066, 0.44752321376381066>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:21.0
+Current ball positions and velocities:
+Ball 1: Position @ (65.6952018373827, 65.6952018373827)
+        Velocity of <0.44304798162617254, 0.44304798162617254>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:22.0
+Current ball positions and velocities:
+Ball 1: Position @ (66.13824981900888, 66.13824981900888)
+        Velocity of <0.4386175018099108, 0.4386175018099108>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:23.0
+Current ball positions and velocities:
+Ball 1: Position @ (66.57686732081879, 66.57686732081879)
+        Velocity of <0.4342313267918117, 0.4342313267918117>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:24.0
+Current ball positions and velocities:
+Ball 1: Position @ (67.01109864761061, 67.01109864761061)
+        Velocity of <0.4298890135238936, 0.4298890135238936>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:25.0
+Current ball positions and velocities:
+Ball 1: Position @ (67.4409876611345, 67.4409876611345)
+        Velocity of <0.42559012338865465, 0.42559012338865465>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:26.0
+Current ball positions and velocities:
+Ball 1: Position @ (67.86657778452316, 67.86657778452316)
+        Velocity of <0.4213342221547681, 0.4213342221547681>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:27.0
+Current ball positions and velocities:
+Ball 1: Position @ (68.28791200667793, 68.28791200667793)
+        Velocity of <0.41712087993322045, 0.41712087993322045>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:28.0
+Current ball positions and velocities:
+Ball 1: Position @ (68.70503288661115, 68.70503288661115)
+        Velocity of <0.41294967113388825, 0.41294967113388825>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:29.0
+Current ball positions and velocities:
+Ball 1: Position @ (69.11798255774504, 69.11798255774504)
+        Velocity of <0.40882017442254937, 0.40882017442254937>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:30.0
+Current ball positions and velocities:
+Ball 1: Position @ (69.52680273216758, 69.52680273216758)
+        Velocity of <0.4047319726783239, 0.4047319726783239>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:31.0
+Current ball positions and velocities:
+Ball 1: Position @ (69.9315347048459, 69.9315347048459)
+        Velocity of <0.40068465295154065, 0.40068465295154065>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:32.0
+Current ball positions and velocities:
+Ball 1: Position @ (70.33221935779744, 70.33221935779744)
+        Velocity of <0.39667780642202527, 0.39667780642202527>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:33.0
+Current ball positions and velocities:
+Ball 1: Position @ (70.72889716421946, 70.72889716421946)
+        Velocity of <0.392711028357805, 0.392711028357805>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:34.0
+Current ball positions and velocities:
+Ball 1: Position @ (71.12160819257727, 71.12160819257727)
+        Velocity of <0.38878391807422696, 0.38878391807422696>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:35.0
+Current ball positions and velocities:
+Ball 1: Position @ (71.5103921106515, 71.5103921106515)
+        Velocity of <0.3848960788934847, 0.3848960788934847>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:36.0
+Current ball positions and velocities:
+Ball 1: Position @ (71.89528818954498, 71.89528818954498)
+        Velocity of <0.38104711810454983, 0.38104711810454983>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:37.0
+Current ball positions and velocities:
+Ball 1: Position @ (72.27633530764953, 72.27633530764953)
+        Velocity of <0.37723664692350434, 0.37723664692350434>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:38.0
+Current ball positions and velocities:
+Ball 1: Position @ (72.65357195457304, 72.65357195457304)
+        Velocity of <0.37346428045426927, 0.37346428045426927>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:39.0
+Current ball positions and velocities:
+Ball 1: Position @ (73.02703623502731, 73.02703623502731)
+        Velocity of <0.36972963764972655, 0.36972963764972655>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:40.0
+Current ball positions and velocities:
+Ball 1: Position @ (73.39676587267704, 73.39676587267704)
+        Velocity of <0.36603234127322926, 0.36603234127322926>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:41.0
+Current ball positions and velocities:
+Ball 1: Position @ (73.76279821395026, 73.76279821395026)
+        Velocity of <0.36237201786049694, 0.36237201786049694>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:42.0
+Current ball positions and velocities:
+Ball 1: Position @ (74.12517023181076, 74.12517023181076)
+        Velocity of <0.358748297681892, 0.358748297681892>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:43.0
+Current ball positions and velocities:
+Ball 1: Position @ (74.48391852949266, 74.48391852949266)
+        Velocity of <0.35516081470507305, 0.35516081470507305>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:44.0
+Current ball positions and velocities:
+Ball 1: Position @ (74.83907934419773, 74.83907934419773)
+        Velocity of <0.3516092065580223, 0.3516092065580223>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:45.0
+Current ball positions and velocities:
+Ball 1: Position @ (75.19068855075575, 75.19068855075575)
+        Velocity of <0.34809311449244207, 0.34809311449244207>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:46.0
+Current ball positions and velocities:
+Ball 1: Position @ (75.5387816652482, 75.5387816652482)
+        Velocity of <0.34461218334751764, 0.34461218334751764>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:47.0
+Current ball positions and velocities:
+Ball 1: Position @ (75.88339384859572, 75.88339384859572)
+        Velocity of <0.34116606151404244, 0.34116606151404244>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:48.0
+Current ball positions and velocities:
+Ball 1: Position @ (76.22455991010976, 76.22455991010976)
+        Velocity of <0.337754400898902, 0.337754400898902>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:49.0
+Current ball positions and velocities:
+Ball 1: Position @ (76.56231431100866, 76.56231431100866)
+        Velocity of <0.334376856889913, 0.334376856889913>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:50.0
+Current ball positions and velocities:
+Ball 1: Position @ (76.89669116789858, 76.89669116789858)
+        Velocity of <0.33103308832101386, 0.33103308832101386>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:51.0
+Current ball positions and velocities:
+Ball 1: Position @ (77.22772425621959, 77.22772425621959)
+        Velocity of <0.3277227574378037, 0.3277227574378037>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:52.0
+Current ball positions and velocities:
+Ball 1: Position @ (77.55544701365739, 77.55544701365739)
+        Velocity of <0.3244455298634257, 0.3244455298634257>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:53.0
+Current ball positions and velocities:
+Ball 1: Position @ (77.87989254352081, 77.87989254352081)
+        Velocity of <0.3212010745647914, 0.3212010745647914>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:54.0
+Current ball positions and velocities:
+Ball 1: Position @ (78.20109361808561, 78.20109361808561)
+        Velocity of <0.3179890638191435, 0.3179890638191435>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:55.0
+Current ball positions and velocities:
+Ball 1: Position @ (78.51908268190475, 78.51908268190475)
+        Velocity of <0.31480917318095203, 0.31480917318095203>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:56.0
+Current ball positions and velocities:
+Ball 1: Position @ (78.8338918550857, 78.8338918550857)
+        Velocity of <0.3116610814491425, 0.3116610814491425>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:57.0
+Current ball positions and velocities:
+Ball 1: Position @ (79.14555293653484, 79.14555293653484)
+        Velocity of <0.30854447063465107, 0.30854447063465107>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:58.0
+Current ball positions and velocities:
+Ball 1: Position @ (79.4540974071695, 79.4540974071695)
+        Velocity of <0.30545902592830454, 0.30545902592830454>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:1:59.0
+Current ball positions and velocities:
+Ball 1: Position @ (79.7595564330978, 79.7595564330978)
+        Velocity of <0.3024044356690215, 0.3024044356690215>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (80.06196086876682, 80.06196086876682)
+        Velocity of <0.29938039131233124, 0.29938039131233124>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:1.0
+Current ball positions and velocities:
+Ball 1: Position @ (80.36134126007914, 80.36134126007914)
+        Velocity of <0.2963865873992079, 0.2963865873992079>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:2.0
+Current ball positions and velocities:
+Ball 1: Position @ (80.65772784747836, 80.65772784747836)
+        Velocity of <0.29342272152521587, 0.29342272152521587>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:3.0
+Current ball positions and velocities:
+Ball 1: Position @ (80.95115056900357, 80.95115056900357)
+        Velocity of <0.2904884943099637, 0.2904884943099637>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:4.0
+Current ball positions and velocities:
+Ball 1: Position @ (81.24163906331354, 81.24163906331354)
+        Velocity of <0.28758360936686406, 0.28758360936686406>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:5.0
+Current ball positions and velocities:
+Ball 1: Position @ (81.5292226726804, 81.5292226726804)
+        Velocity of <0.2847077732731954, 0.2847077732731954>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:6.0
+Current ball positions and velocities:
+Ball 1: Position @ (81.8139304459536, 81.8139304459536)
+        Velocity of <0.28186069554046345, 0.28186069554046345>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:7.0
+Current ball positions and velocities:
+Ball 1: Position @ (82.09579114149406, 82.09579114149406)
+        Velocity of <0.2790420885850588, 0.2790420885850588>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:8.0
+Current ball positions and velocities:
+Ball 1: Position @ (82.37483323007912, 82.37483323007912)
+        Velocity of <0.2762516676992082, 0.2762516676992082>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:9.0
+Current ball positions and velocities:
+Ball 1: Position @ (82.65108489777833, 82.65108489777833)
+        Velocity of <0.27348915102221616, 0.27348915102221616>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:10.0
+Current ball positions and velocities:
+Ball 1: Position @ (82.92457404880055, 82.92457404880055)
+        Velocity of <0.270754259511994, 0.270754259511994>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:11.0
+Current ball positions and velocities:
+Ball 1: Position @ (83.19532830831254, 83.19532830831254)
+        Velocity of <0.26804671691687404, 0.26804671691687404>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:12.0
+Current ball positions and velocities:
+Ball 1: Position @ (83.46337502522941, 83.46337502522941)
+        Velocity of <0.2653662497477053, 0.2653662497477053>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:13.0
+Current ball positions and velocities:
+Ball 1: Position @ (83.72874127497711, 83.72874127497711)
+        Velocity of <0.2627125872502282, 0.2627125872502282>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:14.0
+Current ball positions and velocities:
+Ball 1: Position @ (83.99145386222735, 83.99145386222735)
+        Velocity of <0.2600854613777259, 0.2600854613777259>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:15.0
+Current ball positions and velocities:
+Ball 1: Position @ (84.25153932360507, 84.25153932360507)
+        Velocity of <0.2574846067639487, 0.2574846067639487>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:16.0
+Current ball positions and velocities:
+Ball 1: Position @ (84.50902393036903, 84.50902393036903)
+        Velocity of <0.2549097606963092, 0.2549097606963092>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:17.0
+Current ball positions and velocities:
+Ball 1: Position @ (84.76393369106533, 84.76393369106533)
+        Velocity of <0.2523606630893461, 0.2523606630893461>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:18.0
+Current ball positions and velocities:
+Ball 1: Position @ (85.01629435415468, 85.01629435415468)
+        Velocity of <0.24983705645845267, 0.24983705645845267>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:19.0
+Current ball positions and velocities:
+Ball 1: Position @ (85.26613141061313, 85.26613141061313)
+        Velocity of <0.24733868589386815, 0.24733868589386815>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:20.0
+Current ball positions and velocities:
+Ball 1: Position @ (85.51347009650699, 85.51347009650699)
+        Velocity of <0.24486529903492946, 0.24486529903492946>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:21.0
+Current ball positions and velocities:
+Ball 1: Position @ (85.75833539554192, 85.75833539554192)
+        Velocity of <0.24241664604458016, 0.24241664604458016>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:22.0
+Current ball positions and velocities:
+Ball 1: Position @ (86.0007520415865, 86.0007520415865)
+        Velocity of <0.23999247958413436, 0.23999247958413436>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:23.0
+Current ball positions and velocities:
+Ball 1: Position @ (86.24074452117063, 86.24074452117063)
+        Velocity of <0.23759255478829303, 0.23759255478829303>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:24.0
+Current ball positions and velocities:
+Ball 1: Position @ (86.47833707595892, 86.47833707595892)
+        Velocity of <0.2352166292404101, 0.2352166292404101>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:25.0
+Current ball positions and velocities:
+Ball 1: Position @ (86.71355370519933, 86.71355370519933)
+        Velocity of <0.232864462948006, 0.232864462948006>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:26.0
+Current ball positions and velocities:
+Ball 1: Position @ (86.94641816814733, 86.94641816814733)
+        Velocity of <0.23053581831852593, 0.23053581831852593>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:27.0
+Current ball positions and velocities:
+Ball 1: Position @ (87.17695398646586, 87.17695398646586)
+        Velocity of <0.22823046013534068, 0.22823046013534068>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:28.0
+Current ball positions and velocities:
+Ball 1: Position @ (87.4051844466012, 87.4051844466012)
+        Velocity of <0.22594815553398728, 0.22594815553398728>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:29.0
+Current ball positions and velocities:
+Ball 1: Position @ (87.63113260213518, 87.63113260213518)
+        Velocity of <0.22368867397864742, 0.22368867397864742>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:30.0
+Current ball positions and velocities:
+Ball 1: Position @ (87.85482127611382, 87.85482127611382)
+        Velocity of <0.22145178723886094, 0.22145178723886094>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:31.0
+Current ball positions and velocities:
+Ball 1: Position @ (88.07627306335269, 88.07627306335269)
+        Velocity of <0.21923726936647234, 0.21923726936647234>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:32.0
+Current ball positions and velocities:
+Ball 1: Position @ (88.29551033271916, 88.29551033271916)
+        Velocity of <0.2170448966728076, 0.2170448966728076>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:33.0
+Current ball positions and velocities:
+Ball 1: Position @ (88.51255522939196, 88.51255522939196)
+        Velocity of <0.21487444770607952, 0.21487444770607952>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:34.0
+Current ball positions and velocities:
+Ball 1: Position @ (88.72742967709804, 88.72742967709804)
+        Velocity of <0.21272570322901874, 0.21272570322901874>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:35.0
+Current ball positions and velocities:
+Ball 1: Position @ (88.94015538032706, 88.94015538032706)
+        Velocity of <0.21059844619672854, 0.21059844619672854>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:36.0
+Current ball positions and velocities:
+Ball 1: Position @ (89.15075382652378, 89.15075382652378)
+        Velocity of <0.20849246173476127, 0.20849246173476127>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:37.0
+Current ball positions and velocities:
+Ball 1: Position @ (89.35924628825855, 89.35924628825855)
+        Velocity of <0.20640753711741366, 0.20640753711741366>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:38.0
+Current ball positions and velocities:
+Ball 1: Position @ (89.56565382537596, 89.56565382537596)
+        Velocity of <0.20434346174623952, 0.20434346174623952>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:39.0
+Current ball positions and velocities:
+Ball 1: Position @ (89.7699972871222, 89.7699972871222)
+        Velocity of <0.20230002712877712, 0.20230002712877712>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:40.0
+Current ball positions and velocities:
+Ball 1: Position @ (89.97229731425097, 89.97229731425097)
+        Velocity of <0.20027702685748935, 0.20027702685748935>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:41.0
+Current ball positions and velocities:
+Ball 1: Position @ (90.17257434110846, 90.17257434110846)
+        Velocity of <0.19827425658891445, 0.19827425658891445>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:42.0
+Current ball positions and velocities:
+Ball 1: Position @ (90.37084859769737, 90.37084859769737)
+        Velocity of <0.1962915140230253, 0.1962915140230253>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:43.0
+Current ball positions and velocities:
+Ball 1: Position @ (90.5671401117204, 90.5671401117204)
+        Velocity of <0.19432859888279505, 0.19432859888279505>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:44.0
+Current ball positions and velocities:
+Ball 1: Position @ (90.7614687106032, 90.7614687106032)
+        Velocity of <0.1923853128939671, 0.1923853128939671>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:45.0
+Current ball positions and velocities:
+Ball 1: Position @ (90.95385402349716, 90.95385402349716)
+        Velocity of <0.19046145976502743, 0.19046145976502743>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:46.0
+Current ball positions and velocities:
+Ball 1: Position @ (91.14431548326219, 91.14431548326219)
+        Velocity of <0.18855684516737714, 0.18855684516737714>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:47.0
+Current ball positions and velocities:
+Ball 1: Position @ (91.33287232842957, 91.33287232842957)
+        Velocity of <0.18667127671570335, 0.18667127671570335>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:48.0
+Current ball positions and velocities:
+Ball 1: Position @ (91.51954360514527, 91.51954360514527)
+        Velocity of <0.18480456394854633, 0.18480456394854633>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:49.0
+Current ball positions and velocities:
+Ball 1: Position @ (91.70434816909382, 91.70434816909382)
+        Velocity of <0.18295651830906087, 0.18295651830906087>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:50.0
+Current ball positions and velocities:
+Ball 1: Position @ (91.88730468740287, 91.88730468740287)
+        Velocity of <0.18112695312597027, 0.18112695312597027>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:51.0
+Current ball positions and velocities:
+Ball 1: Position @ (92.06843164052884, 92.06843164052884)
+        Velocity of <0.17931568359471056, 0.17931568359471056>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:52.0
+Current ball positions and velocities:
+Ball 1: Position @ (92.24774732412355, 92.24774732412355)
+        Velocity of <0.17752252675876345, 0.17752252675876345>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:53.0
+Current ball positions and velocities:
+Ball 1: Position @ (92.42526985088232, 92.42526985088232)
+        Velocity of <0.17574730149117582, 0.17574730149117582>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:54.0
+Current ball positions and velocities:
+Ball 1: Position @ (92.60101715237349, 92.60101715237349)
+        Velocity of <0.17398982847626407, 0.17398982847626407>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:55.0
+Current ball positions and velocities:
+Ball 1: Position @ (92.77500698084975, 92.77500698084975)
+        Velocity of <0.17224993019150142, 0.17224993019150142>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:56.0
+Current ball positions and velocities:
+Ball 1: Position @ (92.94725691104125, 92.94725691104125)
+        Velocity of <0.1705274308895864, 0.1705274308895864>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:57.0
+Current ball positions and velocities:
+Ball 1: Position @ (93.11778434193084, 93.11778434193084)
+        Velocity of <0.16882215658069055, 0.16882215658069055>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:58.0
+Current ball positions and velocities:
+Ball 1: Position @ (93.28660649851153, 93.28660649851153)
+        Velocity of <0.16713393501488363, 0.16713393501488363>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:2:59.0
+Current ball positions and velocities:
+Ball 1: Position @ (93.45374043352642, 93.45374043352642)
+        Velocity of <0.16546259566473479, 0.16546259566473479>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (93.61920302919115, 93.61920302919115)
+        Velocity of <0.16380796970808745, 0.16380796970808745>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:1.0
+Current ball positions and velocities:
+Ball 1: Position @ (93.78301099889924, 93.78301099889924)
+        Velocity of <0.16216989001100657, 0.16216989001100657>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:2.0
+Current ball positions and velocities:
+Ball 1: Position @ (93.94518088891024, 93.94518088891024)
+        Velocity of <0.1605481911108965, 0.1605481911108965>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:3.0
+Current ball positions and velocities:
+Ball 1: Position @ (94.10572908002113, 94.10572908002113)
+        Velocity of <0.15894270919978754, 0.15894270919978754>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:4.0
+Current ball positions and velocities:
+Ball 1: Position @ (94.26467178922093, 94.26467178922093)
+        Velocity of <0.15735328210778965, 0.15735328210778965>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:5.0
+Current ball positions and velocities:
+Ball 1: Position @ (94.42202507132872, 94.42202507132872)
+        Velocity of <0.15577974928671176, 0.15577974928671176>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:6.0
+Current ball positions and velocities:
+Ball 1: Position @ (94.57780482061543, 94.57780482061543)
+        Velocity of <0.15422195179384465, 0.15422195179384465>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:7.0
+Current ball positions and velocities:
+Ball 1: Position @ (94.73202677240927, 94.73202677240927)
+        Velocity of <0.1526797322759062, 0.1526797322759062>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:8.0
+Current ball positions and velocities:
+Ball 1: Position @ (94.88470650468517, 94.88470650468517)
+        Velocity of <0.15115293495314713, 0.15115293495314713>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:9.0
+Current ball positions and velocities:
+Ball 1: Position @ (95.03585943963832, 95.03585943963832)
+        Velocity of <0.14964140560361566, 0.14964140560361566>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:10.0
+Current ball positions and velocities:
+Ball 1: Position @ (95.18550084524193, 95.18550084524193)
+        Velocity of <0.1481449915475795, 0.1481449915475795>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:11.0
+Current ball positions and velocities:
+Ball 1: Position @ (95.33364583678951, 95.33364583678951)
+        Velocity of <0.1466635416321037, 0.1466635416321037>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:12.0
+Current ball positions and velocities:
+Ball 1: Position @ (95.48030937842162, 95.48030937842162)
+        Velocity of <0.14519690621578268, 0.14519690621578268>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:13.0
+Current ball positions and velocities:
+Ball 1: Position @ (95.62550628463741, 95.62550628463741)
+        Velocity of <0.14374493715362485, 0.14374493715362485>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:14.0
+Current ball positions and velocities:
+Ball 1: Position @ (95.76925122179104, 95.76925122179104)
+        Velocity of <0.1423074877820886, 0.1423074877820886>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:15.0
+Current ball positions and velocities:
+Ball 1: Position @ (95.91155870957313, 95.91155870957313)
+        Velocity of <0.1408844129042677, 0.1408844129042677>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:16.0
+Current ball positions and velocities:
+Ball 1: Position @ (96.0524431224774, 96.0524431224774)
+        Velocity of <0.13947556877522502, 0.13947556877522502>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:17.0
+Current ball positions and velocities:
+Ball 1: Position @ (96.19191869125262, 96.19191869125262)
+        Velocity of <0.13808081308747278, 0.13808081308747278>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:18.0
+Current ball positions and velocities:
+Ball 1: Position @ (96.3299995043401, 96.3299995043401)
+        Velocity of <0.13670000495659804, 0.13670000495659804>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:19.0
+Current ball positions and velocities:
+Ball 1: Position @ (96.46669950929669, 96.46669950929669)
+        Velocity of <0.13533300490703207, 0.13533300490703207>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:20.0
+Current ball positions and velocities:
+Ball 1: Position @ (96.60203251420371, 96.60203251420371)
+        Velocity of <0.13397967485796175, 0.13397967485796175>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:21.0
+Current ball positions and velocities:
+Ball 1: Position @ (96.73601218906168, 96.73601218906168)
+        Velocity of <0.13263987810938213, 0.13263987810938213>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:22.0
+Current ball positions and velocities:
+Ball 1: Position @ (96.86865206717107, 96.86865206717107)
+        Velocity of <0.1313134793282883, 0.1313134793282883>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:23.0
+Current ball positions and velocities:
+Ball 1: Position @ (96.99996554649935, 96.99996554649935)
+        Velocity of <0.13000034453500542, 0.13000034453500542>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:24.0
+Current ball positions and velocities:
+Ball 1: Position @ (97.12996589103436, 97.12996589103436)
+        Velocity of <0.12870034108965536, 0.12870034108965536>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:25.0
+Current ball positions and velocities:
+Ball 1: Position @ (97.25866623212401, 97.25866623212401)
+        Velocity of <0.12741333767875881, 0.12741333767875881>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:26.0
+Current ball positions and velocities:
+Ball 1: Position @ (97.38607956980277, 97.38607956980277)
+        Velocity of <0.12613920430197123, 0.12613920430197123>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:27.0
+Current ball positions and velocities:
+Ball 1: Position @ (97.51221877410475, 97.51221877410475)
+        Velocity of <0.12487781225895152, 0.12487781225895152>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:28.0
+Current ball positions and velocities:
+Ball 1: Position @ (97.63709658636371, 97.63709658636371)
+        Velocity of <0.123629034136362, 0.123629034136362>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:29.0
+Current ball positions and velocities:
+Ball 1: Position @ (97.76072562050007, 97.76072562050007)
+        Velocity of <0.12239274379499838, 0.12239274379499838>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:30.0
+Current ball positions and velocities:
+Ball 1: Position @ (97.88311836429507, 97.88311836429507)
+        Velocity of <0.1211688163570484, 0.1211688163570484>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:31.0
+Current ball positions and velocities:
+Ball 1: Position @ (98.00428718065211, 98.00428718065211)
+        Velocity of <0.11995712819347792, 0.11995712819347792>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:32.0
+Current ball positions and velocities:
+Ball 1: Position @ (98.12424430884559, 98.12424430884559)
+        Velocity of <0.11875755691154315, 0.11875755691154315>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:33.0
+Current ball positions and velocities:
+Ball 1: Position @ (98.24300186575714, 98.24300186575714)
+        Velocity of <0.11756998134242772, 0.11756998134242772>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:34.0
+Current ball positions and velocities:
+Ball 1: Position @ (98.36057184709956, 98.36057184709956)
+        Velocity of <0.11639428152900344, 0.11639428152900344>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:35.0
+Current ball positions and velocities:
+Ball 1: Position @ (98.47696612862856, 98.47696612862856)
+        Velocity of <0.11523033871371341, 0.11523033871371341>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:36.0
+Current ball positions and velocities:
+Ball 1: Position @ (98.59219646734228, 98.59219646734228)
+        Velocity of <0.11407803532657627, 0.11407803532657627>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:37.0
+Current ball positions and velocities:
+Ball 1: Position @ (98.70627450266885, 98.70627450266885)
+        Velocity of <0.11293725497331052, 0.11293725497331052>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:38.0
+Current ball positions and velocities:
+Ball 1: Position @ (98.81921175764215, 98.81921175764215)
+        Velocity of <0.1118078824235774, 0.1118078824235774>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:39.0
+Current ball positions and velocities:
+Ball 1: Position @ (98.93101964006573, 98.93101964006573)
+        Velocity of <0.11068980359934164, 0.11068980359934164>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:40.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.04170944366507, 99.04170944366507)
+        Velocity of <0.10958290556334822, 0.10958290556334822>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:41.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.15129234922841, 99.15129234922841)
+        Velocity of <0.10848707650771475, 0.10848707650771475>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:42.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.25977942573613, 99.25977942573613)
+        Velocity of <0.1074022057426376, 0.1074022057426376>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:43.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.36718163147877, 99.36718163147877)
+        Velocity of <0.10632818368521123, 0.10632818368521123>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:44.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.47350981516398, 99.47350981516398)
+        Velocity of <0.10526490184835911, 0.10526490184835911>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:45.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.57877471701234, 99.57877471701234)
+        Velocity of <0.10421225282987552, 0.10421225282987552>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:46.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.68298696984222, 99.68298696984222)
+        Velocity of <0.10317013030157676, 0.10317013030157676>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:47.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.7861571001438, 99.7861571001438)
+        Velocity of <0.10213842899856099, 0.10213842899856099>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:48.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.88829552914235, 99.88829552914235)
+        Velocity of <0.10111704470857538, 0.10111704470857538>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:49.0
+Current ball positions and velocities:
+Ball 1: Position @ (99.98941257385093, 99.98941257385093)
+        Velocity of <0.10010587426148963, 0.10010587426148963>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:50.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.08951844811241, 100.08951844811241)
+        Velocity of <0.09910481551887473, 0.09910481551887473>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:51.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.18862326363129, 100.18862326363129)
+        Velocity of <0.09811376736368599, 0.09811376736368599>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:52.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.28673703099497, 100.28673703099497)
+        Velocity of <0.09713262969004913, 0.09713262969004913>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:53.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.38386966068502, 100.38386966068502)
+        Velocity of <0.09616130339314863, 0.09616130339314863>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:54.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.48003096407817, 100.48003096407817)
+        Velocity of <0.09519969035921715, 0.09519969035921715>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:55.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.57523065443739, 100.57523065443739)
+        Velocity of <0.09424769345562498, 0.09424769345562498>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:56.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.66947834789302, 100.66947834789302)
+        Velocity of <0.09330521652106873, 0.09330521652106873>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:57.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.7627835644141, 100.7627835644141)
+        Velocity of <0.09237216435585804, 0.09237216435585804>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:58.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.85515572876996, 100.85515572876996)
+        Velocity of <0.09144844271229946, 0.09144844271229946>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:3:59.0
+Current ball positions and velocities:
+Ball 1: Position @ (100.94660417148226, 100.94660417148226)
+        Velocity of <0.09053395828517646, 0.09053395828517646>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:4:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (101.03713812976744, 101.03713812976744)
+        Velocity of <0.08962861870232469, 0.08962861870232469>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:4:1.0
+Current ball positions and velocities:
+Ball 1: Position @ (101.12676674846976, 101.12676674846976)
+        Velocity of <0.08873233251530144, 0.08873233251530144>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:4:2.0
+Current ball positions and velocities:
+Ball 1: Position @ (101.21549908098507, 101.21549908098507)
+        Velocity of <0.08784500919014843, 0.08784500919014843>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:4:3.0
+Current ball positions and velocities:
+Ball 1: Position @ (101.30334409017522, 101.30334409017522)
+        Velocity of <0.08696655909824694, 0.08696655909824694>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:4:4.0
+Current ball positions and velocities:
+Ball 1: Position @ (101.39031064927346, 101.39031064927346)
+        Velocity of <0.08609689350726446, 0.08609689350726446>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:4:5.0
+Current ball positions and velocities:
+Ball 1: Position @ (101.47640754278072, 101.47640754278072)
+        Velocity of <0.08523592457219181, 0.08523592457219181>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:4:6.0
+Current ball positions and velocities:
+Ball 1: Position @ (101.56164346735291, 101.56164346735291)
+        Velocity of <0.0843835653264699, 0.0843835653264699>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:4:7.0
+Current ball positions and velocities:
+Ball 1: Position @ (101.64602703267938, 101.64602703267938)
+        Velocity of <0.0835397296732052, 0.0835397296732052>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:4:8.0
+Current ball positions and velocities:
+Ball 1: Position @ (101.72956676235259, 101.72956676235259)
+        Velocity of <0.08270433237647315, 0.08270433237647315>
+Pole:   Position @ (94.0, 53.0)
+        Velocity of <0.0, 0.0>
+
+NO COLLISION IS POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should go out of bounds...
+======================================  
+
+Number of objects on the field: 2
+
+Current time: 0:0:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (10.0, 10.0)
+        Velocity of <1000.0, 1000.0>
+Pole:   Position @ (31.0, 2.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:1.0
+Current ball positions and velocities:
+Ball 1: Position @ (1010.0, 1010.0)
+        Velocity of <990.0, 990.0>
+Pole:   Position @ (31.0, 2.0)
+        Velocity of <0.0, 0.0>
+
+NO COLLISION IS POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set six balls subsecond time slice...
+======================================  
+
+Number of objects on the field: 7
+
+Current time: 0:0:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (200.0, 200.0)
+        Velocity of <10.0, 10.0>
+Ball 2: Position @ (100.0, 100.0)
+        Velocity of <-100.0, -100.0>
+Ball 3: Position @ (150.0, 150.0)
+        Velocity of <200.0, 200.0>
+Ball 4: Position @ (175.0, 175.0)
+        Velocity of <-110.0, -110.0>
+Ball 5: Position @ (20.0, 20.0)
+        Velocity of <1.0, 1.0>
+Ball 6: Position @ (50.0, 50.0)
+        Velocity of <-5.0, -5.0>
+Pole:   Position @ (162.0, 159.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:0.1
+Current ball positions and velocities:
+Ball 1: Position @ (201.0, 201.0)
+        Velocity of <9.9899547129175, 9.9899547129175>
+Ball 2: Position @ (90.0, 90.0)
+        Velocity of <-99.899547129175, -99.899547129175>
+Ball 3: Position @ (170.0, 170.0)
+        Velocity of <199.79909425835, 199.79909425835>
+Ball 4: Position @ (164.0, 164.0)
+        Velocity of <-109.8895018420925, -109.8895018420925>
+Ball 5: Position @ (20.1, 20.1)
+        Velocity of <0.99899547129175, 0.99899547129175>
+Ball 6: Position @ (49.5, 49.5)
+        Velocity of <-4.99497735645875, -4.99497735645875>
+Pole:   Position @ (162.0, 159.0)
+        Velocity of <0.0, 0.0>
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set five balls 1.234 second time slice...
+======================================  
+
+Number of objects on the field: 6
+
+Current time: 0:0:0.0
+Current ball positions and velocities:
+Ball 1: Position @ (200.0, 200.0)
+        Velocity of <10.0, 10.0>
+Ball 2: Position @ (100.0, 100.0)
+        Velocity of <-100.0, -100.0>
+Ball 3: Position @ (175.0, 175.0)
+        Velocity of <-110.0, -110.0>
+Ball 4: Position @ (20.0, 20.0)
+        Velocity of <1.0, 1.0>
+Ball 5: Position @ (50.0, 50.0)
+        Velocity of <-5.0, -5.0>
+Pole:   Position @ (179.0, 90.0)
+        Velocity of <0.0, 0.0>
+
+Current time: 0:0:1.234
+Current ball positions and velocities:
+Ball 1: Position @ (212.34, 212.34)
+        Velocity of <9.876744748281789, 9.876744748281789>
+Ball 2: Position @ (-23.400000000000006, -23.400000000000006)
+        Velocity of <-98.7674474828179, -98.7674474828179>
+Ball 3: Position @ (39.25999999999999, 39.25999999999999)
+        Velocity of <-108.64419223109968, -108.64419223109968>
+Ball 4: Position @ (21.234, 21.234)
+        Velocity of <0.9876744748281789, 0.9876744748281789>
+Ball 5: Position @ (43.83, 43.83)
+        Velocity of <-4.9383723741408945, -4.9383723741408945>
+Pole:   Position @ (179.0, 90.0)
+        Velocity of <0.0, 0.0>
+
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set ten balls 10 second time slice...
+======================================  
+
+At least one ball is not on the 400.0 ft by 400.0 ft field.
+.                                       
+.                                       
+======================================  
+... End of SoccerSim Testing...         
+======================================  
