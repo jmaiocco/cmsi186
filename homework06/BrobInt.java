@@ -51,14 +51,14 @@ public class BrobInt {
       StringBuilder BrobStringBuilder = new StringBuilder( value );
       this.stringBuilder = BrobStringBuilder;
       if ( this.internalValue.substring( 0, 0 ) == "-" ) {
-        this.sign = -1;
+        this.sign = 1;
         this.stringBuilder.deleteCharAt( 0 ).trimToSize();
       }
       if ( this.internalValue.substring( 0, 0 ) == "+" ) {
         this.sign = 0;
         this.stringBuilder.deleteCharAt( 0 ).trimToSize();
       }
-      try { value.validateDigits(); }
+      try { this.stringBuilder.validateDigits(); }
       catch( IllegalArgumentException iae ) { System.out.println( "Unexpected character within string input." ); }
       this.stringBuilder.toString().reverser();
       this.byteVersion = new byte[ this.stringBuilder.length() ];
@@ -88,8 +88,7 @@ public class BrobInt {
    *  @return BrobInt that is the reverse of the value of this BrobInt
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt reverser() {
-     this.reversed = new StringBuilder( this.internalValue ).reverse().toString();
-     return new BrobInt( this.reversed );
+     reverser( this );
     }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +98,8 @@ public class BrobInt {
    *  @return BrobInt that is the reverse of the value of the BrobInt passed as argument
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public static BrobInt reverser( BrobInt gint ) {
-     return gint.reverser();
+     gint.reversed = new StringBuilder( gint.internalValue ).reverse().toString();
+     return new BrobInt( gint.reversed );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,10 +107,13 @@ public class BrobInt {
    *  @param  gint         BrobInt to add to this
    *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public BrobInt addByte( BrobInt gint ) {
+   public BrobInt add( BrobInt gint ) {
     byte addedBytes;
     byte[] addedByteArray = null;
     int shortestLength, carry;
+    if ( this.sign == 1 && gint.sign == 0 ) {
+     /// this.internalValue.subtract( gint );
+    }
     if ( this.byteVersion.length < gint.byteVersion.length ) {
       shortestLength = this.byteVersion.length;
     } else {
@@ -131,29 +134,11 @@ public class BrobInt {
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to add the value of a BrobIntk passed as argument to this BrobInt using int array
-   *  @param  gint         BrobInt to add to this
-   *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
-   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public BrobInt addInt( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-   }
-
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to subtract the value of a BrobIntk passed as argument to this BrobInt using bytes
    *  @param  gint         BrobInt to subtract from this
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public BrobInt subtractByte( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-   }
-
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to subtract the value of a BrobIntk passed as argument to this BrobInt using int array
-   *  @param  gint         BrobInt to subtract from this
-   *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
-   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public BrobInt subtractInt( BrobInt gint ) {
+   public BrobInt subtract( BrobInt gint ) {
       throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
    }
 
