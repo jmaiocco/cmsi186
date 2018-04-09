@@ -47,23 +47,24 @@ public class BrobInt {
       if ( value.equals( "" ) ) {
         throw new IllegalArgumentException( "String was not passed to constructor" ); 
       }
-      this.internalValue = value;
+      internalValue = value;
       StringBuilder BrobStringBuilder = new StringBuilder( value );
-      this.stringBuilder = BrobStringBuilder;
-      if ( this.internalValue.substring( 0, 0 ) == "-" ) {
-        this.sign = 1;
-        this.stringBuilder.deleteCharAt( 0 ).trimToSize();
+      stringBuilder = BrobStringBuilder;
+      if ( internalValue.substring( 0, 0 ) == "-" ) {
+        sign = 1;
+        stringBuilder.deleteCharAt( 0 ).trimToSize();
+      } else if ( internalValue.substring( 0, 0 ) == "+" ) {
+        sign = 0;
+        stringBuilder.deleteCharAt( 0 ).trimToSize();
+      } else {
+        sign = 0;
       }
-      if ( this.internalValue.substring( 0, 0 ) == "+" ) {
-        this.sign = 0;
-        this.stringBuilder.deleteCharAt( 0 ).trimToSize();
-      }
-      try { this.validateDigits(); }
+      try { validateDigits( stringBuilder ); }
       catch( IllegalArgumentException iae ) { System.out.println( "Unexpected character within string input." ); }
-      this.reverser();
-      this.byteVersion = new byte[ this.stringBuilder.length() ];
-      for ( int i = 0; i < this.byteVersion.length; i++ ) {
-        this.byteVersion[ i ] = Byte.parseByte( this.stringBuilder.substring( 0, 0 ) ); 
+      reversed = reverser().toString();
+      byteVersion = new byte[ stringBuilder.length() ];
+      for ( int i = 0; i < byteVersion.length; i++ ) {
+        byteVersion[ i ] = Byte.parseByte( stringBuilder.substring( 0, 0 ) ); 
       }
    }
 
@@ -74,8 +75,8 @@ public class BrobInt {
    *  note that there is no return false, because of throwing the exception
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public boolean validateDigits() throws IllegalArgumentException {
-      if ( !( this.internalValue.matches( "[0-9]+" ) ) ) {
+   public boolean validateDigits( StringBuilder value ) throws IllegalArgumentException {
+      if ( !( value.toString().matches( "[0-9]+" ) ) ) {
         throw new IllegalArgumentException( "Unexpected character within string" );
       }
       return true;
@@ -86,8 +87,7 @@ public class BrobInt {
    *  @return BrobInt that is the reverse of the value of this BrobInt
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt reverser() {
-     this.reversed = new StringBuilder( this.internalValue ).reverse().toString();
-     return new BrobInt( this.reversed );
+     return new BrobInt( new StringBuilder( this.stringBuilder ).reverse().toString() );
     }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
