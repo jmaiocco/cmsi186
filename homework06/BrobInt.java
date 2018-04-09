@@ -58,9 +58,9 @@ public class BrobInt {
         this.sign = 0;
         this.stringBuilder.deleteCharAt( 0 ).trimToSize();
       }
-      try { this.stringBuilder.validateDigits(); }
+      try { this.validateDigits(); }
       catch( IllegalArgumentException iae ) { System.out.println( "Unexpected character within string input." ); }
-      this.stringBuilder.toString().reverser();
+      this.reverser();
       this.byteVersion = new byte[ this.stringBuilder.length() ];
       for ( int i = 0; i < this.byteVersion.length; i++ ) {
         this.byteVersion[ i ] = Byte.parseByte( this.stringBuilder.substring( 0, 0 ) ); 
@@ -75,12 +75,10 @@ public class BrobInt {
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public boolean validateDigits() throws IllegalArgumentException {
-    for ( int i = 0; i < this.stringBuilder.length(); i++ ) {
-      if ( !( this.stringBuilder.substring( 0, 0 ).matches( "[0-9]+" ) ) ) {
+      if ( !( this.internalValue.matches( "[0-9]+" ) ) ) {
         throw new IllegalArgumentException( "Unexpected character within string" );
       }
-    }
-    return true;
+      return true;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,7 +86,8 @@ public class BrobInt {
    *  @return BrobInt that is the reverse of the value of this BrobInt
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt reverser() {
-     reverser( this );
+     this.reversed = new StringBuilder( this.internalValue ).reverse().toString();
+     return new BrobInt( this.reversed );
     }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,8 +97,7 @@ public class BrobInt {
    *  @return BrobInt that is the reverse of the value of the BrobInt passed as argument
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public static BrobInt reverser( BrobInt gint ) {
-     gint.reversed = new StringBuilder( gint.internalValue ).reverse().toString();
-     return new BrobInt( gint.reversed );
+     return gint.reverser();
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,7 +108,8 @@ public class BrobInt {
    public BrobInt add( BrobInt gint ) {
     byte addedBytes;
     byte[] addedByteArray = null;
-    int shortestLength, carry;
+    int carry = 0;
+    int shortestLength;
     if ( this.sign == 1 && gint.sign == 0 ) {
      /// this.internalValue.subtract( gint );
     }
@@ -139,7 +138,20 @@ public class BrobInt {
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtract( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+     //byte subtractedBytes;
+     byte[] subtractedByteArray = null;
+     //int carry = 0;
+     //int shortestLength;
+     //if ( this.sign == 1 && gint.sign == 1 ) {
+     /// this.add( gint );
+    //}
+    //if ( this.byteVersion.length < gint.byteVersion.length ) {
+      //shortestLength = this.byteVersion.length;
+    //} else {
+      //shortestLength = gint.byteVersion.length;
+    //}
+    BrobInt newBrobInt = new BrobInt( subtractedByteArray.toString() );
+    return newBrobInt;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
