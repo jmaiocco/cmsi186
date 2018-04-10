@@ -117,16 +117,18 @@ public class BrobInt {
     byte addedBytes;
     byte[] addedByteArray = null;
     int carry = 0;
-    int shortestLength;
+    int shorterLength;
     if ( this.sign == 1 && gint.sign == 0 ) {
      /// this.internalValue.subtract( gint );
     }
     if ( this.byteVersion.length < gint.byteVersion.length ) {
-      shortestLength = this.byteVersion.length;
+      shorterLength = this.byteVersion.length;
+      addedByteArray = new byte[ gint.byteVersion.length ];
     } else {
-      shortestLength = gint.byteVersion.length;
+      shorterLength = gint.byteVersion.length;
+      addedByteArray = new byte[ this.byteVersion.length ];
     }
-    for ( int i = 0; i < shortestLength; i++ ) {
+    for ( int i = 0; i < shorterLength; i++ ) {
       addedBytes = (byte) ( this.byteVersion[ i ] + gint.byteVersion[ i ] + carry );
       if ( addedBytes >= 10 ) {
         addedBytes -= 10;
@@ -136,8 +138,15 @@ public class BrobInt {
       }
       addedByteArray[ i ] += addedBytes;
     }
+    for ( int j = shorterLength; j < addedByteArray.length; j++ ) {
+      if ( shorterLength == this.byteVersion.length ) {
+        addedByteArray[ j ] = gint.byteVersion[ j ];
+      } else {
+        addedByteArray[ j ] = this.byteVersion[ j ];
+      }
+    }
     BrobInt newBrobInt = new BrobInt( addedByteArray.toString() );
-    return newBrobInt;
+    return newBrobInt.reverser();
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
