@@ -44,27 +44,15 @@ public class BrobInt {
    *  @param  value  String value to make into a BrobInt
    */
    public BrobInt( String value ) {
-      if ( value.equals( "" ) ) {
+      if ( value.equals( "" ) || value.equals( null ) ) {
         throw new IllegalArgumentException( "String was not passed to constructor" ); 
       }
       internalValue = value;
-      StringBuilder BrobStringBuilder = new StringBuilder( value );
-      stringBuilder = BrobStringBuilder;
-      if ( internalValue.substring( 0, 0 ) == "-" ) {
-        sign = 1;
-        stringBuilder.deleteCharAt( 0 ).trimToSize();
-      } else if ( internalValue.substring( 0, 0 ) == "+" ) {
-        sign = 0;
-        stringBuilder.deleteCharAt( 0 ).trimToSize();
-      } else {
-        sign = 0;
-      }
-      try { validateDigits( stringBuilder ); }
-      catch( IllegalArgumentException iae ) { System.out.println( "Unexpected character within string input." ); }
-      reversed = reverser().toString();
+       validateDigits( stringBuilder.toString() ); 
+       ///IllegalArgumentException iae ) { System.out.println( "Unexpected character within string input." ); }
       byteVersion = new byte[ stringBuilder.length() ];
       for ( int i = 0; i < byteVersion.length; i++ ) {
-        byteVersion[ i ] = Byte.parseByte( stringBuilder.substring( 0, 0 ) ); 
+        byteVersion[ i ] = Byte.parseByte( stringBuilder.substring( i, i + 1 ) ); 
       }
    }
 
@@ -75,11 +63,31 @@ public class BrobInt {
    *  note that there is no return false, because of throwing the exception
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public boolean validateDigits( StringBuilder value ) throws IllegalArgumentException {
-      if ( !( value.toString().matches( "[0-9]+" ) ) ) {
-        throw new IllegalArgumentException( "Unexpected character within string" );
-      }
-      return true;
+   public boolean validateDigits( String value ) throws IllegalArgumentException {
+     StringBuilder stringBuilder = new StringBuilder( value );
+     if ( internalValue.substring( 0, 1 ) == "-" ) {
+       sign = 1;
+       stringBuilder.deleteCharAt( 0 ).trimToSize();
+       reversed = new StringBuilder( stringBuilder ).reverse().toString();
+     } else if ( internalValue.substring( 0, 1 ) == "+" ) {
+       sign = 0;
+       stringBuilder.deleteCharAt( 0 ).trimToSize();
+       reversed = new StringBuilder( stringBuilder ).reverse().toString();
+     } else {
+       sign = 0;
+       reversed = new StringBuilder( stringBuilder ).reverse().toString();
+     } 
+     String validDigits = "0123456789";
+       for ( int i = 0; i < reversed.length(); i++ ) {
+         for ( int j = 0; j < validDigits.length(); j++ ) {
+           if ( reversed.charAt( j ) == validDigits.charAt( j ) ) {
+             continue;
+            } else if ( !( reversed.charAt( j ) == validDigits.charAt( j ) ) && j == validDigits.length() - 1 ) {
+              throw new IllegalArgumentException();
+            }
+          }
+        }
+        return true;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
