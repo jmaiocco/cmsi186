@@ -48,8 +48,7 @@ public class BrobInt {
         throw new IllegalArgumentException( "String was not passed to constructor" ); 
       }
       internalValue = value;
-       validateDigits( stringBuilder.toString() ); 
-       ///IllegalArgumentException iae ) { System.out.println( "Unexpected character within string input." ); }
+      validateDigits( stringBuilder.toString() ); 
       byteVersion = new byte[ stringBuilder.length() ];
       for ( int i = 0; i < byteVersion.length; i++ ) {
         byteVersion[ i ] = Byte.parseByte( stringBuilder.substring( i, i + 1 ) ); 
@@ -118,8 +117,9 @@ public class BrobInt {
     byte[] addedByteArray = null;
     int carry = 0;
     int shorterLength;
+    StringBuilder addedByteStringBuilder = new StringBuilder();
     if ( this.sign == 1 && gint.sign == 0 ) {
-     /// this.internalValue.subtract( gint );
+     /// this.subtract( gint );
     }
     if ( this.byteVersion.length < gint.byteVersion.length ) {
       shorterLength = this.byteVersion.length;
@@ -145,8 +145,12 @@ public class BrobInt {
         addedByteArray[ j ] = this.byteVersion[ j ];
       }
     }
-    BrobInt newBrobInt = new BrobInt( addedByteArray.toString() );
-    return newBrobInt.reverser();
+    for ( int k = 0; k < addedByteArray.length; k++ ) {
+      addedByteStringBuilder.append( addedByteArray[ k ] );
+      System.out.println( "" + addedByteStringBuilder );
+    }
+    BrobInt newBrobInt = new BrobInt( addedByteStringBuilder.toString() );
+    return newBrobInt;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
