@@ -111,8 +111,6 @@ public class BrobInt {
    *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt add( BrobInt gint ) {
-    System.out.println( this.reversed );
-    System.out.println( gint.reversed );
     int addedInts = 0;
     int carry = 0;
     int shorterLength, longerLength;
@@ -123,16 +121,12 @@ public class BrobInt {
     if ( this.reversed.length() <= gint.reversed.length() ) {
       shorterLength = this.reversed.length();
       longerLength = gint.reversed.length();
-      ///addedIntStringBuilder.setLength( gint.IntVersion.length + 1 );
     } else {
       shorterLength = gint.reversed.length();
       longerLength = this.reversed.length();
-      ///addedIntStringBuilder.setLength( this.IntVersion.length + 1 );
     }
     for ( int i = 0; i < shorterLength; i++ ) {
-      ///addedInts = this.IntVersion[ i ] + gint.IntVersion[ i ] + carry;
       addedInts = Integer.parseInt( this.reversed.charAt(i) + "" ) + Integer.parseInt( gint.reversed.charAt(i) + "" ) + carry;
-      ///System.out.println(addedInts);
       if ( addedInts > 9 ) {
         addedInts -= 10;
         carry = 1;
@@ -145,7 +139,7 @@ public class BrobInt {
       addedIntStringBuilder.append(carry);
     }
     for ( int j = shorterLength; j < longerLength; j++) {
-      if ( shorterLength == this.IntVersion.length ) {
+      if ( shorterLength == this.reversed.length() ) {
         addedIntStringBuilder.append( gint.reversed.charAt(j) + "" );
       } else {
         addedIntStringBuilder.append( this.reversed.charAt(j) + "" );
@@ -153,6 +147,9 @@ public class BrobInt {
     }
     if ( addedIntStringBuilder.charAt( addedIntStringBuilder.length() - 1 ) == '0' ) {
       addedIntStringBuilder.deleteCharAt( addedIntStringBuilder.length() -1 );
+    }
+    if ( this.sign == 1 && gint.sign == 1 ) {
+      addedIntStringBuilder.append( "-" );
     }
     String addedIntString = new String( addedIntStringBuilder.reverse().toString() );
     BrobInt newBrobInt = new BrobInt( addedIntString );
