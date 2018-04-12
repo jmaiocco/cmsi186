@@ -33,9 +33,9 @@ public class BrobInt {
 
   /// These are the internal fields
    private String internalValue = "";        // internal String representation of this BrobInt
-   private byte   sign          = 0;         // "0" is positive, "1" is negative
-   private String reversed      = "";        // the backwards version of the internal String representation
-   private byte[] byteVersion   = null;      // byte array for storing the string values; uses the reversed string
+   private int   sign          = 0;         // "0" is positive, "1" is negative
+   private String reversed      = new String();        // the backwards version of the internal String representation
+   private static int[] IntVersion   = null;      // Int array for storing the string values; uses the reversed string
    private StringBuilder stringBuilder = new StringBuilder();
   /**
    *  Constructor takes a string and assigns it to the internal storage, checks for a sign character
@@ -48,11 +48,13 @@ public class BrobInt {
         throw new IllegalArgumentException( "String was not passed to constructor" ); 
       }
       internalValue = value;
+      StringBuilder stringBuilder = new StringBuilder( internalValue );
       validateDigits( stringBuilder.toString() ); 
-      byteVersion = new byte[ stringBuilder.length() ];
-      for ( int i = 0; i < byteVersion.length; i++ ) {
-        byteVersion[ i ] = Byte.parseByte( stringBuilder.substring( i, i + 1 ) ); 
+      IntVersion = new int[ stringBuilder.length() ];
+      for ( int i = 0; i < IntVersion.length; i++ ) {
+        IntVersion[ i ] = Integer.parseInt( reversed.valueOf(i) );
       }
+      ///Arrays.toString( IntVersion );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,25 +65,22 @@ public class BrobInt {
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public boolean validateDigits( String value ) throws IllegalArgumentException {
-     StringBuilder stringBuilder = new StringBuilder( value );
      if ( internalValue.substring( 0, 1 ) == "-" ) {
        sign = 1;
        stringBuilder.deleteCharAt( 0 ).trimToSize();
-       reversed = new StringBuilder( stringBuilder ).reverse().toString();
      } else if ( internalValue.substring( 0, 1 ) == "+" ) {
        sign = 0;
        stringBuilder.deleteCharAt( 0 ).trimToSize();
-       reversed = new StringBuilder( stringBuilder ).reverse().toString();
      } else {
        sign = 0;
-       reversed = new StringBuilder( stringBuilder ).reverse().toString();
      } 
+     reversed = stringBuilder.reverse().toString();
      String validDigits = "0123456789";
        for ( int i = 0; i < reversed.length(); i++ ) {
          for ( int j = 0; j < validDigits.length(); j++ ) {
            if ( reversed.charAt( j ) == validDigits.charAt( j ) ) {
              continue;
-            } else if ( !( reversed.charAt( j ) == validDigits.charAt( j ) ) && j == validDigits.length() - 1 ) {
+            } else if ( ( j == validDigits.length() - 1 ) && !( reversed.charAt( j ) == validDigits.charAt( j ) ) ) {
               throw new IllegalArgumentException();
             }
           }
@@ -107,71 +106,69 @@ public class BrobInt {
      return gint.reverser();
    }
 
+
+
+   public static int[] getIntVersion() {
+    return IntVersion;
+   }
+
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to add the value of a BrobIntk passed as argument to this BrobInt using byte array
+   *  Method to add the value of a BrobIntk passed as argument to this BrobInt using Int array
    *  @param  gint         BrobInt to add to this
    *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt add( BrobInt gint ) {
-    byte addedBytes;
-    byte[] addedByteArray = null;
+    int addedInts = 0;
     int carry = 0;
-    int shorterLength;
-    StringBuilder addedByteStringBuilder = new StringBuilder();
+    int shorterLength = 0;
+    StringBuilder addedIntStringBuilder = new StringBuilder();
     if ( this.sign == 1 && gint.sign == 0 ) {
      /// this.subtract( gint );
     }
-    if ( this.byteVersion.length < gint.byteVersion.length ) {
-      shorterLength = this.byteVersion.length;
-      addedByteArray = new byte[ gint.byteVersion.length ];
+    if ( this.IntVersion.length <= gint.IntVersion.length ) {
+      shorterLength = this.IntVersion.length;
+      ///addedIntStringBuilder.setLength( gint.IntVersion.length + 1 );
     } else {
-      shorterLength = gint.byteVersion.length;
-      addedByteArray = new byte[ this.byteVersion.length ];
+      shorterLength = gint.IntVersion.length;
+      ///addedIntStringBuilder.setLength( this.IntVersion.length + 1 );
     }
     for ( int i = 0; i < shorterLength; i++ ) {
-      addedBytes = (byte) ( this.byteVersion[ i ] + gint.byteVersion[ i ] + carry );
-      if ( addedBytes >= 10 ) {
-        addedBytes -= 10;
+      addedInts = ( this.IntVersion[ i ] + gint.IntVersion[ i ] + carry );
+      if ( addedInts > 9 ) {
+        addedInts -= 10;
         carry = 1;
       } else {
         carry = 0;
       }
-      addedByteArray[ i ] += addedBytes;
+      addedIntStringBuilder.append( addedInts );
     }
-    for ( int j = shorterLength; j < addedByteArray.length; j++ ) {
-      if ( shorterLength == this.byteVersion.length ) {
-        addedByteArray[ j ] = gint.byteVersion[ j ];
-      } else {
-        addedByteArray[ j ] = this.byteVersion[ j ];
-      }
+    if ( addedIntStringBuilder.charAt( addedIntStringBuilder.length() - 1 ) == '0' ) {
+      addedIntStringBuilder.deleteCharAt( addedIntStringBuilder.length() -1 );
     }
-    for ( int k = 0; k < addedByteArray.length; k++ ) {
-      addedByteStringBuilder.append( addedByteArray[ k ] );
-      System.out.println( "" + addedByteStringBuilder );
-    }
-    BrobInt newBrobInt = new BrobInt( addedByteStringBuilder.toString() );
+    String addedIntString = new String( addedIntStringBuilder.reverse().toString() );
+    BrobInt newBrobInt = new BrobInt( addedIntString );
     return newBrobInt;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to subtract the value of a BrobIntk passed as argument to this BrobInt using bytes
+   *  Method to subtract the value of a BrobIntk passed as argument to this BrobInt using Ints
    *  @param  gint         BrobInt to subtract from this
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtract( BrobInt gint ) {
-     //byte subtractedBytes;
-     byte[] subtractedByteArray = null;
+     //Int subtractedInts;
+     int[] subtractedIntArray = null;
      //int carry = 0;
      //int shortestLength;
      //if ( this.sign == 1 && gint.sign == 1 ) {
      /// this.add( gint );
     //}
-    //if ( this.byteVersion.length < gint.byteVersion.length ) {
-      //shortestLength = this.byteVersion.length;
+    //if ( this.IntVersion.length < gint.IntVersion.length ) {
+      //shortestLength = this.IntVersion.length;
     //} else {
-      //shortestLength = gint.byteVersion.length;
+      //shortestLength = gint.IntVersion.length;
     //}
-    BrobInt newBrobInt = new BrobInt( subtractedByteArray.toString() );
+    BrobInt newBrobInt = new BrobInt( subtractedIntArray.toString() );
     return newBrobInt;
    }
 
@@ -245,18 +242,18 @@ public class BrobInt {
    *  @return String  which is the String representation of this BrobInt
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public String toString() {
-      String byteVersionOutput = "";
-      for( int i = 0; i < byteVersion.length; i++ ) {
-         byteVersionOutput = byteVersionOutput.concat( Byte.toString( byteVersion[i] ) );
+      String IntVersionOutput = "";
+      for( int i = 0; i < IntVersion.length; i++ ) {
+         IntVersionOutput = IntVersionOutput.concat( Integer.toString( IntVersion[i] ) );
       }
-      byteVersionOutput = new String( new StringBuffer( byteVersionOutput ).reverse() );
+      IntVersionOutput = new String( new StringBuffer( IntVersionOutput ).reverse() );
       return internalValue;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to display an Array representation of this BrobInt as its bytes
+   *  Method to display an Array representation of this BrobInt as its Ints
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public void toArray( byte[] d ) {
+   public void toArray( int[] d ) {
       System.out.println( Arrays.toString( d ) );
    }
 
