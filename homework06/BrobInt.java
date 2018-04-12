@@ -162,19 +162,35 @@ public class BrobInt {
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtract( BrobInt gint ) {
-     //Int subtractedInts;
-     int[] subtractedIntArray = null;
-     //int carry = 0;
-     //int shortestLength;
-     //if ( this.sign == 1 && gint.sign == 1 ) {
-     /// this.add( gint );
-    //}
-    //if ( this.IntVersion.length < gint.IntVersion.length ) {
-      //shortestLength = this.IntVersion.length;
-    //} else {
-      //shortestLength = gint.IntVersion.length;
-    //}
-    BrobInt newBrobInt = new BrobInt( subtractedIntArray.toString() );
+    int subtractedInts = 0;
+    int carry = 0;
+    int shorterLength, longerLength;
+    StringBuilder subtractedIntStringBuilder = new StringBuilder();
+    if ( this.sign == 1 && gint.sign == 1 ) {
+      this.add( gint );
+    }
+    if ( this.reversed.length() <= gint.reversed.length() ) {
+      shorterLength = this.reversed.length();
+      longerLength = gint.reversed.length();
+    } else {
+      shorterLength = gint.reversed.length();
+      longerLength = this.reversed.length();
+    }
+
+    ///Start working again past here plz
+
+    for ( int i = 0; i < shorterLength; i++ ) {
+      subtractedInts = Integer.parseInt( this.reversed.charAt(i) + "" ) + Integer.parseInt( gint.reversed.charAt(i) + "" ) + carry;
+      if ( addedInts > 9 ) {
+        addedInts -= 10;
+        carry = 1;
+      } else {
+        carry = 0;
+      }
+      addedIntStringBuilder.append( addedInts );
+    }
+    String subtractedIntString = new String( subtractedIntStringBuilder.reverse().toString() );
+    BrobInt newBrobInt = new BrobInt( subtractedIntString );
     return newBrobInt;
    }
 
