@@ -148,7 +148,7 @@ public class BrobInt {
     if ( addedIntStringBuilder.charAt( addedIntStringBuilder.length() - 1 ) == '0' ) {
       addedIntStringBuilder.deleteCharAt( addedIntStringBuilder.length() -1 );
     }
-    if ( this.sign == 1 && gint.sign == 1 ) {
+    if (  this.sign == 1 && gint.sign == 1 ) {
       addedIntStringBuilder.append( "-" );
     }
     String addedIntString = new String( addedIntStringBuilder.reverse().toString() );
@@ -169,9 +169,6 @@ public class BrobInt {
     StringBuilder subtractedIntStringBuilder = new StringBuilder();
     StringBuilder shorterInt = new StringBuilder();
     StringBuilder longerInt = new StringBuilder();
-    if ( this.sign == 1 && gint.sign == 1 ) {
-      this.add( gint );
-    }
     if ( this.reversed.length() <= gint.reversed.length() ) {
       shorterLength = this.reversed.length();
       shorterInt = this.reversed;
@@ -183,9 +180,9 @@ public class BrobInt {
       longerLength = this.reversed.length();
       longerInt = this.reversed;
     }
-
-    ///Start working again past here plz
-
+    if (this.sign == 0 && gint.sign == 1 ) {
+      this.add( gint );
+    }
     for ( int i = 0; i < shorterLength; i++ ) {
       subtractedInts = Integer.parseInt( longerInt.charAt(i) + "" ) - Integer.parseInt( shorterInt.charAt(i) + "" ) - carry;
       if ( subtractedInts < 0 ) {
@@ -199,7 +196,7 @@ public class BrobInt {
     for ( int j = shorterLength; j < longerLength; j++) {
       subtractedIntStringBuilder.append( longerInt.charAt(j) + "" );
     }
-    if ( this.sign == 1 ) {
+    if ( gint.reversed == longerInt && gint.sign == 0 ) {
       subtractedIntStringBuilder.append( "-" );
     }
     String subtractedIntString = new String( subtractedIntStringBuilder.reverse().toString() );
