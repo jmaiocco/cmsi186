@@ -34,7 +34,7 @@ public class BrobInt {
   /// These are the internal fields
    private String internalValue = "";        // internal String representation of this BrobInt
    private int   sign          = 0;         // "0" is positive, "1" is negative
-   private String reversed      = new String();        // the backwards version of the internal String representation
+   private StringBuilder reversed = new StringBuilder();        // the backwards version of the internal String representation
    private static int[] IntVersion   = null;      // Int array for storing the string values; uses the reversed string
    private StringBuilder stringBuilder = new StringBuilder();
   /**
@@ -49,12 +49,21 @@ public class BrobInt {
       }
       internalValue = value;
       StringBuilder stringBuilder = new StringBuilder( internalValue );
+      if ( internalValue.charAt( 0 ) == '-' ) {
+       sign = 1;
+       stringBuilder.deleteCharAt( 0 );
+     } else if ( internalValue.charAt( 0 ) == '+' ) {
+       sign = 0;
+       stringBuilder.deleteCharAt( 0 );
+     } else {
+       sign = 0;
+     } 
       validateDigits( stringBuilder.toString() ); 
       IntVersion = new int[ stringBuilder.length() ];
-      for ( int i = 0; i < IntVersion.length; i++ ) {
-        IntVersion[ i ] = Integer.parseInt( reversed.valueOf(i) );
+      for ( int i = IntVersion.length - 1; i > -1; i-- ) {
+        reversed.append( stringBuilder.charAt(i) + "" );
+        IntVersion[ i ] = Integer.parseInt( stringBuilder.charAt(i) + "" );
       }
-      ///Arrays.toString( IntVersion );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,22 +74,12 @@ public class BrobInt {
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public boolean validateDigits( String value ) throws IllegalArgumentException {
-     if ( internalValue.substring( 0, 1 ) == "-" ) {
-       sign = 1;
-       stringBuilder.deleteCharAt( 0 ).trimToSize();
-     } else if ( internalValue.substring( 0, 1 ) == "+" ) {
-       sign = 0;
-       stringBuilder.deleteCharAt( 0 ).trimToSize();
-     } else {
-       sign = 0;
-     } 
-     reversed = stringBuilder.reverse().toString();
      String validDigits = "0123456789";
-       for ( int i = 0; i < reversed.length(); i++ ) {
+       for ( int i = 0; i < stringBuilder.length(); i++ ) {
          for ( int j = 0; j < validDigits.length(); j++ ) {
-           if ( reversed.charAt( j ) == validDigits.charAt( j ) ) {
+           if ( stringBuilder.toString().charAt( j ) == validDigits.charAt( j ) ) {
              continue;
-            } else if ( ( j == validDigits.length() - 1 ) && !( reversed.charAt( j ) == validDigits.charAt( j ) ) ) {
+            } else if ( ( j == validDigits.length() - 1 ) && !( stringBuilder.toString().charAt( j ) == validDigits.charAt( j ) ) ) {
               throw new IllegalArgumentException();
             }
           }
@@ -106,34 +105,34 @@ public class BrobInt {
      return gint.reverser();
    }
 
-
-
-   public static int[] getIntVersion() {
-    return IntVersion;
-   }
-
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to add the value of a BrobIntk passed as argument to this BrobInt using Int array
    *  @param  gint         BrobInt to add to this
    *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt add( BrobInt gint ) {
+    System.out.println( this.reversed );
+    System.out.println( gint.reversed );
     int addedInts = 0;
     int carry = 0;
-    int shorterLength = 0;
+    int shorterLength, longerLength;
     StringBuilder addedIntStringBuilder = new StringBuilder();
     if ( this.sign == 1 && gint.sign == 0 ) {
      /// this.subtract( gint );
     }
-    if ( this.IntVersion.length <= gint.IntVersion.length ) {
-      shorterLength = this.IntVersion.length;
+    if ( this.reversed.length() <= gint.reversed.length() ) {
+      shorterLength = this.reversed.length();
+      longerLength = gint.reversed.length();
       ///addedIntStringBuilder.setLength( gint.IntVersion.length + 1 );
     } else {
-      shorterLength = gint.IntVersion.length;
+      shorterLength = gint.reversed.length();
+      longerLength = this.reversed.length();
       ///addedIntStringBuilder.setLength( this.IntVersion.length + 1 );
     }
     for ( int i = 0; i < shorterLength; i++ ) {
-      addedInts = ( this.IntVersion[ i ] + gint.IntVersion[ i ] + carry );
+      ///addedInts = this.IntVersion[ i ] + gint.IntVersion[ i ] + carry;
+      addedInts = Integer.parseInt( this.reversed.charAt(i) + "" ) + Integer.parseInt( gint.reversed.charAt(i) + "" ) + carry;
+      ///System.out.println(addedInts);
       if ( addedInts > 9 ) {
         addedInts -= 10;
         carry = 1;
@@ -141,6 +140,16 @@ public class BrobInt {
         carry = 0;
       }
       addedIntStringBuilder.append( addedInts );
+    }
+    if ( carry == 1 ) {
+      addedIntStringBuilder.append(carry);
+    }
+    for ( int j = shorterLength; j < longerLength; j++) {
+      if ( shorterLength == this.IntVersion.length ) {
+        addedIntStringBuilder.append( gint.reversed.charAt(j) + "" );
+      } else {
+        addedIntStringBuilder.append( this.reversed.charAt(j) + "" );
+      }
     }
     if ( addedIntStringBuilder.charAt( addedIntStringBuilder.length() - 1 ) == '0' ) {
       addedIntStringBuilder.deleteCharAt( addedIntStringBuilder.length() -1 );
