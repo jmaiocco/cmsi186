@@ -116,7 +116,7 @@ public class BrobInt {
     int shorterLength, longerLength;
     StringBuilder addedIntStringBuilder = new StringBuilder();
     if ( this.sign == 1 && gint.sign == 0 ) {
-     /// this.subtract( gint );
+      this.subtract( gint );
     }
     if ( this.reversed.length() <= gint.reversed.length() ) {
       shorterLength = this.reversed.length();
@@ -164,30 +164,43 @@ public class BrobInt {
    public BrobInt subtract( BrobInt gint ) {
     int subtractedInts = 0;
     int carry = 0;
-    int shorterLength, longerLength;
+    int shorterLength = 0; 
+    int longerLength = 0;
     StringBuilder subtractedIntStringBuilder = new StringBuilder();
+    StringBuilder shorterInt = new StringBuilder();
+    StringBuilder longerInt = new StringBuilder();
     if ( this.sign == 1 && gint.sign == 1 ) {
       this.add( gint );
     }
     if ( this.reversed.length() <= gint.reversed.length() ) {
       shorterLength = this.reversed.length();
+      shorterInt = this.reversed;
       longerLength = gint.reversed.length();
-    } else {
+      longerInt = gint.reversed;
+    } else if ( this.reversed.length() > gint.reversed.length() ) {
       shorterLength = gint.reversed.length();
+      shorterInt = gint.reversed;
       longerLength = this.reversed.length();
+      longerInt = this.reversed;
     }
 
     ///Start working again past here plz
 
     for ( int i = 0; i < shorterLength; i++ ) {
-      subtractedInts = Integer.parseInt( this.reversed.charAt(i) + "" ) + Integer.parseInt( gint.reversed.charAt(i) + "" ) + carry;
-      if ( addedInts > 9 ) {
-        addedInts -= 10;
+      subtractedInts = Integer.parseInt( longerInt.charAt(i) + "" ) - Integer.parseInt( shorterInt.charAt(i) + "" ) - carry;
+      if ( subtractedInts < 0 ) {
+        subtractedInts += 10;
         carry = 1;
       } else {
         carry = 0;
       }
-      addedIntStringBuilder.append( addedInts );
+      subtractedIntStringBuilder.append( subtractedInts );
+    }
+    for ( int j = shorterLength; j < longerLength; j++) {
+      subtractedIntStringBuilder.append( longerInt.charAt(j) + "" );
+    }
+    if ( this.sign == 1 ) {
+      subtractedIntStringBuilder.append( "-" );
     }
     String subtractedIntString = new String( subtractedIntStringBuilder.reverse().toString() );
     BrobInt newBrobInt = new BrobInt( subtractedIntString );
