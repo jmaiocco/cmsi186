@@ -114,16 +114,19 @@ public class BrobInt {
     int addedInts = 0;
     int carry = 0;
     int shorterLength, longerLength;
+    StringBuilder shorterInt = new StringBuilder();
+    StringBuilder longerInt = new StringBuilder();
     StringBuilder addedIntStringBuilder = new StringBuilder();
-    if ( this.sign == 1 && gint.sign == 0 ) {
-      this.subtract( gint );
-    }
     if ( this.reversed.length() <= gint.reversed.length() ) {
       shorterLength = this.reversed.length();
+      shorterInt = this.reversed;
       longerLength = gint.reversed.length();
+      longerInt = gint.reversed;
     } else {
       shorterLength = gint.reversed.length();
+      shorterInt = gint.reversed;
       longerLength = this.reversed.length();
+      longerInt = this.reversed;
     }
     for ( int i = 0; i < shorterLength; i++ ) {
       addedInts = Integer.parseInt( this.reversed.charAt(i) + "" ) + Integer.parseInt( gint.reversed.charAt(i) + "" ) + carry;
@@ -138,17 +141,13 @@ public class BrobInt {
     if ( carry == 1 ) {
       addedIntStringBuilder.append(carry);
     }
-    for ( int j = shorterLength; j < longerLength; j++) {
-      if ( shorterLength == this.reversed.length() ) {
-        addedIntStringBuilder.append( gint.reversed.charAt(j) + "" );
-      } else {
-        addedIntStringBuilder.append( this.reversed.charAt(j) + "" );
-      }
+     for ( int j = shorterLength; j < longerLength; j++) {
+      addedIntStringBuilder.append( longerInt.charAt(j) + "" );
     }
     if ( addedIntStringBuilder.charAt( addedIntStringBuilder.length() - 1 ) == '0' ) {
-      addedIntStringBuilder.deleteCharAt( addedIntStringBuilder.length() -1 );
+      addedIntStringBuilder.deleteCharAt( addedIntStringBuilder.length() - 1 );
     }
-    if (  this.sign == 1 && gint.sign == 1 ) {
+    if ( this.sign == 1 && gint.sign == 1 && this.compareTo( gint ) > 0 ) {
       addedIntStringBuilder.append( "-" );
     }
     String addedIntString = new String( addedIntStringBuilder.reverse().toString() );
@@ -166,9 +165,28 @@ public class BrobInt {
     int carry = 0;
     int shorterLength = 0; 
     int longerLength = 0;
-    StringBuilder subtractedIntStringBuilder = new StringBuilder();
     StringBuilder shorterInt = new StringBuilder();
     StringBuilder longerInt = new StringBuilder();
+    StringBuilder subtractedIntStringBuilder = new StringBuilder();
+    if ( this.compareTo( gint ) == 0 ) {
+      return ZERO;
+    } else if ( this.compareTo( gint ) < 0 && this.sign == 1 && gint.sign == 1 ) {
+      this.sign = 0; 
+      gint.sign = 0;
+      gint.subtract( this );
+    } else if ( this.compareTo( gint ) > 0 && this.sign == 1 && gint.sign == 1 ) {
+      this.sign = 0;
+      gint.sign = 0;
+      this.subtract( gint );
+    } else if ( this.sign == 0 && gint.sign == 1 ) {
+      gint.sign = 0;
+      this.add( gint );
+    } else if ( this.sign == 1 && gint.sign == 0 ) {
+      ///this.sign = 0;
+      BrobInt temporaryBrobInt = new BrobInt ( this.add( gint ).toString() );
+      System.out.println( temporaryBrobInt );
+      return new BrobInt( new String( temporaryBrobInt.stringBuilder.append("-").reverse().toString() ) );
+    }
     if ( this.reversed.length() <= gint.reversed.length() ) {
       shorterLength = this.reversed.length();
       shorterInt = this.reversed;
@@ -180,9 +198,6 @@ public class BrobInt {
       longerLength = this.reversed.length();
       longerInt = this.reversed;
     }
-    if (this.sign == 0 && gint.sign == 1 ) {
-      this.add( gint );
-    }
     for ( int i = 0; i < shorterLength; i++ ) {
       subtractedInts = Integer.parseInt( longerInt.charAt(i) + "" ) - Integer.parseInt( shorterInt.charAt(i) + "" ) - carry;
       if ( subtractedInts < 0 ) {
@@ -191,12 +206,14 @@ public class BrobInt {
       } else {
         carry = 0;
       }
+      ///System.out.println( subtractedInts );
       subtractedIntStringBuilder.append( subtractedInts );
     }
     for ( int j = shorterLength; j < longerLength; j++) {
       subtractedIntStringBuilder.append( longerInt.charAt(j) + "" );
+      ///System.out.println( longerInt.charAt(j) + "" );
     }
-    if ( gint.reversed == longerInt && gint.sign == 0 ) {
+    if ( this.compareTo( gint ) < 0 ) {
       subtractedIntStringBuilder.append( "-" );
     }
     String subtractedIntString = new String( subtractedIntStringBuilder.reverse().toString() );
@@ -210,7 +227,45 @@ public class BrobInt {
    *  @return BrobInt that is the product of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt multiply( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+     int i, j, k;
+     int multipliedInts = 0;
+     int shorterLength = 0; 
+     int longerLength = 0;
+     StringBuilder shorterInt = new StringBuilder();
+     StringBuilder longerInt = new StringBuilder(); 
+     StringBuilder multipledIntStringBuilder = new StringBuilder();
+     if ( this.reversed.length() <= gint.reversed.length() ) {
+       shorterLength = this.reversed.length();
+       shorterInt = this.reversed;
+       longerLength = gint.reversed.length();
+       longerInt = gint.reversed;
+     } else if ( this.reversed.length() > gint.reversed.length() ) {
+       shorterLength = gint.reversed.length();
+       shorterInt = gint.reversed;
+       longerLength = this.reversed.length();
+       longerInt = this.reversed;
+     }
+     for ( i = 0;  ) {
+       k = i;
+       for ( j = 0;  ) {
+         multipliedInts = Integer.parseInt( longerInt.charAt(i) + "" ) - Integer.parseInt( shorterInt.charAt(i) + "" ) - carry;
+         if ( multipliedInts > 9 ) {
+           
+           carry = ;
+         } else {
+           carry = 0;
+         }
+
+       }
+
+     }
+     if ( multipledIntStringBuilder.charAt( multipledIntStringBuilder.length() - 1 ) == '0' ) {
+       multipledIntStringBuilder.deleteCharAt( multipledIntStringBuilder.length() - 1 );
+     }
+     if ( this.sign != gint.sign ) {
+      multipledIntStringBuilder.append( "-" );
+     }
+     return new BrobInt( new String( multipledIntStringBuilder.reverse().toString() ) );
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
