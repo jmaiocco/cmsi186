@@ -229,11 +229,14 @@ public class BrobInt {
    public BrobInt multiply( BrobInt gint ) {
      int i, j, k;
      int multipliedInts = 0;
+     int carry = 0;
      int shorterLength = 0; 
      int longerLength = 0;
+     int[] intermediateResultArray;
      StringBuilder shorterInt = new StringBuilder();
      StringBuilder longerInt = new StringBuilder(); 
      StringBuilder multipledIntStringBuilder = new StringBuilder();
+     StringBuilder carryHandler = new StringBuilder();
      if ( this.reversed.length() <= gint.reversed.length() ) {
        shorterLength = this.reversed.length();
        shorterInt = this.reversed;
@@ -245,19 +248,25 @@ public class BrobInt {
        longerLength = this.reversed.length();
        longerInt = this.reversed;
      }
-     for ( i = 0;  ) {
+     intermediateResultArray = new int[ longerLength + 2 ];
+     for ( i = 0; i < shorterLength; i++ ) {
        k = i;
-       for ( j = 0;  ) {
-         multipliedInts = Integer.parseInt( longerInt.charAt(i) + "" ) - Integer.parseInt( shorterInt.charAt(i) + "" ) - carry;
-         if ( multipliedInts > 9 ) {
-           
-           carry = ;
+       for ( j = 0; j < longerLength; j++ ) {
+         multipliedInts = ( Integer.parseInt( longerInt.charAt(j) + "" ) * Integer.parseInt( shorterInt.charAt(i) + "" ) ) + carry + intermediateResultArray[ k ];
+         if ( intermediateResultArray[ k ] > 9 ) {
+           carryHandler = new StringBuilder( Integer.toString( multipliedInts ) );
+           System.out.println( carryHandler );
+           multipliedInts = Integer.parseInt( carryHandler.charAt( 1 ) + "" );
+           carry = Integer.parseInt( carryHandler.charAt( 0 ) + "" );
          } else {
            carry = 0;
          }
-
+         intermediateResultArray[ j ] = multipliedInts;
+         k++;
        }
-
+     }
+     for ( i = 0; i < intermediateResultArray.length; i++ ) {
+       multipledIntStringBuilder.append( intermediateResultArray[ i ] );
      }
      if ( multipledIntStringBuilder.charAt( multipledIntStringBuilder.length() - 1 ) == '0' ) {
        multipledIntStringBuilder.deleteCharAt( multipledIntStringBuilder.length() - 1 );
