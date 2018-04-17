@@ -167,7 +167,6 @@ public class BrobInt {
    public BrobInt subtract( BrobInt gint ) {
     int subtractedInts = 0;
     int carry = 0;
-    int negativeSign = 0;
     int shorterLength = 0; 
     int longerLength = 0;
     StringBuilder shorterInt = new StringBuilder();
@@ -175,15 +174,16 @@ public class BrobInt {
     StringBuilder subtractedIntStringBuilder = new StringBuilder();
     if ( this.compareTo( gint ) == 0 ) {
       return ZERO;
-    } else if ( this.sign == 1 && gint.sign == 1 && this.compareTo( gint ) > 0 ) {
-      this.sign = 0; 
-      gint.sign = 0;
-      negativeSign = 1;
-      return new BrobInt( this.subtract( gint ).toString() );
-    } else if ( this.sign == 1 && gint.sign == 1 && this.compareTo( gint ) < 0 ) {
-      this.sign = 0;
-      gint.sign = 0;
-      return new BrobInt( gint.subtract( this ).toString() );
+    } else if ( this.sign == 1 && gint.sign == 1 && this.isGreaterThan( gint ) ) {
+      StringBuilder positiveThis = new StringBuilder( this.toString() ).deleteCharAt( 0 );
+      StringBuilder positiveGint = new StringBuilder( gint.toString() ).deleteCharAt( 0 );
+      return new BrobInt( new BrobInt( positiveThis.toString() ).subtract( new BrobInt( positiveGint.toString() ) ).toString() );
+    } else if ( this.sign == 1 && gint.sign == 1 && !( this.isGreaterThan( gint ) ) ) {
+      StringBuilder positiveThis = new StringBuilder( this.toString() ).deleteCharAt( 0 );
+      StringBuilder positiveGint = new StringBuilder( gint.toString() ).deleteCharAt( 0 );
+      System.out.println( positiveThis );
+      System.out.println( positiveGint );
+      return new BrobInt( new StringBuilder( new BrobInt( positiveGint.toString() ).subtract( new BrobInt( positiveThis.toString() ) ).toString() ).insert( 0, "-" ).toString() );
     } else if ( this.sign == 0 && gint.sign == 1 ) {
       StringBuilder positiveGint = new StringBuilder( gint.toString() ).deleteCharAt( 0 );
       return new BrobInt( this.add( new BrobInt( positiveGint.toString() ) ).toString() );
@@ -216,7 +216,7 @@ public class BrobInt {
       subtractedIntStringBuilder.append( longerInt.charAt(j) + "" );
       ///System.out.println( longerInt.charAt(j) + "" );
     }
-    if ( negativeSign == 1 || this.compareTo( gint ) < 0 ) {
+    if ( !( this.isGreaterThan( gint ) ) && this.reversed.length() < gint.reversed.length() ) {
       subtractedIntStringBuilder.append( "-" );
     }
     String subtractedIntString = new String( subtractedIntStringBuilder.reverse().toString() );
@@ -307,6 +307,40 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public int compareTo( BrobInt gint ) {
       return (internalValue.compareTo( gint.toString() ));
+   }
+
+   public boolean isGreaterThan( BrobInt gint ) {
+    if ( this.sign == 1 && gint.sign == 0 ) {
+      return false;
+    } else if ( this.sign == 0 && gint.sign == 1 ) {
+      return true;
+    } else if ( this.sign == 1 && gint.sign == 1 ) {
+      if ( this.internalValue.length() < gint.internalValue.length() ) {
+        return true;
+      } else if ( this.internalValue.length() > gint.internalValue.length() ) {
+        return false;
+      } else {
+        for ( int i = this.reversed.length() - 1; i > -1; i-- ) {
+          if ( Integer.parseInt( this.reversed.charAt( i ) + "" ) > Integer.parseInt( gint.reversed.charAt( i ) + "" ) ) {
+            return false;
+          }
+        }
+        return true;
+      }
+    } else {
+      if ( this.internalValue.length() < gint.internalValue.length() ) {
+        return false;
+      } else if ( this.internalValue.length() > gint.internalValue.length() ) {
+        return true;
+      } else {
+        for ( int i = this.reversed.length() - 1; i > -1; i-- ) {
+          if ( Integer.parseInt( this.reversed.charAt( i ) + "" ) > Integer.parseInt( gint.reversed.charAt( i ) + "" ) ) {
+            return true;
+          }
+        }
+        return false;
+      }
+    }
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
