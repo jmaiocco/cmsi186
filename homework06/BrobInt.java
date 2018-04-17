@@ -142,11 +142,11 @@ public class BrobInt {
       }
       addedIntStringBuilder.append( addedInts );
     }
-    for ( int j = shorterLength; j < longerLength; j++) {
-      addedIntStringBuilder.append( longerInt.charAt(j) + "" );
-    }
     if ( carry == 1 ) {
       addedIntStringBuilder.append( carry );
+    }
+    for ( int j = shorterLength; j < longerLength; j++) {
+      addedIntStringBuilder.append( longerInt.charAt(j) + "" );
     }
     if ( addedIntStringBuilder.charAt( addedIntStringBuilder.length() - 1 ) == '0' ) {
       addedIntStringBuilder.deleteCharAt( addedIntStringBuilder.length() - 1 );
@@ -230,6 +230,7 @@ public class BrobInt {
      int i, j, k;
      int shorterLength = 0; 
      int longerLength = 0;
+     int appendedOneCounter = 0;
      int[] intArray;
      BrobInt shorterBrobInt = new BrobInt( "0" );
      BrobInt longerBrobInt = new BrobInt( "0" ); 
@@ -266,10 +267,23 @@ public class BrobInt {
             ///System.out.println( newBrobInt );
          }
       }
-     if ( this.sign != gint.sign ) {
-      multipliedIntStringBuilder =  new StringBuilder( newBrobInt.toString() );
-     }
-     return newBrobInt;
+      for ( i = 0; i < newBrobInt.internalValue.length(); i++ ) {
+        if ( newBrobInt.internalValue.charAt( i ) == '1' ) {
+          appendedOneCounter++;
+        } else {
+          break;
+        }
+      }
+      multipliedIntStringBuilder = new StringBuilder( newBrobInt.toString() );
+      if ( appendedOneCounter > 1 ) {
+        multipliedIntStringBuilder.delete( 0, appendedOneCounter );
+        multipliedIntStringBuilder.insert( 0, appendedOneCounter );
+      }
+      /*if ( this.sign != gint.sign ) {
+       multipliedIntStringBuilder =  new StringBuilder( newBrobInt.toString() );
+      }*/
+      newBrobInt = new BrobInt( multipliedIntStringBuilder.toString() );
+      return newBrobInt;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
