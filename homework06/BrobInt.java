@@ -294,6 +294,7 @@ public class BrobInt {
    public BrobInt divide( BrobInt gint ) {
      BrobInt divisor = gint;
      BrobInt dividend = this;
+     BrobInt currentDividend = new BrobInt( "0" );
      BrobInt quotient = new BrobInt( "0" ); 
      if ( divisor.equals( ZERO ) ) {
       throw new IllegalArgumentException( "Cannot divide by zero" );
@@ -303,12 +304,26 @@ public class BrobInt {
        return ZERO;
      } 
      int divisorLength = gint.reversed.length();
-
-
-     //while (  ) {
-
-     //}
-     return ZERO;
+     currentDividend = new BrobInt( dividend.toString().substring( 0, divisorLength ) );
+     if ( divisorLength > currentDividend.toString().length() ) {
+       divisorLength++;
+       currentDividend = new BrobInt( dividend.toString().substring( 0, divisorLength ) );
+     } 
+     while ( divisorLength <= dividend.toString().length() ) {
+       while ( Integer.parseInt( currentDividend.internalValue ) > Integer.parseInt( divisor.internalValue ) ) {
+         currentDividend = currentDividend.subtract( divisor );
+         quotient = quotient.add( ONE ); 
+        }
+         if ( ( divisorLength + 1 ) == divisor.toString().length() ) {
+           break;
+         } else {
+           currentDividend = currentDividend.multiply( TEN );
+           quotient = quotient.multiply( TEN );
+           currentDividend = new BrobInt( new StringBuilder( currentDividend.internalValue ).append( dividend.toString().charAt( divisorLength - 1) + "" ).toString() );
+         }
+     }
+     BrobInt newBrobInt = new BrobInt( quotient.toString() ); 
+     return newBrobInt;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
