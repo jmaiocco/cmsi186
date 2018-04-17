@@ -142,11 +142,11 @@ public class BrobInt {
       }
       addedIntStringBuilder.append( addedInts );
     }
-    if ( carry == 1 ) {
-      addedIntStringBuilder.append(carry);
-    }
-     for ( int j = shorterLength; j < longerLength; j++) {
+    for ( int j = shorterLength; j < longerLength; j++) {
       addedIntStringBuilder.append( longerInt.charAt(j) + "" );
+    }
+    if ( carry == 1 ) {
+      addedIntStringBuilder.append( carry );
     }
     if ( addedIntStringBuilder.charAt( addedIntStringBuilder.length() - 1 ) == '0' ) {
       addedIntStringBuilder.deleteCharAt( addedIntStringBuilder.length() - 1 );
@@ -181,8 +181,6 @@ public class BrobInt {
     } else if ( this.sign == 1 && gint.sign == 1 && !( this.isGreaterThan( gint ) ) ) {
       StringBuilder positiveThis = new StringBuilder( this.toString() ).deleteCharAt( 0 );
       StringBuilder positiveGint = new StringBuilder( gint.toString() ).deleteCharAt( 0 );
-      System.out.println( positiveThis );
-      System.out.println( positiveGint );
       return new BrobInt( new StringBuilder( new BrobInt( positiveGint.toString() ).subtract( new BrobInt( positiveThis.toString() ) ).toString() ).insert( 0, "-" ).toString() );
     } else if ( this.sign == 0 && gint.sign == 1 ) {
       StringBuilder positiveGint = new StringBuilder( gint.toString() ).deleteCharAt( 0 );
@@ -214,7 +212,6 @@ public class BrobInt {
     }
     for ( int j = shorterLength; j < longerLength; j++) {
       subtractedIntStringBuilder.append( longerInt.charAt(j) + "" );
-      ///System.out.println( longerInt.charAt(j) + "" );
     }
     if ( !( this.isGreaterThan( gint ) ) && this.reversed.length() < gint.reversed.length() ) {
       subtractedIntStringBuilder.append( "-" );
@@ -231,53 +228,48 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt multiply( BrobInt gint ) {
      int i, j, k;
-     int multipliedInts = 0;
-     int carry = 0;
      int shorterLength = 0; 
      int longerLength = 0;
-     int[] intermediateResultArray;
-     StringBuilder shorterInt = new StringBuilder();
-     StringBuilder longerInt = new StringBuilder(); 
-     StringBuilder multipledIntStringBuilder = new StringBuilder();
-     StringBuilder carryHandler = new StringBuilder();
+     int[] intArray;
+     BrobInt shorterBrobInt = new BrobInt( "0" );
+     BrobInt longerBrobInt = new BrobInt( "0" ); 
+     StringBuilder multipliedIntStringBuilder = new StringBuilder();
+     BrobInt newBrobInt = new BrobInt( "0" );
      if ( this.reversed.length() <= gint.reversed.length() ) {
        shorterLength = this.reversed.length();
-       shorterInt = this.reversed;
+       shorterBrobInt = this;
        longerLength = gint.reversed.length();
-       longerInt = gint.reversed;
+       longerBrobInt = gint;
      } else if ( this.reversed.length() > gint.reversed.length() ) {
        shorterLength = gint.reversed.length();
-       shorterInt = gint.reversed;
+       shorterBrobInt = gint;
        longerLength = this.reversed.length();
-       longerInt = this.reversed;
+       longerBrobInt = this;
      }
-     intermediateResultArray = new int[ longerLength + 2 ];
-     for ( i = 0; i < shorterLength; i++ ) {
-       k = i;
-       for ( j = 0; j < longerLength; j++ ) {
-         multipliedInts = ( Integer.parseInt( longerInt.charAt(j) + "" ) * Integer.parseInt( shorterInt.charAt(i) + "" ) ) + carry + intermediateResultArray[ k ];
-         if ( intermediateResultArray[ k ] > 9 ) {
-           carryHandler = new StringBuilder( Integer.toString( multipliedInts ) );
-           System.out.println( carryHandler );
-           multipliedInts = Integer.parseInt( carryHandler.charAt( 1 ) + "" );
-           carry = Integer.parseInt( carryHandler.charAt( 0 ) + "" );
-         } else {
-           carry = 0;
+     int numberOfInts = ( shorterLength / 9) + 1;
+     intArray = new int[ numberOfInts ];
+     
+     if ( shorterLength < 10 ){
+         intArray[0] = Integer.parseInt( shorterBrobInt.internalValue );
+      } else {
+         for ( j = 0; j < numberOfInts; j++ ){
+           if ( j + 9 < longerLength ){
+             intArray[j] = Integer.parseInt( shorterBrobInt.internalValue.substring(j*9, (j*9) + 9) );
+           } else {
+             intArray[j] = Integer.parseInt( shorterBrobInt.internalValue.substring(j*9, (j*9) + (shorterLength - j) ) );
+           }
          }
-         intermediateResultArray[ j ] = multipliedInts;
-         k++;
-       }
-     }
-     for ( i = 0; i < intermediateResultArray.length; i++ ) {
-       multipledIntStringBuilder.append( intermediateResultArray[ i ] );
-     }
-     if ( multipledIntStringBuilder.charAt( multipledIntStringBuilder.length() - 1 ) == '0' ) {
-       multipledIntStringBuilder.deleteCharAt( multipledIntStringBuilder.length() - 1 );
-     }
+      }
+      for (  i = 0; i < numberOfInts; i++ ){
+         for ( j = 0; j < intArray[i]; j++ ){
+            newBrobInt = newBrobInt.add( new BrobInt( longerBrobInt.internalValue ) );
+            ///System.out.println( newBrobInt );
+         }
+      }
      if ( this.sign != gint.sign ) {
-      multipledIntStringBuilder.append( "-" );
+      multipliedIntStringBuilder =  new StringBuilder( newBrobInt.toString() );
      }
-     return new BrobInt( new String( multipledIntStringBuilder.reverse().toString() ) );
+     return newBrobInt;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -286,7 +278,23 @@ public class BrobInt {
    *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt divide( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+     BrobInt divisor = gint;
+     BrobInt dividend = this;
+     BrobInt quotient = new BrobInt( "0" ); 
+     if ( divisor.equals( ZERO ) ) {
+      throw new IllegalArgumentException( "Cannot divide by zero" );
+     } else if ( dividend.equals( divisor ) ) {
+       return ONE;
+     } else if ( divisor.isGreaterThan( dividend ) ) {
+       return ZERO;
+     } 
+     int divisorLength = gint.reversed.length();
+
+
+     //while (  ) {
+
+     //}
+     return ZERO;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
