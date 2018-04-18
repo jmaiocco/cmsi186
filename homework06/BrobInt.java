@@ -4,10 +4,9 @@
  * @author    :  Joe Maiocco
  * Date       :  2017-03-27
  * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
- * Notes      :  None
+ * Notes      :  Use tester in GitHub repo
  * Warnings   :  None
- *
- **/
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
 
 public class BrobInt {
@@ -117,8 +116,9 @@ public class BrobInt {
     StringBuilder shorterInt = new StringBuilder();
     StringBuilder longerInt = new StringBuilder();
     StringBuilder addedIntStringBuilder = new StringBuilder();
-    if ( this.sign == 0 && gint.sign == 1 ) {
+    if ( this.sign == 0 && gint.sign == 1 || this.sign == 1 && gint.sign == 0 ) {
       gint.sign = 0;
+      this.sign = 0;
       this.subtract( gint );
     }
     if ( this.reversed.length() <= gint.reversed.length() ) {
@@ -189,12 +189,12 @@ public class BrobInt {
       gint.sign = 1;
       return new BrobInt( this.add( gint ).toString() );
     }
-    if ( this.reversed.length() <= gint.reversed.length() ) {
+    if ( !( this.isGreaterThan( gint ) ) ) {
       shorterLength = this.reversed.length();
       shorterInt = this.reversed;
       longerLength = gint.reversed.length();
       longerInt = gint.reversed;
-    } else if ( this.reversed.length() > gint.reversed.length() ) {
+    } else if ( this.isGreaterThan( gint ) ) {
       shorterLength = gint.reversed.length();
       shorterInt = gint.reversed;
       longerLength = this.reversed.length();
@@ -279,9 +279,9 @@ public class BrobInt {
         multipliedIntStringBuilder.delete( 0, appendedOneCounter );
         multipliedIntStringBuilder.insert( 0, appendedOneCounter );
       }
-      /*if ( this.sign != gint.sign ) {
-       multipliedIntStringBuilder =  new StringBuilder( newBrobInt.toString() );
-      }*/
+      if ( this.sign != gint.sign ) {
+       multipliedIntStringBuilder =  new StringBuilder( newBrobInt.reversed.toString() ).append( "-" ).reverse();
+      }
       newBrobInt = new BrobInt( multipliedIntStringBuilder.toString() );
       return newBrobInt;
    }
@@ -292,11 +292,11 @@ public class BrobInt {
    *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt divide( BrobInt gint ) {
-     int divisionCheckpoint = 0;
      BrobInt divisor = gint;
      BrobInt dividend = this;
      BrobInt currentDividend = new BrobInt( "0" );
      BrobInt quotient = new BrobInt( "0" ); 
+     StringBuilder dividedIntStringBuilder = new StringBuilder();
      if ( divisor.equals( ZERO ) ) {
       throw new IllegalArgumentException( "Cannot divide by zero" );
      } else if ( dividend.equals( divisor ) ) {
@@ -312,26 +312,25 @@ public class BrobInt {
      if ( Integer.parseInt( divisor.toString() ) > Integer.parseInt( currentDividend.toString() ) ) {
        divisorLength++;
        currentDividend = new BrobInt( dividend.toString().substring( 0, divisorLength ) );
-       System.out.println( currentDividend );
      } 
      remainingDividendChecker += divisorLength;
      while ( divisorLength <= dividend.toString().length() ) {
        while ( Integer.parseInt( currentDividend.internalValue ) > Integer.parseInt( divisor.internalValue ) ) {
          currentDividend = new BrobInt( ( Integer.parseInt( currentDividend.toString() ) - Integer.parseInt( divisor.toString() ) ) + "" );
-         System.out.println( currentDividend );
          quotient = quotient.add( ONE ); 
-         System.out.println( quotient );
         }
         if ( remainingDividendChecker == dividendLength ) {
            break;
         }
         currentDividend = currentDividend.multiply( TEN );
-        System.out.println( currentDividend );
         quotient = quotient.multiply( TEN );
         currentDividend = new BrobInt( ( Integer.parseInt( currentDividend.internalValue ) + Integer.parseInt( dividend.toString().charAt( remainingDividendChecker  ) + "" ) ) + "");
-        System.out.println( currentDividend );
         remainingDividendChecker++;
      }
+      if ( this.sign != gint.sign ) {
+       dividedIntStringBuilder = new StringBuilder( quotient.reversed.toString() ).append( "-" ).reverse();
+       quotient = new BrobInt( dividedIntStringBuilder.toString() );
+      }
      BrobInt newBrobInt = new BrobInt( quotient.toString() ); 
      return newBrobInt;
    }
@@ -342,7 +341,13 @@ public class BrobInt {
    *  @return BrobInt that is the remainder of division of this BrobInt by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt remainder( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+     BrobInt newBrobInt = new BrobInt ( this.subtract( this.divide( gint ).multiply( gint ) ).toString() );
+     StringBuilder remainderStringBuilder = new StringBuilder( newBrobInt.toString() );
+     while ( remainderStringBuilder.charAt( 0 ) == '0' ) {
+       remainderStringBuilder.deleteCharAt( 0 );
+     }
+     newBrobInt = new BrobInt( remainderStringBuilder.toString() );
+     return newBrobInt;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -355,6 +360,12 @@ public class BrobInt {
    public int compareTo( BrobInt gint ) {
       return (internalValue.compareTo( gint.toString() ));
    }
+
+  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   *  Method to check whether one BrobInt is greater than another BrobInt
+   *  @param  gint  BrobInt to add to this
+   *  @return int   that is one of neg/0/pos if this BrobInt precedes/equals/follows the argument
+   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
    public boolean isGreaterThan( BrobInt gint ) {
     if ( this.sign == 1 && gint.sign == 0 ) {
@@ -445,6 +456,11 @@ public class BrobInt {
    public static void main( String[] args ) {
       System.out.println( "\n  Hello, world, from the BrobInt program!!\n" );
       System.out.println( "\n   You should run your tests from the BrobIntTester...\n" );
+
+      BrobInt g1 = new BrobInt( "765" );
+      BrobInt g2 = new BrobInt( "759" );
+
+      System.out.println( g1.subtract( g2 ) );
 
       System.exit( 0 );
    }
