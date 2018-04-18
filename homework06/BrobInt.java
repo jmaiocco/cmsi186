@@ -292,6 +292,7 @@ public class BrobInt {
    *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt divide( BrobInt gint ) {
+     int divisionCheckpoint = 0;
      BrobInt divisor = gint;
      BrobInt dividend = this;
      BrobInt currentDividend = new BrobInt( "0" );
@@ -303,24 +304,33 @@ public class BrobInt {
      } else if ( divisor.isGreaterThan( dividend ) ) {
        return ZERO;
      } 
-     int divisorLength = gint.reversed.length();
+     int divisorLength = divisor.internalValue.length();
+     int dividendLength = dividend.internalValue.length();
+     int remainingDividendChecker = 0;
      currentDividend = new BrobInt( dividend.toString().substring( 0, divisorLength ) );
-     if ( divisorLength > currentDividend.toString().length() ) {
+     System.out.println( currentDividend );
+     if ( Integer.parseInt( divisor.toString() ) > Integer.parseInt( currentDividend.toString() ) ) {
        divisorLength++;
        currentDividend = new BrobInt( dividend.toString().substring( 0, divisorLength ) );
+       System.out.println( currentDividend );
      } 
+     remainingDividendChecker += divisorLength;
      while ( divisorLength <= dividend.toString().length() ) {
        while ( Integer.parseInt( currentDividend.internalValue ) > Integer.parseInt( divisor.internalValue ) ) {
-         currentDividend = currentDividend.subtract( divisor );
+         currentDividend = new BrobInt( ( Integer.parseInt( currentDividend.toString() ) - Integer.parseInt( divisor.toString() ) ) + "" );
+         System.out.println( currentDividend );
          quotient = quotient.add( ONE ); 
+         System.out.println( quotient );
         }
-         if ( ( divisorLength + 1 ) == divisor.toString().length() ) {
+        if ( remainingDividendChecker == dividendLength ) {
            break;
-         } else {
-           currentDividend = currentDividend.multiply( TEN );
-           quotient = quotient.multiply( TEN );
-           currentDividend = new BrobInt( new StringBuilder( currentDividend.internalValue ).append( dividend.toString().charAt( divisorLength - 1) + "" ).toString() );
-         }
+        }
+        currentDividend = currentDividend.multiply( TEN );
+        System.out.println( currentDividend );
+        quotient = quotient.multiply( TEN );
+        currentDividend = new BrobInt( ( Integer.parseInt( currentDividend.internalValue ) + Integer.parseInt( dividend.toString().charAt( remainingDividendChecker  ) + "" ) ) + "");
+        System.out.println( currentDividend );
+        remainingDividendChecker++;
      }
      BrobInt newBrobInt = new BrobInt( quotient.toString() ); 
      return newBrobInt;
