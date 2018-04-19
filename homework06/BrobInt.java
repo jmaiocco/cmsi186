@@ -36,6 +36,7 @@ public class BrobInt {
    private StringBuilder reversed = new StringBuilder();        // the backwards version of the internal String representation
    private static int[] IntVersion   = null;      // Int array for storing the string values; uses the reversed string
    private StringBuilder stringBuilder = new StringBuilder();
+   
   /**
    *  Constructor takes a string and assigns it to the internal storage, checks for a sign character
    *   and handles that accordingly;  it then checks to see if it's all valid digits, and reverses it
@@ -92,7 +93,7 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt reverser() {
      return new BrobInt( new StringBuilder( this.stringBuilder ).reverse().toString() );
-    }
+   }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to reverse the value of a BrobIntk passed as argument
@@ -249,7 +250,6 @@ public class BrobInt {
      }
      int numberOfInts = ( shorterLength / 9) + 1;
      intArray = new int[ numberOfInts ];
-     
      if ( shorterLength < 10 ){
          intArray[0] = Integer.parseInt( shorterBrobInt.internalValue );
       } else {
@@ -264,7 +264,6 @@ public class BrobInt {
       for (  i = 0; i < numberOfInts; i++ ){
          for ( j = 0; j < intArray[i]; j++ ){
             newBrobInt = newBrobInt.add( new BrobInt( longerBrobInt.internalValue ) );
-            ///System.out.println( newBrobInt );
          }
       }
       for ( i = 0; i < newBrobInt.internalValue.length(); i++ ) {
@@ -363,10 +362,9 @@ public class BrobInt {
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to check whether one BrobInt is greater than another BrobInt
-   *  @param  gint  BrobInt to add to this
-   *  @return int   that is one of neg/0/pos if this BrobInt precedes/equals/follows the argument
+   *  @param  gint      BrobInt to add to this
+   *  @return boolean   that is one of neg/0/pos if this BrobInt precedes/equals/follows the argument
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
    public boolean isGreaterThan( BrobInt gint ) {
     if ( this.sign == 1 && gint.sign == 0 ) {
       return false;
@@ -456,11 +454,6 @@ public class BrobInt {
    public static void main( String[] args ) {
       System.out.println( "\n  Hello, world, from the BrobInt program!!\n" );
       System.out.println( "\n   You should run your tests from the BrobIntTester...\n" );
-
-      BrobInt g1 = new BrobInt( "765" );
-      BrobInt g2 = new BrobInt( "759" );
-
-      System.out.println( g1.subtract( g2 ) );
 
       System.exit( 0 );
    }
