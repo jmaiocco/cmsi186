@@ -3,7 +3,7 @@
  * Purpose    :  Learning exercise to implement arbitrarily large numbers and their operations
  * @author    :  Joe Maiocco
  * Date       :  2017-03-27
- * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
+ * Description:  Methods for calculating the values of very large integers
  * Notes      :  Use tester in GitHub repo
  * Warnings   :  None
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -31,14 +31,14 @@ public class BrobInt {
    public static final BrobInt MIN_LONG = new BrobInt( new Long( Long.MIN_VALUE ).toString() );
 
   /// These are the internal fields
-   private String internalValue = "";        // internal String representation of this BrobInt
-   private int   sign          = 0;         // "0" is positive, "1" is negative
-   private StringBuilder reversed = new StringBuilder();        // the backwards version of the internal String representation
-   private static int[] IntVersion   = null;      // Int array for storing the string values; uses the reversed string
-   private StringBuilder stringBuilder = new StringBuilder();
-   
+   private String internalValue         = "";                         // internal String representation of this BrobInt
+   private int   sign                   = 0;                          // "0" is positive, "1" is negative
+   private StringBuilder reversed       = new StringBuilder();        // the backwards version of the internal String representation
+   private static int[] IntVersion      = null;                       // Int array for storing the string values; uses the reversed string
+   private StringBuilder stringBuilder  = new StringBuilder();
+
   /**
-   *  Constructor takes a string and assigns it to the internal storage, checks for a sign character
+   *   Constructor takes a string and assigns it to the internal storage, checks for a sign character
    *   and handles that accordingly;  it then checks to see if it's all valid digits, and reverses it
    *   for later use
    *  @param  value  String value to make into a BrobInt
@@ -93,16 +93,33 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt reverser() {
      return new BrobInt( new StringBuilder( this.stringBuilder ).reverse().toString() );
-   }
+    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to reverse the value of a BrobIntk passed as argument
    *  Note: static method
-   *  @param  gint         BrobInt to reverse its value
+   *  @param  gint  BrobInt to reverse its value
    *  @return BrobInt that is the reverse of the value of the BrobInt passed as argument
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public static BrobInt reverser( BrobInt gint ) {
      return gint.reverser();
+   }
+
+  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   *  Method to get the private sign value of a BrobInt
+   *  @return int  current sign value of the given BrobInt
+   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+   public int returnSign() {
+    return sign;
+   }
+
+  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   *  Method to set the private sign value of a BrobInt
+   *  @param  int  newSign  new sign to be assigned to the given BrobInt
+   *  @return int  changed new sign of the given BrobInt
+   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+   public int changeSign( int newSign ) {
+     return sign = newSign;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,9 +134,9 @@ public class BrobInt {
     StringBuilder shorterInt = new StringBuilder();
     StringBuilder longerInt = new StringBuilder();
     StringBuilder addedIntStringBuilder = new StringBuilder();
-    if ( this.sign == 0 && gint.sign == 1 || this.sign == 1 && gint.sign == 0 ) {
-      gint.sign = 0;
-      this.sign = 0;
+    if ( this.returnSign() == 0 && gint.returnSign() == 1 || this.returnSign() == 1 && gint.returnSign() == 0 ) {
+      gint.changeSign( 0 );
+      this.changeSign( 0 );
       this.subtract( gint );
     }
     if ( this.reversed.length() <= gint.reversed.length() ) {
@@ -152,7 +169,7 @@ public class BrobInt {
     if ( addedIntStringBuilder.charAt( addedIntStringBuilder.length() - 1 ) == '0' ) {
       addedIntStringBuilder.deleteCharAt( addedIntStringBuilder.length() - 1 );
     }
-    if ( this.sign == 1 && gint.sign == 1 ) {
+    if ( this.returnSign() == 1 && gint.returnSign() == 1 ) {
       addedIntStringBuilder.append( "-" );
     }
     String addedIntString = new String( addedIntStringBuilder.reverse().toString() );
@@ -175,19 +192,23 @@ public class BrobInt {
     StringBuilder subtractedIntStringBuilder = new StringBuilder();
     if ( this.compareTo( gint ) == 0 ) {
       return ZERO;
-    } else if ( this.sign == 1 && gint.sign == 1 && this.isGreaterThan( gint ) ) {
+    } 
+    if ( this.returnSign() == 1 && gint.returnSign() == 1 && this.isGreaterThan( gint ) ) {
       StringBuilder positiveThis = new StringBuilder( this.toString() ).deleteCharAt( 0 );
       StringBuilder positiveGint = new StringBuilder( gint.toString() ).deleteCharAt( 0 );
       return new BrobInt( new BrobInt( positiveThis.toString() ).subtract( new BrobInt( positiveGint.toString() ) ).toString() );
-    } else if ( this.sign == 1 && gint.sign == 1 && !( this.isGreaterThan( gint ) ) ) {
+    } 
+    if ( this.returnSign() == 1 && gint.returnSign() == 1 && !( this.isGreaterThan( gint ) ) ) {
       StringBuilder positiveThis = new StringBuilder( this.toString() ).deleteCharAt( 0 );
       StringBuilder positiveGint = new StringBuilder( gint.toString() ).deleteCharAt( 0 );
       return new BrobInt( new StringBuilder( new BrobInt( positiveGint.toString() ).subtract( new BrobInt( positiveThis.toString() ) ).toString() ).insert( 0, "-" ).toString() );
-    } else if ( this.sign == 0 && gint.sign == 1 ) {
+    } 
+    if ( this.returnSign() == 0 && gint.returnSign() == 1 ) {
       StringBuilder positiveGint = new StringBuilder( gint.toString() ).deleteCharAt( 0 );
       return new BrobInt( this.add( new BrobInt( positiveGint.toString() ) ).toString() );
-    } else if ( this.sign == 1 && gint.sign == 0 ) {
-      gint.sign = 1;
+    } 
+    if ( this.returnSign() == 1 && gint.returnSign() == 0 ) {
+      gint.changeSign( 1 );
       return new BrobInt( this.add( gint ).toString() );
     }
     if ( !( this.isGreaterThan( gint ) ) ) {
@@ -263,7 +284,7 @@ public class BrobInt {
       }
       for (  i = 0; i < numberOfInts; i++ ){
          for ( j = 0; j < intArray[i]; j++ ){
-            newBrobInt = newBrobInt.add( new BrobInt( longerBrobInt.internalValue ) );
+           newBrobInt = newBrobInt.add( new BrobInt( longerBrobInt.internalValue ) );
          }
       }
       for ( i = 0; i < newBrobInt.internalValue.length(); i++ ) {
@@ -278,7 +299,7 @@ public class BrobInt {
         multipliedIntStringBuilder.delete( 0, appendedOneCounter );
         multipliedIntStringBuilder.insert( 0, appendedOneCounter );
       }
-      if ( this.sign != gint.sign ) {
+      if ( this.returnSign() != gint.returnSign() ) {
        multipliedIntStringBuilder =  new StringBuilder( newBrobInt.reversed.toString() ).append( "-" ).reverse();
       }
       newBrobInt = new BrobInt( multipliedIntStringBuilder.toString() );
@@ -326,7 +347,7 @@ public class BrobInt {
         currentDividend = new BrobInt( ( Integer.parseInt( currentDividend.internalValue ) + Integer.parseInt( dividend.toString().charAt( remainingDividendChecker  ) + "" ) ) + "");
         remainingDividendChecker++;
      }
-      if ( this.sign != gint.sign ) {
+      if ( this.returnSign() != gint.returnSign() ) {
        dividedIntStringBuilder = new StringBuilder( quotient.reversed.toString() ).append( "-" ).reverse();
        quotient = new BrobInt( dividedIntStringBuilder.toString() );
       }
@@ -345,6 +366,9 @@ public class BrobInt {
      while ( remainderStringBuilder.charAt( 0 ) == '0' ) {
        remainderStringBuilder.deleteCharAt( 0 );
      }
+     if ( this.returnSign() == 1 ) {
+       remainderStringBuilder = remainderStringBuilder.reverse().append( "-" ).reverse();
+     }
      newBrobInt = new BrobInt( remainderStringBuilder.toString() );
      return newBrobInt;
    }
@@ -362,9 +386,11 @@ public class BrobInt {
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to check whether one BrobInt is greater than another BrobInt
-   *  @param  gint      BrobInt to add to this
-   *  @return boolean   that is one of neg/0/pos if this BrobInt precedes/equals/follows the argument
+   *  @param  gint  BrobInt to add to this
+   *  @return int   that is one of neg/0/pos if this BrobInt precedes/equals/follows the argument
+   *  Note: It's not the most efficient thing in the world, but it gets the job done.
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
    public boolean isGreaterThan( BrobInt gint ) {
     if ( this.sign == 1 && gint.sign == 0 ) {
       return false;
@@ -454,6 +480,11 @@ public class BrobInt {
    public static void main( String[] args ) {
       System.out.println( "\n  Hello, world, from the BrobInt program!!\n" );
       System.out.println( "\n   You should run your tests from the BrobIntTester...\n" );
+
+      BrobInt g1 = new BrobInt( "765" );
+      BrobInt g2 = new BrobInt( "759" );
+
+      System.out.println( g1.subtract( g2 ) );
 
       System.exit( 0 );
    }
