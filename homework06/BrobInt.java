@@ -269,8 +269,8 @@ public class BrobInt {
        longerLength = this.reversed.length();
        longerBrobInt = this;
      }
-     int numberOfInts = ( shorterLength / 9) + 1;
-     intArray = new int[ numberOfInts ];
+     int intArrayLength = ( shorterLength / 9) + 1;
+     intArray = new int[ intArrayLength ];
      if ( shorterLength < 10 ){
          intArray[0] = Integer.parseInt( shorterBrobInt.internalValue );
       } else {
