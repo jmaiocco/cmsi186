@@ -2,7 +2,7 @@
  * File name  :  ChangeMaker.java
  * Purpose    :  Learning exercise to implement arbitrarily large numbers and their operations
  * @author    :  Joe Maiocco
- * Date       :  2018-04-29
+ * Date       :  2018-04-24
  * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
  * Notes      :  Use tester in GitHub repo
  * Warnings   :  None
