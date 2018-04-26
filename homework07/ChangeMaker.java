@@ -30,22 +30,26 @@ public class DynamicChangeMaker {
   *  @param
   *
   */
-  public static void checkForAcceptableData( int[] denominations, int amount ) throws IllegalArgumentException {
+  public static Tuple checkForAcceptableData( int[] denominations, int amount ) {
     for ( int i = 0; i < denominations.length; i++ ) {
       if ( denominations[ i ] <= 0 ) { 
-        throw new IllegalArgumentException( "One of the given denominations is unacceptable." );
+        System.out.println( "BAD DATA : One of the given denominations is impossible." );
+        return IMPOSSIBLE;
       }
     }
-    if ( amount < 0 ) {
-      throw new IllegalArgumentException( "Your given amount is unacceptable." );
+    if ( amount <= 0 ) {
+      System.out.println( "BAD DATA : Your given amount is impossible." );
+      return IMPOSSIBLE;
     }
     for ( int denominationIndex1 = 0; denominationIndex1 < denominations.length; denominationIndex1++ ) {
       for ( int denominationIndex2 = denominationIndex1 + 1; denominationIndex2 < denominations.length; denominationIndex2++ ) {
         if ( denominations[ denominationIndex1 ] == denominations[ denominationIndex2 ] ) {
-          throw new IllegalArgumentException( "Duplicate denominations are not allowed." );
+          System.out.println( "BAD DATA : Duplicate denominations are impossible." );
+          return IMPOSSIBLE;
         }
       }
     }
+    return new Tuple( denominations.length );
   } 
 
  /**
@@ -54,61 +58,70 @@ public class DynamicChangeMaker {
   *  @return  optimalSolution  Best solution provided the current denominations and amount.
   */
   public static Tuple makeChangeWithDynamicProgramming( int[] denominations, int amount ) {
+  	int row = 0;
+  	int column = 0;
   	checkForAcceptableData( denominations, amount );
   	Tuple[][] table = new Tuple[ denominations.length ][ amount + 1 ];
-  	for ( int row = 0; row < denominations.length; row++ ) {
-  	  for ( int column = 0; column < amount; column++ ) {
-  	    table[ row ][ column ] = new Tuple( denominations.length );
-  	  }
-  	}
 
-  	///Cannot change initialized elements within the tuple array. FIX IT DUUUUUUUUDE
 
-    for ( int row = 0; row < denominations.length; row++ ) {
-      for ( int column = 0; column < amount; column++ ) {
+    for ( row = 0; row < denominations.length; row++ ) {
+      for ( column = 0; column < amount + 1; column++ ) {
+      	System.out.println( row );
+      	System.out.println( column );
         if ( column == 0 ) {
 
           table[ row ][ 0 ] = new Tuple( denominations.length );
 
         } else {
-          if ( ( amount - denominations[ row ] ) < 0 ) {
+            if ( ( column - denominations[ row ] ) < 0 ) {
 
-            table[ row ][ column ] = new Tuple( new int[ 0 ] );
+              table[ row ][ column ] = new Tuple( new int[ 0 ] );
 
-            if ( !( table[ row ][ column - denominations[ row ] ].equals( new Tuple( new int[ 0 ] ) ) ) ) {
+              if ( ( column - denominations[ row ] >= 0 ) ) {
+                if ( !( table[ row ][ column - denominations[ row ] ].isImpossible() ) ) {
 
-              table[ row ][ column ] = table[ row ][ column - denominations[ row ] ];
+                  table[ row ][ column ] = table[ row ][ column ].add( table[ row ][ column - denominations[ row ] ] );
 
-            }
-            if ( row != 0 ) {
-              if ( table[ row - 1 ][ column ].total() < table[ row ][ column ].total() ) {
-         
-                table[ row ][ column ] = table[ row - 1 ][ column ];
+                }
+				if ( row != 0 ) {
+                  if ( ( table[ row - 1 ][ column ].total() < table[ row ][ column ].total() ) || ( table[ row ][ column ].isImpossible() ) ) {
+
+              	    table[ row ][ column ] = table[ row - 1 ][ column ];
+
+                  } 
 
               }
             } 
-          } else if ( amount - denominations[ row ] >= 0 ) {
-
+          } else {
+			  table[row][column] = new Tuple(denominations.length);
           	  table[ row ][ column ].setElement( row, 1 );
 
-          	  if ( ( column - denominations[ row ] > 0 ) && !( table[ row ][ column -denominations[ row ] ].equals( new Tuple( new int[ 0 ] ) ) ) ) {
+          	  if ( column - denominations[ row ] >= 0 ) {
+          	  	if ( table[ row ][ column - denominations[ row ] ].isImpossible() ) {
 
-          	    table[ row ][ column ] = table[ row ][ column ].add( table[ row ][ column - denominations[ row ] ] );
+          	  	  table[ row ][ column ] = new Tuple( new int[ 0 ] );
 
-          	    if ( row != 0 ) {
-          	  	  if ( table[ row - 1 ][ column ].total() < table[ row ][ column ].total() ) {
+          	  	} else {
 
-                    table[ row ][ column ] = table[ row - 1 ][ column ];
+          	  	  table[ row ][ column ] = table[ row ][ column ].add( table[ row ][ column - denominations[ row ] ] );
 
-          	      }
+          	  	}
+          	  	if ( row != 0 ) {
+          	      if ( !( table[ row - 1 ][ column ].isImpossible() ) ) {
+
+					if ( ( table[ row - 1 ][ column ].total() < table[ row ][ column ].total() ) || ( table[ row ][ column ].isImpossible() ) ) {
+         
+                      table[ row ][ column ] = table[ row - 1 ][ column ];
+
+                    }
+                  }  
           	    }
-              }
+          	  }
             }  	
         }
-      optimalSolution = table[ row ][ column ];
-      System.out.println( optimalSolution );
       }
     }
-    return optimalSolution;
+    System.out.println( table[ row - 1 ][ column - 1 ] );
+    return table[ row - 1 ][ column - 1 ];
   }
 }
