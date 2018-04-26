@@ -61,32 +61,49 @@ public class DynamicChangeMaker {
   	    table[ row ][ column ] = new Tuple( denominations.length );
   	  }
   	}
+
+  	///Cannot change initialized elements within the tuple array. FIX IT DUUUUUUUUDE
+
     for ( int row = 0; row < denominations.length; row++ ) {
       for ( int column = 0; column < amount; column++ ) {
         if ( column == 0 ) {
+
           table[ row ][ 0 ] = new Tuple( denominations.length );
+
         } else {
           if ( ( amount - denominations[ row ] ) < 0 ) {
-            table[ row ][ column ] = IMPOSSIBLE;
-            if ( !( table[ row ][ column - denominations[ row ] ].isImpossible() ) ) {
+
+            table[ row ][ column ] = new Tuple( new int[ 0 ] );
+
+            if ( !( table[ row ][ column - denominations[ row ] ].equals( new Tuple( new int[ 0 ] ) ) ) ) {
+
               table[ row ][ column ] = table[ row ][ column - denominations[ row ] ];
+
             }
             if ( row != 0 ) {
               if ( table[ row - 1 ][ column ].total() < table[ row ][ column ].total() ) {
+         
                 table[ row ][ column ] = table[ row - 1 ][ column ];
+
               }
-            } else if ( amount - denominations[ row ] >= 0 ) {
+            } 
+          } else if ( amount - denominations[ row ] >= 0 ) {
+
           	  table[ row ][ column ].setElement( row, 1 );
-          	  if ( !( table[ row ][ column -denominations[ row ] ].isImpossible() ) ) {
+
+          	  if ( ( column - denominations[ row ] > 0 ) && !( table[ row ][ column -denominations[ row ] ].equals( new Tuple( new int[ 0 ] ) ) ) ) {
+
           	    table[ row ][ column ] = table[ row ][ column ].add( table[ row ][ column - denominations[ row ] ] );
+
           	    if ( row != 0 ) {
           	  	  if ( table[ row - 1 ][ column ].total() < table[ row ][ column ].total() ) {
+
                     table[ row ][ column ] = table[ row - 1 ][ column ];
+
           	      }
           	    }
               }
-            } 
-          }  	
+            }  	
         }
       optimalSolution = table[ row ][ column ];
       System.out.println( optimalSolution );
