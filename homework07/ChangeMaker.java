@@ -26,12 +26,16 @@ public class DynamicChangeMaker {
   }
   
  /**
-  *  Method for checking the given arguments for validity.
-  *  @param  denomiations int[]  given coin values to check
-  *  @param  amount       int    given target change value to check
+  *  Main program for making change with the optimal amount of coins.
+  *  @param  denomiations      int[]  given coin values to manage
+  *  @param  amount            int    given target change value to achieve
+  *  @return  optimalSolution  Tuple  Best solution provided the current denominations and amount.
   */
-  public static Tuple checkForAcceptableData( int[] denominations, int amount ) throws IllegalArgumentException {
-    try {
+  public static Tuple makeChangeWithDynamicProgramming( int[] denominations, int amount ) {
+
+	///Preliminary data checks
+
+  	try {
       for ( int i = 0; i < denominations.length; i++ ) {
         if ( denominations[ i ] <= 0 ) { 
           System.out.println( "BAD DATA : One of the given denominations is impossible." );
@@ -52,19 +56,11 @@ public class DynamicChangeMaker {
       }
 	}
     catch( IllegalArgumentException iae ) { return IMPOSSIBLE; }
-    return new Tuple( denominations.length );
-  } 
 
- /**
-  *  Main program for making change with the optimal amount of coins.
-  *  @param  denomiations      int[]  given coin values to manage
-  *  @param  amount            int    given target change value to achieve
-  *  @return  optimalSolution  Tuple  Best solution provided the current denominations and amount.
-  */
-  public static Tuple makeChangeWithDynamicProgramming( int[] denominations, int amount ) {
-  	int row = 0;
+    ///Variable initialization
+
+    int row = 0;
   	int column = 0;
-  	checkForAcceptableData( denominations, amount );
   	Tuple[][] table = new Tuple[ denominations.length ][ amount + 1 ];
 
   	///Main algorithm
@@ -76,7 +72,7 @@ public class DynamicChangeMaker {
 
         if ( column == 0 ) {
 
-          table[ row ][ 0 ] = new Tuple( denominations.length );
+          table[ row ][ column ] = new Tuple( denominations.length );
 
         } else {
 
@@ -90,21 +86,21 @@ public class DynamicChangeMaker {
 
                 if ( !( table[ row ][ column - denominations[ row ] ].isImpossible() ) ) {
 
-                  table[ row ][ column ] = table[ row ][ column ].add( table[ row ][ column - denominations[ row ] ] );
+                  table[ row ][ column ].add( table[ row ][ column - denominations[ row ] ] );
 
                 }
-				if ( row != 0 ) {
+              }
+			 if ( row != 0 ) {
 
-				  if ( !( table[ row - 1 ][ column ].isImpossible() ) ) {
+	     	   if ( !( table[ row - 1 ][ column ].isImpossible() ) ) {
 
-                    if ( ( table[ row - 1 ][ column ].total() < table[ row ][ column ].total() ) || ( table[ row ][ column ].isImpossible() ) ) {
+                 if ( ( table[ row - 1 ][ column ].total() < table[ row ][ column ].total() ) || ( table[ row ][ column ].isImpossible() ) ) {
 
-              	      table[ row ][ column ] = table[ row - 1 ][ column ];
+       	           table[ row ][ column ] = table[ row - 1 ][ column ];
 
-                    }
-                  } 
-                }
-              }   
+                 }
+                } 
+              }
             } else {
 
               ///Case where the current denomination can be taken out of the given amount
@@ -142,4 +138,5 @@ public class DynamicChangeMaker {
     System.out.println( table[ row - 1 ][ column - 1 ] );
     return table[ row - 1 ][ column - 1 ];
     }
+
 }
