@@ -274,7 +274,7 @@ public class BrobInt {
      if ( shorterLength < 10 ){
          intArray[0] = Integer.parseInt( shorterBrobInt.internalValue );
       } else {
-         for ( j = 0; j < numberOfInts; j++ ){
+         for ( j = 0; j < intArrayLength; j++ ){
            if ( j + 9 < longerLength ){
              intArray[j] = Integer.parseInt( shorterBrobInt.internalValue.substring(j*9, (j*9) + 9) );
            } else {
@@ -282,7 +282,7 @@ public class BrobInt {
            }
          }
       }
-      for (  i = 0; i < numberOfInts; i++ ){
+      for (  i = 0; i < intArrayLength; i++ ){
          for ( j = 0; j < intArray[i]; j++ ){
            newBrobInt = newBrobInt.add( new BrobInt( longerBrobInt.internalValue ) );
          }
